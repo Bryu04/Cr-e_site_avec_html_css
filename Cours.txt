@@ -1,0 +1,50 @@
+Comprenez le rôle du HTML
+
+Le HTML (HyperText Markup Language) a fait son apparition dès 1991 lors du lancement du Web. Son rôle est de gérer et d’organiser le contenu.
+
+C'est donc en HTML que vous écrirez ce qui doit être affiché sur la page : du texte, des liens, des images… En “français”, cela consiste à dire par exemple : “Ceci est mon titre”, “Ceci est mon menu”, “Voici une image à afficher”, etc.
+
+Souvenez-vous ! Dans la vidéo qui introduit ce chapitre, vous avez vu à quoi ressemble le site OpenClassrooms sans aucun CSS, juste en HTML pur. Sans CSS, le contenu du site web d’OpenClassrooms s’affiche sans aucune mise en forme particulière.
+
+Bref, vous l'aurez compris : vous pouvez très bien créer un site web uniquement en HTML… Mais celui-ci ne sera pas très beau car l'information apparaîtra “brute” et sans aucune mise en forme. C'est pour cela que le langage CSS vient toujours le compléter.
+
+Comprenez le rôle du CSS
+
+Le CSS (Cascading Style Sheets, aussi appelées feuilles de style) a pour rôle de gérer l'apparence de la page web (agencement, positionnement, décoration, couleurs, taille du texte…). Ce langage est venu compléter le HTML en 1996, et il est toujours au fondement même du style du Web de nos jours.
+
+Comme vous pouvez le voir, le site d'OpenClassrooms a bien meilleure allure avec du CSS. La couche CSS permet de voir le site web d’OpenClassrooms dans sa mise en forme graphique aboutie.
+
+Le CSS a besoin d'une base en HTML pour fonctionner. C'est pour cela que nous allons d'abord apprendre à coder en HTML avant de nous occuper du style en CSS. Vos premières pages ne seront donc pas des plus esthétiques au début, mais c'est normal et cela ne durera pas longtemps.
+
+Comprenez le rôle du navigateur
+
+Les rôles du HTML et du CSS se complètent. Mais ensuite, c’est le navigateur web qui fait le reste du travail : lire le code HTML et CSS pour afficher un résultat visuel à l'écran. Si votre code CSS dit “Les titres sont en rouge”, alors le navigateur affichera les titres en rouge.
+
+Le rôle du navigateur est donc essentiel !
+
+On ne dirait pas comme ça, mais un navigateur est un programme extrêmement complexe. En effet, comprendre le code HTML et CSS n'est pas une mince affaire.
+
+Les différents navigateurs n'affichent pas toujours le même site exactement de la même façon ! Il faudra vous y faire, et prendre l'habitude de vérifier régulièrement que votre site fonctionne correctement sur les navigateurs les plus utilisés.
+
+Aujourd'hui, vous apprenez à développer dans un environnement quasi magique : tous les navigateurs que vous utilisez embarquent des outils de développement particulièrement sophistiqués, notamment l’outil d’inspection d’une page web.
+
+En effet, l'inspection d'une page web permet très simplement d'accéder au HTML et au CSS, et de faire des changements en temps réel. Pour cela, il vous suffit de faire un clic droit sur n'importe quelle page, et de sélectionner l'inspecteur.
+
+La manière d'accéder à l'inspecteur peut varier selon le navigateur que vous utilisez. Vous trouverez une liste des différentes manières d'y arriver sur cette page. Depuis Chrome, en un clic droit, vous pouvez inspecter le HTML et le CSS d'un site web.
+
+En résumé :
+
+Le HTML constitue la structure d'une page web.
+
+Le CSS permet d'ajouter du style.
+
+Les deux langages se complètent avec un rôle bien défini pour chacun.
+
+Le navigateur est un logiciel qui permet de lire les langages du Web : HTML et CSS.
+
+Tous les navigateurs embarquent des outils de développement, dont l'outil d'inspection qui permet d'accéder au HTML et au CSS d'une page.
+
+Alors, vous commencez à y voir plus clair sur la structure d'une page ? Et vous avez pu vous amuser à modifier le contenu de vos pages web favorites ? Parfait ! Parce que nous allons rentrer tout de suite dans le vif du sujet en construisant notre première page HTML !
+
+################################################################################################################
+
