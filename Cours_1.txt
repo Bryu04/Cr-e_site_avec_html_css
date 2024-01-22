@@ -540,3 +540,16 @@ ajouter les liens vers les réseaux sociaux (qui s'ouvrent dans un nouvel onglet
 pour Twitter, vous redirigerez vers "https://twitter.com/",
 
 pour Instagram, le lien pointe vers "https://www.instagram.com/".
+
+En résumé
+Un lien hypertexte (ou hyperlien) permet de changer de page. Par défaut, il est en bleu et souligné dans le navigateur mais on peut modifier ce style en CSS.
+
+Pour faire un lien hypertexte vers un site web existant, on utilise la balise  <a>  avec l'attribut  href pour indiquer l'adresse de la page web cible. Il s'agit d'un lien absolu. Exemple :  <a href="https://openclassrooms.com"> .
+
+Pour faire un lien hypertexte vers une autre page de son site, on utilise la balise <a>  avec l'attribut  href pour indiquer le nom du fichier en local. Il s'agit d'un lien relatif. Exemple :  <a href="page2.html"> .
+
+Un lien hypertexte peut aussi permettre d'amener vers un endroit précis d'une page. Il faut créer une ancre avec l'attribut  id  pour “marquer” cet endroit dans la page, puis faire un lien vers l'ancre comme ceci :  <a href="#ancre"> .
+
+On se retrouve tout de suite pour le dernier chapitre de la partie, qui vous permettra d'insérer de magnifiques images dans vos pages web !
+
+#################################################################################################################
