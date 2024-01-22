@@ -397,3 +397,146 @@ Vous avez maintenant un peu plus d'éléments dans vos pages HTML, bravo à vous
 
 #################################################################################################################
 
+Créez un lien hypertexte en HTML
+
+On reconnaît facilement un lien hypertexte (ou hyperlien) sur une page web : par défaut, il est en bleu et souligné dans le navigateur et un curseur en forme de main apparaît lorsqu'on pointe dessus ; mais on peut modifier ce style en CSS.
+
+Créez un lien hypertexte avec la balise <a> et l'attribut href
+
+Pour faire un lien hypertexte :
+
+on utilise la balise<a>(pour "anchor") pour indiquer qu'on va rediriger vers un autre endroit,
+
+puis, on ajoute l'attribut href suivi de = pour annoncer l'endroit vers lequel on veut rediriger,
+
+on indique explicitement entre  " "  l'endroit vers lequel le lien doit rediriger,
+
+enfin, on écrit le texte qui doit s'afficher sur l'hyperlien.
+
+À partir de là, il y a des subtilités selon l'endroit où l'on veut rediriger l'utilisateur.
+
+Créez un lien hypertexte vers l'URL d'une page disponible sur internet
+Si vous voulez faire un lien vers un autre site existant en ligne, rien de plus simple, il suffit d'utiliser la méthode de copier l'URL du site entre " "à la suite de l'attribut, comme ceci :
+
+<a href="https://openclassrooms.com/fr/">Accédez à OpenClassrooms</a>
+
+Ce type de lien hypertexte s'appelle un lien absolu : il indique une adresse complète.
+
+Nous allons maintenant voir que l'on peut écrire les liens d'une façon un peu différente, ce qui va nous être utile pour faire des liens entre les pages de notre site.
+
+Créez un lien hypertexte d'une page à une autre sur votre site
+Souvenez-vous : pour l’instant nous n’avons pas d’URL disponible car le site n’est pas encore en ligne. On va donc créer des liens entre nos pages en utilisant leur nom, et en indiquant leur arborescence dans notre dossier en local.
+
+Ce type de lien hypertexte s'appelle un lien relatif : il indique où trouver notre fichier HTML.
+
+Cas n°1 : les deux pages sont situées dans un même dossier en local
+Si les pages sont dans le même dossier, il suffit d'écrire comme cible du lien hypertexte le nom du fichier vers lequel on veut amener, par exemple le fichier nommé page2.html.
+
+Si on veut aller de la page 1 à la page 2, voici ce que nous écrirons dans le fichier de page1.html
+
+<a href="page2.html">Page 2</a>
+
+Mais comment faire si on veut créer un fichier page 3 et le déplacer dans un dossier `/contenu` : comment indiquer le chemin relatif ?
+
+Justement, la réponse est dans la question : en indiquant le chemin !
+
+Cas n°2 : les deux pages sont situées dans deux dossiers différents en local
+Si on veut créer un fichier page 3 et le déplacer dans un autre dossier, par exemple un dossier  /contenu , on va donc indiquer le chemin à suivre pour trouver ce fichier :
+
+<a href="contenu/page3.html">Page 3</a>
+Et s'il y a plusieurs sous-dossiers, on écrira ceci :
+
+<a href="contenu/autredossier/page3.html">Page 3</a>
+
+Et si le fichier ne se trouve pas dans un sous-dossier, mais dans un dossier “parent”, on fait comment ?
+
+Si votre fichier cible est placé dans un dossier qui se trouve “plus haut” dans l'arborescence, il faut écrire deux points  ..  , comme ceci :
+
+<a href="../page3.html">Page 3</a>
+
+Créez une ancre avec les attributs  id  et  href
+
+Une ancre est un repère que l'on peut mettre dans une page HTML si elle est très longue, cela aide à la navigation et rend un contenu plus facile à parcourir. Cela permet par exemple aux visiteurs d'un site web d'aller directement à la partie qui les intéresse.
+
+Ce comportement est typique d'un site web "one page" où tout se situe sur la même page. 
+
+Pour créer une ancre, il suffit de rajouter l'attribut  id  à une balise qui va alors servir de repère. Ce peut être n'importe quelle balise, une balise de titre par exemple. Voyons comment faire :
+
+La première étape consiste à ajouter l'attribut  id suivi de =  pour donner un nom à l'ancre entre  " " :
+
+<h2 id="mon_ancre">Titre</h2>
+L'attribut  id  sert à donner un nom “unique” à une balise, pour s'en servir de repère. Et, croyez-moi, vous n'avez pas fini d'entendre parler de cet attribut. Ici, on s'en sert pour faire un lien vers une ancre mais, en CSS, il pourra nous être utile pour repérer une balise précise, vous verrez.
+
+Évitez de créer des  id  avec des espaces ou des caractères spéciaux ; utilisez simplement, dans la mesure du possible, des lettres et des chiffres pour que la valeur soit reconnue par tous les navigateurs.
+
+La seconde étape consiste à indiquer où se situe l'ancre. La méthode pour se faire varie selon que :
+
+l'ancre est plus bas sur la même page
+
+l'ancre est située sur une autre page
+
+Cas n°1 : l'ancre est plus bas sur la même page
+Dans ce premier cas, on crée un lien avec l'attribut href  (il contient un dièse #  suivi du nom de l'ancre) :
+
+<a href="#mon_ancre">Aller vers l'ancre</a>
+
+Voici un exemple de page comportant beaucoup de texte et utilisant les ancres :
+
+<h1>Ma grande page</h1>
+<p>
+Découvrez nos conseils d’aménagement pour :<br>
+    <a href="#cuisine">La cuisine</a><br>
+    <a href="#jardin">Le jardin</a><br>
+    <a href="#salon">Le salon</a><br>
+</p>
+<h2 id="cuisine">La cuisine</h2>
+<p>... (beaucoup de texte) ...</p>
+<h2 id="jardin">Le jardin</h2>
+<p>... (beaucoup de texte) ...</p>
+<h2 id="salon">Le salon</h2>
+<p>... (beaucoup de texte) ...</p>
+Testez pour voir avec le CodePen P1C5
+
+Vous avez peut-être remarqué que l’on a commencé à utiliser du latin pour remplir des zones de texte dans notre code. C'est normal, pas de panique ! Il s'agit du "lorem ipsum", un “faux texte” qu'on peut ajouter provisoirement, de manière à calibrer une mise en page avant la validation d’un texte définitif.
+
+Cas n°2 : l'ancre est située dans une autre page
+Dans ce cas-là, on tape le nom de la page cible avant le dièse # et enfin le nom de l'ancre :
+
+<a href="index.html#jardin">Le jardin</a>
+Voici une nouvelle page qui contient trois liens, chacun amenant vers une des ancres de la page de l'exemple précédent :
+
+<h1>Le Mégamix</h1>
+<p>
+Rendez-vous quelque part sur la page :<br>
+    <a href="index.html#cuisine">La cuisine</a><br>
+    <a href="index.html#jardin">Le jardin</a><br>
+    <a href="index.html#salon">Le salon</a><br>
+</p>
+
+Et voilà pour tout ce que vous devez savoir sur les liens !
+
+Sachez qu'il est possible de configurer un lien pour qu'il ait un comportement un peu particulier.
+
+target="_blank"  fait en sorte que le lien hypertexte ouvre un nouvel onglet :
+
+<p>Bonjour. Souhaitez-vous apprendre sur <a href="https://openclassrooms.com" target="_blank">OpenClassrooms</a> ?</p>
+
+href="mailto:NOMDUMAIL@MAIL.COM"  crée un lien hypertexte qui ouvre la boîte mail avec un nouveau message vide.
+
+href="NOMDEFICHIER.EXTENSION"  crée un lien hypertexte qui permet de télécharger un fichier que vous avez placé au préalable dans le même dossier que votre page web.
+
+À vous de jouer
+
+Vous allez maintenant pouvoir mettre en pratique ce que vous venez d'apprendre sur les liens. Exceptionnellement pour cet exercice, la page  a-propos.html  a été déplacée dans un dossier  dossier-demo  afin que vous puissiez tester votre compréhension des liens relatifs.
+
+Pour cet exercice, votre mission, si vous l'acceptez, est de :
+
+créer sur la page d'accueil un lien vers la page "À propos" (sans déplacer les fichiers) ;
+
+créer sur la page  a-propos.html  un lien vers la page d'accueil (sans déplacer les fichiers) ;
+
+ajouter les liens vers les réseaux sociaux (qui s'ouvrent dans un nouvel onglet) sur la page d'accueil et la page "À propos" :
+
+pour Twitter, vous redirigerez vers "https://twitter.com/",
+
+pour Instagram, le lien pointe vers "https://www.instagram.com/".
