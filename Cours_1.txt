@@ -214,3 +214,186 @@ Une page web est constituée de deux sections principales : l'en-tête<head> </h
 
 Félicitations ! Vous avez créé votre première page web ! Vous pouvez être fier de vous ! Dans le chapitre suivant, nous allons rentrer un peu plus dans le détail, en apprenant à organiser son texte en HTML. Alors à tout de suite ! 
 
+#################################################################################################################
+
+Le texte affiché sur une page web est compris entre les balises <body> </body>.
+
+C'est donc dans <body> </body> que nous allons écrire du texte à afficher en utilisant des balises HTML pour le structurer grâce à des paragraphes, des titres, des listes ou encore mettre en avant du texte important.
+
+Créez des paragraphes avec les balises <p> </p>
+Les balises <p> </p> permettent de délimiter des paragraphes en HTML :
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Ma page</title>
+    </head>
+    <body>
+        <p>Ceci est le contenu de mon premier paragraphe</p>
+        <p>Ceci est le contenu de mon deuxième paragraphe</p>
+    </body>
+</html>
+
+Oui, mais si je veux juste revenir à la ligne sans créer un paragraphe à chaque fois ?
+
+Eh bien devinez quoi : il existe une balise pour cela !
+
+Revenez à la ligne avec la balise orpheline <br>
+
+Pour revenir à la ligne, on utilise la balise orpheline  <br> (pour break), on n'a donc pas besoin de la fermer :
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Ma page</title>
+    </head>
+    <body>
+        <p>Ceci est le contenu de mon premier paragraphe, <br>dont le contenu est particulièrement long.</p>
+        <p>Ceci est le contenu de mon deuxième paragraphe</p>
+    </body>
+</html>
+
+Testez pour voir avec le CodePen P1C4a.
+
+CodePen est une console en ligne, un genre de bac à sable de code : vous pouvez jouer avec et changer des choses pour voir ce que cela fait en direct. Ne vous inquiétez pas, vous ne modifiez pas la base de code du CodePen ; si vous voulez retrouver le code d'origine, il vous suffit de rafraichir la page.
+
+Les bouts de code dans CodePen ne contiennent que le code qui irait dans la balise <body>. Ne soyez pas étonné s'il n'y a pas la balise <head> </head>  ni les autres éléments que nous avons pu voir.
+
+Vous pouvez théoriquement mettre plusieurs balises  <br>  d'affilée pour faire plusieurs sauts de lignes, mais on considère que c'est une mauvaise pratique qui rend le code délicat à maintenir. Pour décaler un texte avec plus de précision, on utilisera le CSS, ce langage qui vient compléter le HTML pour lui ajouter du style, et dont je vous parlerai un peu plus loin.
+
+Maintenant que vous savez créer des paragraphes et sauter des lignes, voyons comment créer des titres.
+
+Créez des titres avec les balises  <h1>,  <h2>,  <h3>…
+
+Les balises de titres vont de <h1> </h1> jusqu'à <h6> </h6>, ce qui permet de hiérarchiser et structurer le texte dans différentes sections, du niveau le plus grand, au niveau le plus petit.
+
+Il faut toujours structurer sa page en commençant par un titre de niveau 1<h1>, puis structurer l'intérieur avec des titres de niveau 2<h2>, puis, si besoin de structurer l'intérieur, utiliser des titres de niveau 3, etc. Il ne devrait pas y avoir de sous-titre sans titre principal !
+
+Ne confondez pas :
+
+La balise <h1>  sert à créer un titre de niveau 1 qui sera affiché sur la page web.
+
+La balise <title>n'affiche rien sur la page web, elle affiche le titre de la page dans l'onglet du navigateur.
+
+Ajoutons donc des balises de titre dans le code :
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ma page</title>
+    </head>
+    <body>
+        <h1>Bienvenue sur ma page</h1>
+        <p>Ceci est le contenu de mon premier paragraphe</p>
+        <p>Ceci est le contenu de mon deuxième paragraphe</p>
+        <h2>Voilà mon sous-titre 1</h2>
+        <h3>Une sous-partie</h3>
+        <p>Un paragraphe</p>
+        <h3>Une autre sous-partie</h3>
+        <p>Tiens encore un paragraphe</p>
+        <h2>Voilà mon sous-titre 2</h2>
+        …
+    </body>
+</html>
+
+Votre navigateur affiche par défaut des tailles différentes de texte en fonction des titres, mais si vous voulez modifier la taille du texte, sachez que nous apprendrons à faire cela en CSS un peu plus tard.
+
+Créez des listes avec les balises  <li>  et  <ul>  ou  <ol>
+
+Étape 1 : balisez les éléments d'une liste avec <li> </li>
+Pour baliser les éléments qu'on veut mettre dans une liste, on utilise <li> </li>  (pour "listed item" ou "élément de la liste" en français). Puis on les insère tous à l'intérieur d'une autre balise pour indiquer s'il s'agit d'une liste à puces ou d'une liste numérotée.
+
+Étape 2 : insérez la liste dans des balises <ul> </ul> ou <ol> </ol>
+Les balises <ul> </ul>(pour "unordered list") permettent d'indiquer qu'on démarre une liste non ordonnée, c'est-à-dire, ce que l'on appelle en français une liste à puces.
+
+Les balises <ol> </ol>(pour "ordered list") permettent d'indiquer qu'on démarre une liste ordonnée, autrement dit en français une liste numérotée.
+
+Comme c'est particulièrement intuitif, je vous laisse admirer la simplicité de cet exemple :
+
+<h1>Les fruits rouges</h1>
+<ul>
+   <li>Fraises</li>
+   <li>Framboises</li>
+   <li>Groseilles</li>
+</ul>
+
+<h1>Ma journée</h1>
+<ol>
+   <li>Je me lève.</li>
+   <li>Je mange et je bois de l'eau.</li>
+   <li>Je retourne me coucher.</li>
+</ol>
+
+Mettez en valeur du texte important
+Dans le texte qui s'affiche sur une page web, vous aimeriez faire ressortir certains mots en particulier.
+
+La balise la plus utilisée pour cela est <strong> mais HTML vous propose différents moyens de mettre en valeur le texte de votre page :
+
+Balises
+
+Traduction par le navigateur
+
+<mark> </mark> => Surligner le texte.
+
+<em> </em> => Mettre le texte en italique.
+
+<strong> </strong> => Mettre le texte en gras.
+
+Testez pour voir avec le CodePen P1C4b !
+
+Ok ! Mais cette mise en forme ne me plaît pas trop, on peut la changer ?
+
+En fait, c'est le navigateur qui choisit comment afficher les mots qu'on lui indique comme étant plus ou moins importants (en gras, en italique,…). Les balises <em> et <strong>  ne signifient pas respectivement “mettre en italique" ou "mettre en gras” mais seulement que le texte est “important”. On pourra décider plus tard, en CSS, d'afficher les mots “importants” d'une autre façon que le gras, si on le souhaite.
+
+Soit, et si je n'ai pas envie de faire ressortir du texte important, c'est grave ?
+
+Les robots de moteurs de recherche parcourent le Web en lisant le code HTML de tous les sites. Les mots-clés “importants”, mais aussi les titres (headings) hiérarchisés auront tendance à avoir plus de valeur à leurs yeux ; donc si quelqu'un fait une recherche sur ces mots, il a plus de chances de tomber sur votre site (votre site aura un meilleur référencement). Mais attention tout de même : abuser de ces balises n’aura pas l’effet escompté sur votre référencement.
+
+Une nuance tout de même : abuser de ces balises n’aura pas l’effet escompté sur votre référencement. Si quasiment tout le texte est signalé comme étant important, rien en particulier ne va vraiment pouvoir "ressortir"… Pensez-y !
+
+À vous de jouer
+
+La photographe Robbie Lens nous a demandé de lui faire un site web pour mettre en avant son travail. Mais il va lui falloir également une page pour se présenter. Pour l'occasion, nous avons donc ajouté du contenu dans le fichier  index.html  et créé une nouvelle page :a-propos.html
+
+Vous trouverez la base de code pour réaliser l'exercice sur la branche GitHub P1C4-exercice .
+
+Téléchargez les fichiers pour les ouvrir dans Visual Studio Code et réaliser l'exercice. Vous allez :
+
+créer le titre dans la page a-propos.html: "À propos de Robbie Lens" ;
+
+créer le paragraphe associé : "Photographe depuis plus de 5 ans, je réalise des reportages aux photos dynamiques et pertinentes pour vos projets de communication. Créativité, qualité, et sérénité pour vous ! Je gère tout, depuis la direction artistique, la réalisation du reportage, jusqu’à la livraison de vos photos retouchées, prêtes à l’emploi." ;
+
+créer un titre de niveau 2 pour ajouter une section nommée : "Services" ;
+
+créer une liste non ordonnée pour lister les spécialités de Robbie Lens :
+
+Portrait seul ou à plusieurs,
+
+Shooting mode,
+
+Retouches sur mesure,
+
+Développement. 
+
+À tout moment, vous pouvez faire un double-clic sur vos fichiers .html pour les ouvrir dans votre navigateur et voir le résultat. Pensez à les enregistrer régulièrement cela dit.
+
+Un problème ? Par ici pour découvrir la solution sur la branche GitHub P1C4-solution.
+
+En résumé
+Le HTML comporte de nombreuses balises qui nous permettent d'organiser le texte de notre page. Ces balises donnent des indications comme “Ceci est un paragraphe”, “Ceci est un titre”, etc.
+
+Les paragraphes sont définis par la balise  <p> </p>  , et les sauts de ligne par la balise orpheline   <br>.
+
+Il existe six niveaux de titre, de  <h1> </h1>  à  <h6> </h6>, à utiliser selon l'importance du titre.
+
+On peut mettre en valeur certains mots avec les balises  <strong>,  <em>  et  <mark>.
+
+Pour créer des listes, on doit utiliser la balise  <ul>  (liste à puces, non ordonnée) ou  <ol>  (liste ordonnée). À l'intérieur, on insère les éléments avec une balise  <li>  pour chaque item.
+
+Vous avez maintenant un peu plus d'éléments dans vos pages HTML, bravo à vous. C'est maintenant le moment de commencer à interagir au sein de votre projet avec les liens. Ça tombe bien : c'est ce qu'on voit dès maintenant dans le chapitre suivant !
+
+#################################################################################################################
+
