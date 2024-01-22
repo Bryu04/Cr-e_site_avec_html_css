@@ -48,3 +48,169 @@ Alors, vous commencez à y voir plus clair sur la structure d'une page ? Et vous
 
 ################################################################################################################
 
+Pour créer une page web en HTML, il suffit de créer un fichier ayant l'extension .html. Ce fichier s'ouvre dans le navigateur web simplement en faisant un double-clic dessus.
+
+Appropriez-vous les balises HTML
+Le langage HTML utilise ce qu'on appelle des balises. On les écrit entre chevrons  <  et  >
+
+Et elles servent à quoi les balises concrètement ?
+
+Les balises indiquent la nature du texte qu'elles encadrent. Elles permettent au navigateur de comprendre ce qu'il faut afficher à l'écran pour les visiteurs d'un site web.
+
+Si elles pouvaient parler, elles diraient :
+
+<title> </title>  : “Ceci est le titre de la page”,
+
+<img>: “Ceci est une image”,
+
+<p> </p>: “Ceci est un paragraphe de texte”, etc.
+
+Ah tiens, pourquoi certaines balises sont doublées et prennent un / dans leur syntaxe ?
+
+On distingue deux types de balises :
+
+Les balises en paires (une balise ouvrante et une balise fermante)
+
+Et les balises orphelines (une seule balise).
+
+Les balises en paires
+Elles s'ouvrent, contiennent du texte, et se ferment plus loin. Si on prend la balise  title  qui correspond au titre de la page, voilà ce que ça nous donne :
+
+<title>Ceci est le titre de ma page</title>
+On a donc :
+
+Une balise ouvrante :   <title> ;
+
+Et une balise fermante : </title>  . 
+
+Cela délimite ce qui sera traduit par un titre. Pour l'ordinateur, tout ce qui n'est pas entre ces deux balises n'est pas un titre.
+
+Les balises orphelines
+Ce sont des balises qui servent le plus souvent à insérer un élément à un endroit précis (par exemple une image). Il n'est pas nécessaire de délimiter le début et la fin de l'image, on veut juste dire à l'ordinateur “Insère une image ici”. Il n'y a donc pas besoin de faire une balise ouvrante et une fermante, d'où l'appellation "balise orpheline".
+
+Une balise orpheline s'écrit comme ceci :  <img>
+
+Jusqu'à il y,a peu, on mettait un  /  à la fin des balises orphelines pour dire qu'elles étaient autofermantes, comme ceci :  <img />  .
+
+Cette syntaxe génère maintenant un avertissement sous W3C.  Il n'est donc pas recommandé de mettre un slash à la fin d'une balise orpheline. Si vous vouliez le faire néanmoins, n’oubliez pas de mettre des guillemets aux valeurs de vos attributs. Par exemple :<img src=”…” alt=”…” />
+
+Dans les prochains chapitres, on utilisera, en plus des balises, des attributs. Les attributs sont un peu les options des balises. Ils viennent les compléter pour donner des informations supplémentaires.
+
+Un attribut est situé dans la balise ouvrante d'une balise en paire, ou directement dans une balise orpheline, comme c'est le cas ci dessous avec la balise  <img>  :
+
+Pour écrire votre première vraie page web en HTML, ouvrez votre fichier index.html sous Visual Studio Code et copiez-collez le code ci-dessous à la place de ce que vous aviez juste avant. 
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Le titre de ma page</title>
+    </head>
+    <body>
+    </body>
+</html>
+
+Tiens c'est quoi ce lang="fr"? On ne l'a pas vu dans la vidéo.
+
+Bien vu ! Il s'agit d'un attribut. Nous l'avons ajouté pour préciser la langue du site web que l'on va créer : lang=”fr”. Ce n’est pas obligatoire (la balise <html>  seule n’empêche pas le code de fonctionner), c’est simplement que si vous codez un site web en langue française, cela vous évite de potentiels soucis d’affichage. En outre, cela permet de mettre la langue par défaut de votre site web sur le français. 
+
+Pour rester simple et vous permettre d’adapter facilement à une autre langue les exemples de code vus dans les vidéos et le texte, nous garderons la balise <html> pour la suite du cours.
+
+Bref, revenons à nos moutons…
+
+Oui, d'ailleurs, l'ordre des balises est important dans cette structure de base ?
+
+OUI ! Les balises s'ouvrent puis se ferment, et elles s'emboitent les unes dans les autres dans un ordre précis.
+
+La syntaxe  <html><body></html></body>  est incorrecte : les balises s'entremêlent.
+
+La syntaxe  <html><body></body></html>  est correcte : une balise qui est ouverte à l'intérieur d'une autre balise doit aussi être fermée à l'intérieur de celle-ci.
+
+On a ainsi des éléments dits "parents", qui vont contenir d'autres éléments dits "enfants".
+
+Voyons à quoi servent toutes ces balises.
+
+La première ligne  <!DOCTYPE html> est une balise orpheline indispensable : elle indique qu'il s'agit d'une page HTML.
+
+La balise en paire <html> </html> englobe tout le contenu de la page web. A l'intérieur, il y a les balises en paire <head> </head> et <body> </body>.
+
+Pour rappel, c’est dans cette balise qu'on peut préciser la langue par défaut du site web :
+
+<html lang=”fr”>  pour le français ;
+
+<html lang=”en”>  pour l’anglais ;
+
+<html lang=”es”>  pour l’espagnol…
+
+La balise en paire <head> </head> contient deux balises qui donnent des informations au navigateur : l’encodage et le titre de la page.
+
+La balise orpheline <meta charset="utf-8"> indique l'encodage utilisé dans le fichier  .html : cela détermine comment les caractères spéciaux s'affichent (accents, idéogrammes chinois et japonais, etc.).
+
+Si les accents s'affichent mal par la suite, c'est qu'il y a un problème avec l'encodage. Vérifiez que la balise meta indique bien UTF-8, et que votre fichier est enregistré en UTF-8.
+
+La balise en paire <title> </title> indique au navigateur le titre de la page web. Toute page doit avoir un titre qui décrit ce qu'elle contient, il s'affichera dans l'onglet du navigateur, et apparaîtra dans les résultats de recherche, comme sur Google. Autant vous dire que bien choisir son titre est important !
+
+La balise en paire <body> </body> contient tout ce qui sera affiché à l'écran sur la page web.
+
+Un commentaire en HTML est un texte qui sert simplement de mémo. Il n'est pas affiché, il n'est pas lu par l'ordinateur, cela ne change rien à l'affichage de la page.
+
+OK, ça ne sert à rien alors ?!
+
+Si ! Cela sert à vous qui développez et aux personnes qui liront le code source de votre page. Vous pouvez utiliser les commentaires pour laisser des indications sur le fonctionnement de votre page. Cela vous permettra de vous rappeler comment fonctionne votre page si vous revenez sur votre code source après un long moment d'absence.
+
+Et on fait comment pour écrire un commentaire ?
+
+Un commentaire est une balise HTML avec une forme bien spéciale :
+
+<!-- Ceci est un commentaire -->
+
+Vous pouvez le mettre où vous voulez au sein de votre code source.
+
+Attention, tout le monde peut voir le code HTML source de votre page, une fois celle-ci mise en ligne sur le Web, avec l’outil d’inspection. Vos commentaires seront donc également visibles en faisant “Afficher le code source de la page”. Par conséquent, ne mettez pas d'informations sensibles comme des mots de passe dans les commentaires… et soignez votre code source, car je pourrai venir vérifier si vous avez bien suivi le cours à la lettre !
+
+D'ailleurs, dans la plupart des éditeurs de code, il existe un raccourci pour commenter une ligne de code très rapidement.
+
+Sur Visual Studio Code, pour transformer une ligne (ou même plusieurs lignes) en commentaire :
+
+sélectionnez la ligne (ou les lignes) en question :
+
+utilisez le raccourci clavier avec la touche CTRL + k puis CTRL + c  (ou ⌘ command + k puis  ⌘ command + c sur mac).
+
+
+À vous de jouer !
+C'est maintenant le moment de mettre en pratique ce que vous avez appris.
+
+Pour cet exercice, vous allez devoir partir de votre fichier index.html que vous venez de créer et :
+
+y insérer la structure de base HTML ;
+
+changer le contenu de la balise  <title> </title>  pour avoir “Accueil – Robbie Lens Photographie” ;
+
+écrire un commentaire dans <body> </body> .
+
+Ici, vous partirez de zéro dans un fichier depuis Visual Studio Code pour commencer cet exercice. Un peu perdu ? Pas de panique, voici le corrigé de l'exercice P1C3.
+
+En cliquant sur le lien du corrigé, vous allez arriver sur la branche P1C3-solution :
+
+Pour consulter le code du corrigé de l’exercice, vous pouvez cliquer sur le fichier   index.html  ou cliquer en haut à droite sur le bouton vert Code pour le télécharger (“download”). Vous pourrez alors l’ouvrir depuis votre ordinateur avec l’éditeur Visual Studio Code (que vous avez normalement téléchargé au début de ce chapitre).
+
+Pour consulter le code du corrigé de l’exercice, vous pouvez cliquer sur le fichier   index.html  ou cliquer en haut à droite sur le bouton vert Code pour le télécharger (“download”). Vous pourrez alors l’ouvrir depuis votre ordinateur avec l’éditeur Visual Studio Code (que vous avez normalement téléchargé au début de ce chapitre).
+
+
+En résumé
+Pour créer une page web, on crée un fichier ayant l'extension  .html  , qui pourra être ouvert dans le navigateur web simplement en faisant un double-clic dessus.
+
+Chaque fichier HTML est constitué de balises.
+
+Les balises peuvent avoir plusieurs formes :
+
+<balise> </balise>  : balises en paires, elles s'ouvrent et se ferment pour délimiter le contenu (début et fin d'un titre, par exemple) ;
+
+<balise>  : balises orphelines (on ne les insère qu'en un seul exemplaire), elles permettent d'insérer un élément à un endroit précis (par exemple une image).
+
+Les balises sont parfois accompagnées d'attributs pour donner des indications supplémentaires, ou paramétrer un élément (exemple :  <img src="photo.jpg">  ).
+
+Une page web est constituée de deux sections principales : l'en-tête<head> </head>  dont le contenu n'apparaît pas dans l'affichage de la page et le corps <body> </body>  qui, lui, apparaît.
+
+Félicitations ! Vous avez créé votre première page web ! Vous pouvez être fier de vous ! Dans le chapitre suivant, nous allons rentrer un peu plus dans le détail, en apprenant à organiser son texte en HTML. Alors à tout de suite ! 
+
