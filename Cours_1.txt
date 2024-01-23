@@ -553,3 +553,133 @@ Un lien hypertexte peut aussi permettre d'amener vers un endroit précis d'une p
 On se retrouve tout de suite pour le dernier chapitre de la partie, qui vous permettra d'insérer de magnifiques images dans vos pages web !
 
 #################################################################################################################
+
+Insérez des images
+
+Insérez une image avec la balise orpheline  <img>
+
+La balise qui permet d'insérer une image est une balise orpheline :  <img> 
+
+Pour fonctionner correctement, la balise  <img>  doit être accompagnée de deux attributs :
+
+src  : cet attribut permet d'indiquer la source de l'image.
+
+alt  : cet attribut permet de donner à l'image une description alternative.
+
+Ajoutez l'attribut  src  pour indiquer la source de l'image
+La source de l'image est précisée avec l'attribut  src pour indiquer au navigateur comment récupérer l'image que l'on veut insérer. De la même manière qu'un lien hypertexte, on peut indiquer la source d'une image :
+
+…avec un chemin absolu si l'image vient d'internet
+On utilise un chemin absolu pour indiquer la source d'une image lorsque celle-ci est en ligne, sur un site, ou qu'elle est hébergée sur le web. On copie colle donc simplement l'URL de l'image.
+
+Regardez ce que ça donne dans le CodePen P1C6.
+
+Lorsque vous utilisez cette technique, faites attention à ce que l'URL corresponde bien à l'image uniquement, et pas à une page web qui contient une image. Pour vous en assurer, vous pouvez faire un clic droit sur l'image de votre choix, et choisir "Copier l'adresse de l'image".
+
+…ou avec un chemin relatif si l'image est en local sur votre ordinateur
+C'est ce que l'on fait si l'image est sur notre ordinateur : on utilise alors le nom et l'arborescence du fichier de l'image en local pour indiquer sa source.
+
+Si l'image est dans un sous-dossier nommé images, on précise :  src="images/logo.png" 
+
+Évitez à tout prix les accents, majuscules et espaces dans vos noms de fichiers et de dossiers. Par exemple, voici un chemin qui va poser problème : Images du site/Image toute bête.jpg 
+
+Il faut idéalement :
+
+supprimer les espaces (ou les remplacer par le symbole_) et les accents ;
+
+tout mettre en minuscules, comme ceci :images_du_site/image_toute_bete.jpg.
+
+Si votre image ne s'affiche pas, c'est très certainement parce que le chemin est incorrect ! Simplifiez au maximum vos noms de fichiers et de dossiers, et tout ira bien.
+
+Voici un exemple d'insertion d'image :
+
+<p>
+Voici une très belle photo que j'ai trouvée sur Unsplash :<br>
+<img src="images/paysage.jpg" alt="Photo de plage vue du dessus" />
+</p>
+
+ Ah tiens c'est quoi ce  alt  là ?
+
+Voilà qui nous fait une belle transition vers la suite de ce chapitre !
+
+Ajoutez l'attribut alt  pour donner à l'image une description alternative
+Donner une decription alternative à une image est une bonne pratique !
+
+C'est-à-dire ? Je ne comprends pas ce que c'est une description alternative.
+
+Une description alternative est un court texte qui décrit ce que contient l'image. Ce texte alternatif sera :
+
+inscrit à la place de l'image si elle ne peut pas être affichée au moment du chargement de la page web (cela arrive) ;
+
+audio-décrit par les navigateurs de personnes présentant un handicap (trouble de la vue, non-voyants).
+
+Cela contribue donc à améliorer ce que l'on appelle l'accessibilité d'un site web. En plus, cela aide les robots des moteurs de recherche pour trouver des images.
+
+D'ailleurs, j'en profite pour faire une petite parenthèse sur les formats d'image !
+
+Choisissez le bon format d'image
+
+Voici quel format adopter en fonction de l'image que vous avez :
+
+Une photo : utilisez un JPEG.
+
+N'importe quelle image avec peu de couleurs (moins de 256) : utilisez un PNG 8 bits, ou éventuellement un GIF.
+
+N'importe quelle image avec beaucoup de couleurs : utilisez un PNG 24 bits.
+
+Une image animée : utilisez un GIF animé.
+
+Un logo vectoriel : utilisez un SVG (vous pouvez en apprendre davantage sur le SVG dans le cours "Codez un site web accessible avec HTML et CSS").
+
+Prenez l'habitude d'enregistrer vos fichiers avec des noms en minuscules, sans espace ni accent. C’est une bonne pratique à mettre en place dès le début. Vous pouvez remplacer les espaces par le caractère underscore _. Par exemple : mon_image.png 
+
+Ajoutez une infobulle avec l'attribut  title
+
+Afin d'afficher une bulle d'aide sur vos images, vous pouvez utiliser l'attribut  title ; (à ne pas confondre avec la balise title qui permet d'indiquer au navigateur le titre d'une page web).
+
+L'attribut title est facultatif, contrairement à alt.
+
+Voici ce que cela peut donner :
+
+<img src="montagnes.png" title="Alors, envie de vous balader n'est-ce pas ?" alt="Chemin de randonnée au milieu des montagnes">
+
+Le visiteur du site, n'aura qu'à survoler la photo avec la souris pour voir l'infobulle "Alors, envie de vous balader n'est-ce pas ?" apparaître par dessus l'image.
+
+Créez une miniature cliquable
+
+Si votre image est très grosse, il est conseillé d'en afficher la miniature cliquable sur votre site. De cette manière vos pages web mettront moins de temps à s'afficher. Si vos visiteurs souhaitent voir vos images en taille originale, ils n'auront qu'à cliquer dessus.
+
+Pour ce faire, il faut disposer de deux versions d’une photo : l'image d'origine, et une version de cette image moins lourde (donc plus petite).
+
+Voyons voir comment faire en sorte que la miniature soit cliquable :
+
+placez vos deux images dans un dossier appelé par exemple images  .
+
+Faites afficher la version montagne_mini.jpg  sur une page,
+
+et faites un lien vers la version montagne.jpg.
+
+L'image agrandie s'affiche alors lorsqu'on clique sur la miniature.
+
+Voici le code HTML qu’on peut utiliser pour cela :
+
+<p>Vous souhaitez voir l'image dans sa taille d'origine ? Cliquez dessus !<br>
+    <a href="images/montagne.jpg"><img src="images/montagne_mini.jpg" alt="Chemin de randonnée au milieu des montagnes" title="Cliquez pour agrandir" ></a>
+</p>
+
+Parfois, certains navigateurs choisissent d'afficher un cadre bleu (ou violet) pas très esthétique autour de votre image cliquable. Nous pourrons retirer ce cadre dans peu de temps grâce au CSS.
+
+À vous de jouer
+
+Vous allez maintenant pouvoir enrichir le portfolio de Robbie Lens. Pour cela, vous devrez :
+
+remplacer les liens Twitter et Instagram en bas des pages "À propos" et "Accueil" par les icônes correspondantes ;
+
+insérer l'image de Robbie Lens sur la page d'accueil (le fichier s'appelle  robbie-lens.png  ) ;
+
+afficher tout en haut et tout en bas de la page le logo qui renvoie sur la page d'accueil grâce à un lien.
+
+Vous trouverez toutes les images nécessaires pour cet exercice directement dans la base de code, dans le dossier  /images  .
+
+Comme pour les chapitres précédents, vous trouverez la base de code pour démarrer l'exercice sur la branche P1C6-exercice, et la solution sur la branche P1C6-solution par ici !
+
