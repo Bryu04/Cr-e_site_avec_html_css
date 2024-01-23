@@ -697,3 +697,209 @@ Et voilà, vous avez maintenant terminé la première partie de ce cours : un gr
 
 #################################################################################################################
 
+!!!!!!!!!!!!!!!! Maîtriser les bases de HTML5 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Question 1
+
+Parmi ces extraits de code, lequel comporte une syntaxe valide pour créer un paragraphe de texte ?
+
+
+- <paragraph>Ceci est mon texte</paragraph>
+
+- <p>Ceci est mon texte</p> (o) (B)
+
+- <p value="Ceci est mon texte">
+
+- <body>Ceci est mon texte</body>
+
+""""""""""" Réponse """""""""""""
+Pour écrire un paragraphe de texte en HTML, il faut :
+
+Utiliser la balise ouvrante  <p>  et la balise fermante  </p>  .
+Écrire son texte entre les balises.
+Les balises  <paragraph> </paragraph>  ne correspondent pas à un vrai élément HTML.
+
+La balise orpheline de la réponse 3 n'est pas non plus une syntaxe connue.
+
+Enfin, même si dans les faits il est possible d'écrire directement du texte à l'intérieur de  <body> </body>, la réponse 4 ne correspond pas à l'énoncé.
+
+Il fallait donc choisir la réponse 2 :  <p> </p> 
+
+"""""""""""""""""""""""""""""""""
+
+Question 2
+
+Vous avez une page  index.html  qui veut afficher l'image  perroquet.png. Cette image se situe dans le dossier /images.
+
+Quel snippet de code permet d'afficher la photo ?
+
+
+- <image src="images/perroquet.png" alt="Un perroquet mange une amande">
+
+- <img>"perroquet.png"</img>
+
+- <img src="perroquet.png" alt="Un perroquet mange une amande"> (o) (M)
+
+-  <img src="images/perroquet.png" alt="Un perroquet mange une amande"> (B)
+
+""""""""""" Réponse """""""""""""
+Pour afficher une image en HTML, il faut :
+
+Utiliser la balise orpheline  <img>  avec l'attribut  src  pour lui indiquer le chemin de l'image à aller chercher.
+Utiliser l’attribut  alt  pour garantir l'accessibilité de l'image.
+Les syntaxes des réponses 1 et 2 ne sont pas correctes. Quant à la réponse 3, le chemin relatif indiqué ne correspond pas, puisque l'image  perroquet.png  se situe dans un dossier nommé  images.
+
+Il fallait donc choisir la réponse 4.
+
+"""""""""""""""""""""""""""""""""
+
+Question 3
+
+Vous trouverez du code HTML dans le CodePen Quiz P1Q3.
+
+Dans ce bout de HTML, plusieurs erreurs ont été commises. Qu'est-ce qui ne va pas ? (Essayez de trouver les réponses par vous-même avant de voir les options proposées).
+
+Attention, plusieurs réponses sont possibles.
+
+- <h2>  est utilisé alors qu'il n'y a pas de  <h1> (o) (B)
+
+- La source de l'image n'est pas précisée
+
+- La balise <p> n'est pas fermée (o) (B)
+
+- L'image ne possède pas d'attribut  alt (o) (B)
+
+""""""""""" Réponse """""""""""""
+Comme nous l'avons vu dans le cours, il doit exister une hiérarchie des titres : on ne doit pas avoir de balise  <h2>  avant même d'avoir une balise  <h1>  .
+
+Par ailleurs, deux balises  <p>  sont ouvertes, mais ne sont pas fermées avec  </p>.
+
+Enfin, la balise  img  n'a pas l'attribut  alt  , qui est pourtant indispensable.
+
+Il fallait donc choisir les réponses 1, 3 et 4.
+
+"""""""""""""""""""""""""""""""""
+
+Question 4
+
+Une valeur et un attribut permettent, ensemble, d'ouvrir un lien dans un nouvel onglet. Lesquels ?
+
+Attention, plusieurs réponses sont possibles.
+
+- L'attribut  target (o) (B)
+
+- La valeur  _blank (o) (B)
+
+- L’attribut  title
+
+- La valeur  mailto:
+
+- La valeur  blank
+
+""""""""""" Réponse """""""""""""
+Pour ouvrir un lien dans un nouvel onglet, la syntaxe est la suivante :
+
+<a href="https://lien.com" target="_blank">Mon lien</a>
+Il fallait donc choisir les options 1 et 2.
+
+"""""""""""""""""""""""""""""""""
+
+Question 5
+
+Parmi ces affirmations à propos des commentaires HTML, lesquelles sont correctes ?
+
+Attention, plusieurs réponses sont possibles.
+
+- En HTML, on ouvre un commentaire avec  <!-- (o) (B)
+
+- En HTML , on ferme un commentaire avec  //
+
+- Les commentaires ne sont pas visibles dans le code source d'une page HTML
+
+- Il existe des raccourcis clavier selon l'éditeur de code pour commenter du code rapidement (o) (B)
+
+""""""""""" Réponse """""""""""""
+Pour écrire un commentaire en HTML, on écrit :  <!-- Ceci est mon commentaire →.
+
+On peut l'écrire à la main, ou bien utiliser les raccourcis clavier sur Visual Studio Code : cmd + / ou ctrl+ /
+
+Il fallait donc choisir les réponses 1 et 4.
+
+"""""""""""""""""""""""""""""""""
+
+Question 6
+
+Quel bout de code permet d'obtenir le résultat de l'image ci-dessous ?
+
+- <a href="http://lien.com" title="Ceci est un lien">Cliquez pour voir</a>
+
+- <a href="http://lien.com" title="Cliquez pour voir">Ceci est un lien</a> (o) (B)
+
+- <a href="http://lien.com" bulle="Cliquez pour voir">Ceci est un lien</a>
+
+""""""""""" Réponse """""""""""""
+C'est l'attribut  title  dans un lien qui permet de créer une infobulle comme dans l'exemple de l'image. Sauf que pour la réponse 1,  title  contient le texte qui devrait se trouver dans la balise du lien. Le texte de la balise du lien et celui de l'infobulle sont inversés. Pour ce qui est de la réponse 3, elle utilise un faux attribut :  bulle. Il fallait donc choisir la réponse 2.
+
+"""""""""""""""""""""""""""""""""
+
+Question 7
+
+Quel bout de code correspond à l'affichage de l'image juste en dessous ?
+
+=> <ul>
+       <li> ...</li> (B)
+   </ul>
+
+""""""""""" Réponse """""""""""""
+Ici, il s'agit d'une liste non ordonnée. Pour la créer, on utilise la balise  <ul>  (pour unordered list), dans laquelle on vient mettre des éléments avec  <li>  (pour list item ou "élément de la liste" en français).
+
+La réponse 2 est ordonnée (avec des nombres qui augmentent pour chaque élément). Quant à la réponse 3, elle inverse  <ul>  et  <li> . Il fallait donc choisir la réponse 1.
+
+"""""""""""""""""""""""""""""""""
+
+Question 8
+
+Vous avez une base de code, dans laquelle les fichiers sont organisés de la manière suivante :
+
+Voici à quoi ressemble votre fichier  page2.html  :
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+     <title>Page 2</title>
+  </head>
+  <body>
+    <h1>Bienvenue sur la page 2 🌈</h1>
+    <a href="../index.html">Accueil</a>
+    <!-- Insérer ici un lien vers la page 1 -->
+  </body>
+</html>
+
+Quel morceau de code permet de créer un lien vers la page 1 à la place du commentaire  Insérer ici un lien vers la page 1  ?
+
+- <a href="../page1.html">Page 1</a>
+
+- <a href="../dossier1/page1.html">Page 1</a> (o) (B)
+
+- <a href="./page1.html">Page 1</a>
+
+- <a href="page1.html">Page 1</a>
+
+""""""""""" Réponse """""""""""""
+On utilise ici des chemins relatifs pour indiquer où trouver notre page dans notre code HTML.
+
+On a :
+
+un fichier  index.html  qui se situe à la racine du projet,
+un dossier  dossier1  qui contient un fichier  page1.html,
+et un dossier  dossier2  qui contient le fichier  page2.html.
+Pour retourner un niveau en arrière, on utilise  ../  et pour entrer dans un dossier, il faut indiquer le nom du dossier suivi d'un  /.
+
+Il fallait donc choisir la réponse 2.
+
+"""""""""""""""""""""""""""""""""
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+############################################################################################################
