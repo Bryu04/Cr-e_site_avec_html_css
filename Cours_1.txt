@@ -683,3 +683,17 @@ Vous trouverez toutes les images nécessaires pour cet exercice directement dans
 
 Comme pour les chapitres précédents, vous trouverez la base de code pour démarrer l'exercice sur la branche P1C6-exercice, et la solution sur la branche P1C6-solution par ici !
 
+En résumé
+
+Il existe plusieurs formats d'images adaptés au Web : PNG, JPG…
+
+On insère une image avec la balise <img>  .
+
+<img> doit obligatoirement comporter au moins ces deux attributs : src (source de l'image) et   alt (courte description de l'image).
+
+Il est possible d'afficher une autre version d'une image grâce à un lien qui entoure l’image.
+
+Et voilà, vous avez maintenant terminé la première partie de ce cours : un grand bravo à vous ! Vous avez hâte de vous attaquer au CSS ? J’en suis sûr ! Mais avant de plonger dans le monde merveilleux de la mise en forme, passez le quiz !
+
+#################################################################################################################
+
