@@ -297,4 +297,163 @@ Vous avez maintenant appliqué du style à votre projet ! Bravo à vous. Dans le
 
 ##############################################################################################################
 
+Changez l'apparence du texte
+
+Comme vous avez pu le voir dans la vidéo juste au-dessus, nous allons maintenant en profiter pour mettre en forme le texte de nos pages.
+
+Changez la taille du texte avec la propriété CSS font-size
+
+Pour modifier la taille du texte, on utilise la propriété CSS font-size et ensuite, on indique :
+
+une taille absolue ;
+
+ou une taille relative.
+
+Indiquer une taille absolue, c’est très précis, mais il est conseillé de n'utiliser cette méthode que si on sait sur quelle taille d'écran ou dimension d'impression une personne verra le contenu de la page, car on risque d'indiquer une taille trop petite pour certains lecteurs.
+
+Indiquer une taille relative a l'avantage d'être plus souple, elle s'adapte, selon les tailles d'écrans, plus facilement aux préférences des visiteurs.
+
+Donnez une taille au texte avec une valeur absolue en  px  
+Pour indiquer une taille absolue, on utilise généralement les pixels. Pour avoir un texte de 16 pixels de hauteur, vous devez donc écrire :
+
+font-size: 16px;
+Les lettres auront une taille de 16 pixels :
+
+…ou optez pour une valeur relative en em  (recommandé)
+Il y a plusieurs moyens d'indiquer une valeur relative. Une des plus fréquentes consiste à indiquer la taille en em.
+
+Le texte a une taille normale avec  1em .
+
+Le texte est plus grand avec une valeur supérieure à 1, comme  1.3em .
+
+Le texte est plus petit avec une valeur inférieure à 1, comme  0.8em.
+
+Attention tout de même à la syntaxe : pour les nombres décimaux, il faut mettre un point et non une virgule. Vous devez donc écrire 1.4em et non pas  1,4em  !
+
+Si on le fait en HTML :
+
+<p class="elem1">Élément 1 : 1em</p>
+<p class="elem2">Élément 2 : 1.3em</p>
+<p class="elem3">Élément 3 : 2em</p>
+… et qu’on y associe le CSS ci-dessous :
+
+.elem1 {
+font-size: 1em;
+}
+
+.elem2 {
+font-size: 1.3em;
+}
+
+.elem3 {
+font-size: 2em;
+}
+… on obtient alors le résultat suivant :
+
+Ok d'accord, mais je ne comprends pas la différence avec le pixel, à quoi ça sert une taille relative ?
+
+Une valeur absolue en pixel comme 16px est fixe. C'est comme si je vous disais d'indiquer la taille du texte en millimètres. Si je choisis de mettre la taille d'un texte à 2 millimètres et que vous regardez ma page web depuis votre smartphone vous devriez pouvoir le lire. Maintenant, si mon site web s'affiche sur l'écran d'un stadium, à votre avis que se passera-t-il ? C'est pour cela que l'on recommande une taille relative. 16 pixels est une taille standard pour lire un texte mais peut ne pas suffire selon l'écran sur lequel il s'affiche. Une valeur relative permet de choisir une taille de la même manière qu'on utiliserait un pourcentage.
+
+Choisissez une police avec la propriété CSS font-family
+
+La propriété CSS qui permet d'indiquer la police à utiliser est font-family :
+
+balise
+{
+    font-family: nom-police;
+}
+Voici une liste de polices sans sérif qui fonctionnent nativement sur la plupart des navigateurs :
+
+Arial Black ;
+
+Futura ;
+
+Helvetica ;
+
+Impact ;
+
+Trebuchet MS ;
+
+Verdana.
+
+Le sérif désigne l’empattement situé à l’extrémité des caractères. Choisir une police de caractères sans sérif est plus judicieux en termes d’accessibilité, car c’est plus facile à lire.
+
+C'est tout à fait possible d'utiliser n'importe quelle police sur son site, et ce sur la plupart des navigateurs. Pour cela, il existe plusieurs méthodes, comme importer une police depuis le site de Google Fonts.
+
+D'ailleurs, comment fait-on pour intégrer une police de Google Fonts dans nos fichiers HTML et CSS ?
+
+Pour cela, rendez-vous sur Google Fonts pour sélectionner une police, puis :
+
+Copiez les balises <link> dans le <head> </head> du fichier HTML.
+
+Utilisez la propriété font-family dans le fichier CSS pour déclarer que vous voulez utiliser cette police.
+
+Par exemple, pour la police Roboto, on vient coller dans le HTML :
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+Et on l'utilise dans le CSS en déclarant dans notre sélecteur :
+
+font-family: 'Roboto', sans-serif;
+
+Ici, on s'est contenté de suivre les étapes préconisées par Google Fonts. Mais il est également possible de télécharger une police localement, et de la joindre à notre projet HTML / CSS. Mais cette technique requiert quelques étapes de plus, et n'est pas forcément nécessaire lorsque vous débutez. Néanmoins, vous trouverez un exemple de ce genre de téléchargement de police au format spécifique et de son utilisation en CSS juste ici.
+
+Mettez du texte en italique avec la propriété CSS font-style
+En CSS, on donne une valeur à font-style  pour dire si on veut que du texte soit en italique ou non :
+
+italic  : le texte sera mis en italique ;
+
+normal : le texte sera normal (par défaut). Cela vous permet d'annuler une mise en italique. Par exemple, si vous voulez que les textes entre <em> ne soient plus en italique, vous devrez écrire :
+
+em
+{
+    font-style: normal;
+}
+
+Mettez du texte en gras avec la propriété CSS font-weight
+Pour varier la graisse d'un texte, on utilise la propriété CSS font-weight à laquelle on associe une valeur, au choix :
+
+bold : le texte sera en gras ;
+
+normal : le texte sera écrit normalement (par défaut) ;
+
+thin: le texte est plus fin.
+
+Mais il est également possible d'être plus précis et d'indiquer l'épaisseur du texte avec une valeur numérique allant de 100 à 900, du moins épais au plus épais :
+
+Pour appliquer les différents styles de texte (épaisseur et italique) pour les polices importées, il faut bien s'assurer d'avoir importé les styles de polices correspondants. Ainsi, pour utiliser la police Roboto en italique et bold, il faudra bien avoir importé dans votre code :
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+
+Soulignez du texte avec la propriété CSS text-decoration
+La propriété CSS text-decoration permet, entre autres, de souligner le texte, mais pas seulement. Voici quelques-unes des différentes valeurs qu'elle peut prendre :
+
+underline: souligné ;
+
+line-through: barré ;
+
+none: normal (par défaut, sauf dans le cas des liens).
+
+Ce CSS va vous permettre de tester les effets de text-decoration:
+
+Alignez du texte avec la propriété CSS  text-align
+Le propriété CSS text-align permet d'aligner du texte selon la valeur qu'on lui donne :
+
+left : le texte sera aligné à gauche (c'est le réglage par défaut) ;
+
+center : le texte sera centré ;
+
+right : le texte sera aligné à droite ;
+
+justify  : le texte sera “justifié”.
+
+Justifier le texte permet de faire en sorte qu'il prenne toute la largeur possible sans laisser d'espace blanc à la fin des lignes. Les textes des journaux, par exemple, sont toujours justifiés.
+
+L'alignement ne fonctionne que sur des balises de type block : <p>, <div>, <h1>…
+
+Aligner le texte d'une balise inline, comme  <span>,  <a>,  <em> ,  <strong> n'est pas possible. Et c'est logique quand on y pense : on ne peut pas modifier l'alignement de quelques mots au milieu d'un paragraphe.
+
+À vous de jouer !
 
