@@ -457,3 +457,58 @@ Aligner le texte d'une balise inline, comme  <span>,  <a>,  <em> ,  <strong> n'e
 
 À vous de jouer !
 
+Maintenant que vous avez appris comment mettre du texte en forme, vous allez pouvoir appliquer cela au projet de Robbie Lens. Pour cela, vous allez :
+
+Importer les deux polices principales du projet avec Google Font : Montserrat et Manrope.
+
+Assigner les propriétés de polices suivantes :
+
+les titres H1 :
+
+3.5em  
+
+en couleur  #A5B4FC  
+
+police Montserrat
+
+les paragraphes :
+
+1.1em 
+
+police Manrope
+
+les listes :
+
+1em
+
+police Manrope
+
+les liens :
+
+enlever le soulignement
+
+1em
+
+police Manrope
+
+Remplacer les  <span class="important"></span>  par des éléments  em  tout en gardant le même style.
+
+Vous trouverez la base de code pour démarrer l’exercice sur la branche P2C2-exercice.
+
+Et comme d’habitude, on ne vous abandonne pas dans la nature, la solution se trouve sur la branche P2C2-solution.
+
+En résumé
+On modifie la taille du texte avec la propriété CSS font-size.
+
+On peut indiquer la taille en pixels, comme16px ; ou encore en “em”, comme 1.3em.
+
+On indique la police du texte avec la propriété CSS  font-family . 
+
+De nombreuses propriétés de mise en forme du texte existent : font-style pour l'italique, font-weight pour la mise en gras, text-decoration pour le soulignement.
+
+Le texte peut être aligné avec la propriété CSS text-align  .
+
+Bravo ! Vous venez encore d'ajouter une nouvelle corde à votre arc avec la mise en forme du texte. À partir de maintenant, dans mes démonstrations de code, j'utiliserai uniquement une police "sans-sérif". Dans le prochain chapitre, nous allons apprendre à ajouter de la couleur et un fond. Alors à tout de suite !
+
+##############################################################################################################
+
