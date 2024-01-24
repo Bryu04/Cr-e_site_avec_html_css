@@ -1,7 +1,25 @@
 a {
     color: black;
+    font-family: 'Manrope', sans-serif;
+    text-decoration: none;
 }
 
 .keywords {
     color: #a5b4fc;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: #a5b4fc;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1em;
+}
+
+li {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
 }
