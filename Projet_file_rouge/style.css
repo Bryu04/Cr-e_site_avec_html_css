@@ -4,9 +4,11 @@ a {
     text-decoration: none;
 }
 
-.keywords {
+em {
     color: #a5b4fc;
+    font-style: normal;
 }
+
 
 h1 {
     font-size: 3.5em;
