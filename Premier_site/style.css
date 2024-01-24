@@ -12,17 +12,23 @@ h1 {
     font-size: large;
 }
 
-/**  
-   Ici on va modifier les type de police 
-**/
-
 p {
+    /**  
+    Ici on va modifier les type de police 
+    **/
     font-family: Arial;
+    /* ON change la taille des paragrahes. L'unité relatif em s'adapte à la taille de l'écran */
+    font-size: 2em;
+
 }
 
-/** 
-  On applique le type de police importé sur les titres niveau 1 
-**/
+
 h1 {
+    /** 
+    On applique le type de police importé sur les titres niveau 1 
+    **/
     font-family: 'Lobster', sans-serif;
+    /* ON change la taille des titres. L'unité relatif em s'adapte à la taille de l'écran */
+    font-size: 3em;
+    
 }
