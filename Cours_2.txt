@@ -512,3 +512,180 @@ Bravo ! Vous venez encore d'ajouter une nouvelle corde à votre arc avec la mise
 
 ##############################################################################################################
 
+Ajoutez de la couleur et un fond
+
+Changez la couleur du texte avec color
+La propriété CSS qui permet de modifier la couleur du texte, c'est color.
+
+Vous l'avez déjà utilisée en lui appliquant en valeur le nom d'une couleur en anglais :
+
+h1 {
+    color: blue;
+}
+
+De nombreux noms de couleurs sont supportés par les navigateurs mais il existe d'autres manières d'indiquer une couleur en CSS :
+
+Sous forme hexadécimale (6 chiffres précédés d'un #). Exemple :  color: #FFC8D3; 
+
+En notation RGB (pour Red Green Blue en anglais). Exemple :  color: rgb(250,25,118);. Notez qu'on peut ajouter la notion d'opacité (ou de transparence) avec la notation RGBA, où la dernière valeur correspond à l'opacité :  color: rgba(250,25,118, 0.5); 
+
+Si vous voulez trouver une couleur, ou bien convertir une valeur en utilisant une autre syntaxe, vous trouverez des outils en ligne, comme Coolors ou encore HTML Color Picker.
+
+Appliquez une couleur d'arrière-plan avec background-color
+
+Pour indiquer une couleur de fond, on utilise la propriété CSS background-color. Elle s'utilise de la même manière que la propriété color, c'est-à-dire que vous pouvez taper le nom d'une couleur, l'écrire en notation hexadécimale ou encore utiliser la méthode RGB.
+
+Pour indiquer la couleur de fond de la page web, il vaut mieux l'appliquer à la balise  <body>  . Eh oui,  <body>  correspond à l'ensemble de la page web. C'est donc en modifiant sa couleur de fond que l'on changera la couleur d'arrière-plan de la page :
+
+body {
+    background-color: black; /* Le fond de la page sera noir */
+    color: white; /* Le texte de la page sera blanc */
+}
+
+
+On a demandé à ce que le texte de la balise  <body>   soit écrit en blanc, et tous les paragraphes  <p>  et titres  <h1>  ont pris cette couleur. Comment ça se fait ?
+
+La balise  <body>  contient, entre autres, les balises de paragraphe  <p>  et de titre  <h1>. Si on applique à la balise <body> une couleur de fond noire et une couleur de texte blanche, tous les titres et paragraphes seront eux aussi en blanc sur fond noir.
+
+En CSS, si vous appliquez un style à une balise, toutes les balises qui se trouvent à l'intérieur prendront le même style. Cela s’appelle l’héritage : on dit que les balises qui se trouvent à l'intérieur d'une autre balise “héritent” de ses propriétés. (L'héritage ne fonctionne pas uniquement pour la couleur, mais pour toutes les propriétés CSS.)
+
+C'est d'ailleurs de là que vient le nom “CSS”, qui signifie “Cascading Style Sheets”, c'est-à-dire “Feuilles de style en cascade”. Les propriétés CSS sont héritées en cascade.
+
+Cela veut dire que TOUT le texte de ma page web sera forcément écrit en blanc ?
+
+Non, pas obligatoirement. Si par la suite, vous voulez vos titres en violet par exemple, il faudra le préciser :
+
+body {
+    background-color: black; /* Le fond de la page sera noir */
+    color: white; /* Le texte de la page sera blanc */
+}
+
+h1 {
+    color: purple;
+}
+
+Ajoutez une image de fond avec  background-image
+
+Une "image de fond" ne s'applique pas forcément à la page entière. On peut aussi mettre une image de fond derrière des titres, ou des paragraphes uniquement.
+
+Appliquez une image de fond derrière un élément HTML
+La propriété permettant d'indiquer une image de fond est background-image. Comme valeur, on doit renseigner l'adresse indiquant où se trouve l'image de fond. Elle peut être écrite en absolu (http://…) ou en relatif (fond.png).
+
+Attention lorsque vous écrivez une adresse en relatif dans le fichier CSS : l'adresse de l'image doit être indiquée par rapport au fichier .css et non pas par rapport au fichier .html  . Pour simplifier les choses, je vous conseille de placer l'image de fond dans le même dossier que le fichier .css  (ou dans un sous-dossier).
+
+Voyons tout de suite à quoi ça ressemble !
+
+On écrit dans le fichier HTML :
+
+<body>
+    <div class="banniere">
+        <h1>Mon blog</h1>
+    </div>
+    <p>Ceci est le contenu de mon premier paragraphe</p>
+    <p>Ceci est le contenu de mon deuxième paragraphe</p>
+</body>
+
+Puis dans le fichier CSS :
+
+body {
+    font-family: sans-serif;
+    margin: 0; /* Vous ne connaissez pas encore cette propriété mais elle permet de s'assurer que nos éléments prennent bien toute la largeur de la page */
+}
+
+.banniere {
+    padding: 100px; /* Vous ne connaissez pas encore cette propriété mais elle permet d'ajouter de l'espace dans notre élément*/
+    background-image: url('paysage.jpg');
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+Et on obtient :
+
+Dans le fichier HTML, on a mis la balise du titre à l'intérieur d'une balise div qu'on a nommée banniere. Dans le fichier CSS, on a ajouté sur la classe banniere, une image qu'on place en fond grâce à la propriété background-image.
+
+Une image en fond du titre
+
+C'est bien beau tout ça, mais l'image apparaît floue : elle n'est pas aux bonnes dimensions. Pour corriger cela, on va voir ensemble comment changer le comportement de l'image de fond.
+
+Modifiez le comportement d'une image de fond
+
+Pour changer le comportement d'une image de fond, il existe plusieurs propriétés CSS :
+
+La propriété CSS background-attachment associée à la valeur  fixed  permet de rendre l'image de fond fixe lorsqu'on déroule la page web : background-attachment: fixed;
+
+La propriété CSS background-size associée à la valeur  cover  permet de redimensionner l'image afin qu'elle s'adapte à la taille de l'élément qui la contient (elle garde ses proportions, en rognant la largeur ou la hauteur en fonction de la taille de l'élément qui la contient) :  background-size: cover;
+
+La propriété CSS background-position associée aux valeurs  top ,  bottom ,  left ,  center  ou  right  permet d'indiquer où doit se trouver l'image de fond, par exemple :  background-position: top right;
+
+Chacune de ces 3 propriétés possède plusieurs valeurs possibles qu'on peut leur associer. Je vous invite à aller tester en direct sur le site de Mozilla Developer les différents effets possibles des propriétés :
+
+background-attachment ;
+
+background-size ;
+
+background-position.
+
+De nombreux paramètrages existent en ce qui concerne les images de fond. Si vous voulez en savoir plus, vous pouvez vous référer à la documentation de la propriété CSS background.
+
+Combinez ces propriétés CSS avec la "super-propriété"  background
+Si vous utilisez beaucoup de propriétés en rapport avec le fond,  vous pouvez utiliser une sorte de “super-propriété” appelée  background  dont la valeur peut combiner plusieurs des propriétés :  
+
+background-image  ;
+
+background-repeat  ;
+
+background-attachment  ;
+
+background-size ;
+
+et  background-position  .
+
+C'est la première “super-propriété” que je vous montre, il y en aura d'autres.
+
+On peut donc tout simplement écrire :
+
+.banniere
+{
+    background: url("paysage.jpg") cover center;
+}
+
+Il faut savoir que :
+
+l'ordre des valeurs n'a pas d'importance : vous pouvez combiner les valeurs dans n'importe quel ordre ;
+
+vous n'êtes pas obligé de mettre toutes les valeurs.
+
+Créez des dégradés avec  linear-gradient
+Pour créer un dégradé, on a besoin de la propriété CSS  background  :
+
+background: linear-gradient(90deg, #8360c3, #2ebf91);
+
+Si je devais lire en français cette ligne de CSS, voici ce que ça donnerait :
+
+"J'applique un dégradé linéaire, à 90 degrés, en partant de la couleur  #8360c3  pour arriver à la couleur  #2ebf91.
+
+Ce qui nous permet d'obtenir un très beau dégradé :
+
+Le dégradé va du violet au vert
+
+Ici, on utilise linear-gradient mais il existe d'autres manières de créer des dégradés. Si vous voulez de l'inspiration en termes de dégradés, rendez-vous sur UI Gradients, et si vous voulez construire vos propres dégradés, je vous conseille CSS Gradient. 
+
+Jouez sur la transparence avec la propriété CSS opacity
+
+La propriété CSS opacity  permet d'indiquer le niveau d'opacité (c'est l'inverse de la transparence).
+
+Avec une valeur de 1, l'élément sera totalement opaque : c'est le comportement par défaut.
+
+Avec une valeur de 0, l'élément sera totalement transparent.
+
+Il faut donc choisir une valeur comprise entre 0 et 1. Ainsi, avec une valeur de 0.6 , votre élément sera opaque à 60 %… et on verra donc à travers !
+
+Jetez un œil à ce GIF auquel on applique 0.6 , puis 0.4 et enfin 0.2 :
+
+Comme vous pouvez le voir, si vous appliquez la propriété opacity à un élément de la page, tout le contenu de cet élément sera rendu transparent (même les images, les autres blocs à l'intérieur, etc.). Si vous voulez juste rendre la couleur de fond transparente, utilisez plutôt la notation RGBA que vous avez vue dans la vidéo d'introduction du chapitre.
+
+À vous de jouer !
+
