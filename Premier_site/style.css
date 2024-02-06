@@ -37,6 +37,9 @@ h1 {
     /* Changer la couleur des titres (Utilisation de google color picker) */
     /* color: #5b3499; Methode Hexa */
     color: rgba(91, 52, 153, 0.5); /* Ici on joue sur l'opacité de la couleur */
+
+    /* On ajoute une couleur de fond */
+    background-color: beige;
 }
 
 /* Changer le style des mots en : italics, gras, souligner */
@@ -44,4 +47,9 @@ h1 {
 .introduction {
     font-weight: 700;
     /* Point de repère : 400 => weight normal des sites  */
+}
+
+body {
+    /* On ajoute une couleur de fond à toute la page  */
+    background-color: aquamarine;
 }
