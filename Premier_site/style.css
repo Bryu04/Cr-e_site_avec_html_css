@@ -34,6 +34,8 @@ h1 {
     font-size: 3em;
     /* On change l'alignement des textes  */
     text-align: center;
+    /* Changer la couleur des titres  */
+    color: darkmagenta;
 }
 
 /* Changer le style des mots en : italics, gras, souligner */
