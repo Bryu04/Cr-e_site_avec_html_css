@@ -51,5 +51,25 @@ h1 {
 
 body {
     /* On ajoute une couleur de fond à toute la page  */
-    background-color: aquamarine;
+    background-color: azure;
+}
+
+.mon_titre {
+    /* Ici on ajoute une image de fond sur le titre principal  */
+    background-image: url(Images/colibris_groupe.avif);
+    /* On change aussi la couleur et le padding (à voir plus tard) */
+    color:white; 
+    padding: 150px;
+
+    /* On fixe l'image en arrière-plan avec la commande suivante. L'image reste fix lorsque on defile la page*/
+    background-attachment: fixed;
+
+    /* L'image doit couvrir la largeur de la page  */
+    background-size: cover;
+
+    /* On change la postion de l'image de fond  */
+    background-position: bottom;
+
+    /* Changer l'opacité de l'image de fond  */
+    opacity: 0.8;
 }
