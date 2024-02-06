@@ -25,3 +25,13 @@ li {
     font-family: 'Manrope', sans-serif;
     font-size: 1em;
 }
+
+.header, .footer {
+    /* Changer la couleur de fond en blanc  */
+    background-color: white;
+}
+
+body {
+    /* Changer la couleur du coeur de la page  */
+    background-color: #1F2039;
+}
