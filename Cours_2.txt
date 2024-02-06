@@ -721,3 +721,184 @@ Bravo à vous ! Les couleurs et les fonds en CSS n'ont plus de secret pour vous 
 
 #################################################################################################################
 
+Créez des bordures et des ombres
+
+Créez des bordures avec la propriété CSS  border
+Le CSS offre un large choix de bordures : border-width,  border-color,  border-style…
+
+Pour aller à l'essentiel, je vous propose ici d'utiliser directement la super-propriété border qui regroupe l'ensemble de ces propriétés. Vous vous souvenez de la super-propriété  background  dans le chapitre précédent ? Cela fonctionne sur le même principe : on va pouvoir combiner plusieurs valeurs.
+
+Avec  border, on peut utiliser jusqu'à trois valeurs pour modifier l'apparence de la bordure :
+
+La largeur que l'on définit avec une valeur en pixels (comme 2px).
+
+La couleur que l'on indique avec un nom de couleur, une valeur hexadécimale, ou une valeur RGB.
+
+Le type de bordure qui peut être solid (un trait simple),  double (un double trait), dotted (un trait en pointillés), dashed (un trait en tirets), ou autre. Vous avez un large panel d'options :
+
+Si vous voulez mettre des bordures différentes en fonction du côté (haut, bas, gauche ou droite), vous pouvez le faire sans problème. Dans ce cas, vous devrez utiliser ces quatre propriétés :
+
+border-top  : bordure du haut.
+
+border-bottom  : bordure du bas.
+
+border-left  : bordure de gauche.
+
+border-right  : bordure de droite.
+
+Il existe aussi des équivalents pour paramétrer chaque détail de la bordure si vous le désirez :
+
+border-top-width  pour modifier l'épaisseur de la bordure du haut,
+
+border-top-color  pour la couleur du haut, etc.
+
+Ce sont aussi des super-propriétés, elles fonctionnent comme  border  mais elles ne s'appliquent donc qu'à un seul côté.
+
+On pourrait faire une compilation de nos éléments juste au-dessus.
+
+On écrit dans le fichier HTML :
+
+<p class="element">Élément</p>
+Puis dans le CSS:
+
+.element {
+    border-top: 3px #EB5353 dotted;
+    border-right: 3px #F9D923 double;
+    border-bottom: 3px #36AE7C dashed;
+    border-left: 3px #187498 solid;
+}
+Ce qui nous donnerait :
+
+Bon ce n'est pas forcément du plus bel effet, mais c'était pour la démonstration !
+
+En tout cas, vous pouvez aller tester ces différentes propriétés et vous amuser à recréer l'élément ci-dessus avec le CodePen P2C4a.
+
+On pourrait très bien avoir un élément qui n'aurait un bord que d'un seul côté. Pour cela, il suffit de ne déclarer qu'une seule propriété. Ici, on utilise uniquement la propriété  border-left  :
+
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-left: 5px #187498 solid;
+    padding: 100px;
+}
+Ce qui donne :
+
+Arrondissez vos angles avec  border-radius
+
+La propriété CSS border-radius permet d'arrondir les angles de n'importe quel élément. Il suffit d'indiquer la taille de l'arrondi en pixels :
+
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 10px;
+    padding: 100px;
+}
+Ce qui donne :
+
+Tout comme pour les bordures, il n'y a aucune obligation d'avoir les mêmes arrondis partout : on peut aussi préciser la forme de l'arrondi pour chaque coin. D'un point de vue design, c'est très pratique lorsqu'on souhaite coller deux formes qui ont des border radius, par exemple pour des "groupes de boutons". Vous trouverez plus d’infos sur Bootstrap.
+
+Dans ce cas, indiquez les quatre valeurs correspondant aux angles dans la propriété  border-radius  , dans cet ordre :
+
+En haut à gauche.
+
+En haut à droite.
+
+En bas à droite.
+
+En bas à gauche.
+
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 10px 30px 0px 90px;
+    padding: 100px;
+}
+Ce qui donne :
+
+Il est même possible de créer des courbes elliptiques avec  border-radius .Pour cela, il faut indiquer deux valeurs séparées par une barre oblique (slash) :  /. Mais le rendu est assez dur à anticiper. Il vaut mieux utiliser des outils de visualisation comme  Fancy Border Radius du rendu final :
+
+Il ne reste plus qu'à cliquer sur "copy" pour reporter la valeur du border-radius générée automatiquement (sans oublier le point virgule  ;  à la fin de la ligne) dans notre code :
+
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 30% 70% 70% 30% / 30% 58% 42% 70%;
+    padding: 100px;
+}
+Et voilà le résultat ! De quoi faire des éléments (boutons, encarts, blocs…) uniques sur votre site web :
+
+Ajoutez une ombre portée avec la propriété CSS  box-shadow
+Les ombres donnent des effets de profondeur intéressants sur une page web. C'est particulièrement utile sur les boutons d'un site par exemple. Du fait de l'impression de relief, un bouton avec une ombre portée indique visuellement aux visiteurs du site qu'il est "cliquable".
+
+La propriété CSS box-shadow  s'applique à tout le bloc, et prend quatre valeurs dans l'ordre suivant :
+
+Le décalage horizontal de l'ombre.
+
+Le décalage vertical de l'ombre.
+
+L'adoucissement du dégradé.
+
+La couleur de l'ombre.
+
+L'adoucissement peut être :
+
+faible (si on lui donne une valeur inférieure à celle du décalage),
+
+normal (si on lui donne une valeur égale à celle du décalage)
+
+ou élevé (si on lui donne une valeur supérieure à celle du décalage).
+
+Par exemple :
+
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 10px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0);
+    padding: 100px;
+Ce qui donne :
+
+On obtient une ombre noire, portée horizontalement et verticalement, de 6 pixels, sans adoucissement. Ce qui n'est pas forcément l'effet recherché… Ajoutons donc un adoucissement grâce au troisième paramètre de la propriété  box-shadow  , tout en jouant sur l'opacité de la couleur avec RGBA :
+
+.element {
+    font-size: 25px;
+    background-color: skyblue;
+    border-radius: 10px;
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+    padding: 100px;
+}
+
+Ce qui donne :
+
+Il n'est pas toujours simple de trouver l’effet d’ombre désiré à tâtons. Pour vous aider, vous pouvez :
+
+utiliser l’outil Shadows Brumm ;
+
+vous inspirer des exemples listés sur CSS Scan.
+
+Ajoutez une ombre à un texte avec  text-shadow
+text-shadow permet d'ajouter une ombre sur les lettres de votre texte. Effet vintage garanti !
+
+Les valeurs fonctionnent exactement de la même façon que  box-shadow :
+
+décalage horizontal,
+
+décalage vertical,
+
+adoucissement,
+
+et couleur.
+
+Voyez ce que ça donne dans le morceau de code juste en dessous :
+
+h1 {
+    font-size: 50px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    padding: 100px;
+}
+Et voyez ce que ça nous donne :
+
+Je vous invite maintenant à aller vous entraîner à maitriser toutes les propriétés que l'on a vues dans ce chapitre avec le CodePen P2C4b.
+
+À vous de jouer !
+
