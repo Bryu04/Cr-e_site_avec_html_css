@@ -1,5 +1,5 @@
 a {
-    color: black;
+    color: #242424;
     font-family: 'Manrope', sans-serif;
     text-decoration: none;
 }
@@ -19,11 +19,13 @@ h1 {
 p {
     font-family: 'Manrope', sans-serif;
     font-size: 1.1em;
+    color: #F9F8FF;
 }
 
 li {
     font-family: 'Manrope', sans-serif;
     font-size: 1em;
+    color: #F9F8FF;
 }
 
 .header, .footer {
@@ -34,4 +36,8 @@ li {
 body {
     /* Changer la couleur du coeur de la page  */
     background-color: #1F2039;
+}
+
+h2 {
+    color: #F9F8FF;
 }
