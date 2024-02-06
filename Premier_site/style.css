@@ -40,6 +40,9 @@ h1 {
 
     /* On ajoute une couleur de fond */
     background-color: beige;
+
+    /* On ajoute un fond de dégradé, voir le site uiGradients */
+    background: linear-gradient(to right,#1E9600, #FFF200, #FF0000);
 }
 
 /* Changer le style des mots en : italics, gras, souligner */
