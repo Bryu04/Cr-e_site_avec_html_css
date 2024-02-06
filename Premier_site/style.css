@@ -34,8 +34,9 @@ h1 {
     font-size: 3em;
     /* On change l'alignement des textes  */
     text-align: center;
-    /* Changer la couleur des titres  */
-    color: darkmagenta;
+    /* Changer la couleur des titres (Utilisation de google color picker) */
+    /* color: #5b3499; Methode Hexa */
+    color: rgba(91, 52, 153, 0.5); /* Ici on joue sur l'opacité de la couleur */
 }
 
 /* Changer le style des mots en : italics, gras, souligner */
