@@ -689,3 +689,35 @@ Comme vous pouvez le voir, si vous appliquez la propriété opacity à un élém
 
 À vous de jouer !
 
+Maintenant que vous maîtrisez les couleurs et l'héritage en CSS, vous allez pouvoir en tirer parti pour le projet de Robbie Lens ! Pour cela, vous devrez :
+
+changer les couleurs de fond pour que :
+
+la  div  dans laquelle on a les liens en haut des pages, et le pied de page, aient un fond blanc,
+
+le cœur de la page ait un fond correspondant à  #1F2039 ;
+
+… et les couleurs de texte pour que :
+
+les liens en tête et pied de page soient de couleur  #242424 ,
+
+les paragraphes, les listes et les titres H2 soient de la couleur  #F9F8FF  (sur fond bleu foncé).
+
+Vous trouverez également des liens hypertextes qui ont été ajoutés : "Un projet ? Écrivez-moi" et "Voir mon portfolio". Vous devrez leur ajouter un dégradé qui passe de la couleur  #8E86B5  à la couleur  #ACAEED  et les mettre dans la police Manrope, en blanc.
+
+C'est normal si votre couleur de fond a une petite marge, nous corrigerons cela dans quelques chapitres.
+
+En résumé
+
+On change la couleur du texte avec la propriété  color  et la couleur de fond avec la propriété background-color.
+
+On peut indiquer une couleur en écrivant son nom en anglais, black  par exemple, sous forme hexadécimale, comme  #FFC8D3, ou en notation RGB, comme  rgb(250,25,118).
+
+On peut ajouter une image de fond avec la propriété  background-image. On peut choisir de fixer l'image de fond, ou encore de la positionner où on veut sur la page.
+
+On peut rendre une portion de la page transparente avec la propriété  opacity  ou avec la notation  RGBA  (une extension de la notation RGB, où la quatrième valeur indique le niveau de transparence).
+
+Bravo à vous ! Les couleurs et les fonds en CSS n'ont plus de secret pour vous ! Dans le chapitre suivant, vous allez découvrir deux notions très importantes : les bordures et les ombres. C'est parti !
+
+#################################################################################################################
+
