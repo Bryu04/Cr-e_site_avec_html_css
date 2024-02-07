@@ -121,3 +121,10 @@ a:active {
     text-decoration: underline;
     text-decoration-color: #1E9600;
 }
+
+a:focus {
+    /* Ici on mets une différence pour la selection au clavier ( grace à Tab par exemple) */
+    background-color: black;
+    color: white;
+    outline-color: deeppink;
+}
