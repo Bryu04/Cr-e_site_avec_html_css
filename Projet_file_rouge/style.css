@@ -46,4 +46,6 @@ h2 {
     background: linear-gradient(#8E86B5,#ACAEED);
     font-family: 'Manrope', sans-serif;
     color: white;
+    /* Ajouté des arrondis  */
+    border-radius: 50px;
 }
