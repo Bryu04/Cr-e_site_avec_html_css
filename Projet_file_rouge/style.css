@@ -63,3 +63,7 @@ a:hover {
     background: linear-gradient(#696484,#8788BA);
     text-decoration: none;
 }
+
+.logo_site:hover, .logo_twitter:hover, .logo_insta:hover {
+    opacity: 0.5;
+}
