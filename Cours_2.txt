@@ -924,3 +924,200 @@ C’est grisant, n’est-ce pas ? Vous allez voir, dans le prochain chapitre, on
 
 #################################################################################################################
 
+Créez des apparences dynamiques
+
+Le CSS nous permet aussi de modifier l'apparence des éléments de façon dynamique, c'est-à-dire que des éléments peuvent changer de forme une fois que la page a été chargée ; et tout cela grâce aux pseudo-classes.
+
+Les pseudo-classes viennent s'ajouter à un sélecteur CSS pour décrire à quel moment un style en particulier doit s'appliquer.
+
+Stylisez un élément au survol de la souris avec :hover
+La pseudo-classe :hover s'applique lorsque l'utilisateur survole un élément avec sa souris (:hover  signifie d'ailleurs “survoler”), et va nous permettre d'y appliquer un style.
+
+Déclarez le sélecteur sur lequel le style va s'appliquer
+Prenons un exemple où on applique du style sur les liens hypertextes. Pour déclarer un style qui va "s'activer" dès que le visiteur du site web va pointer la souris dessus, on doit écrire notre CSS comme ceci :
+
+a:hover {
+// Insérer ici les propriétés CSS à appliquer
+}
+
+D'où il sort ce  a  qu'on a mis avant la pseudo-classe  :hover  ?
+
+Rappelez-vous le chapitre "Créez un lien hypertexte", c'est comme ça qu'on annonce un lien hypertexte, avec une balise  <a>  . On pourrait très bien appliquer un style au survol d'un paragraphe (on écrirait alors p:hover), ou bien d'un élément auquel on a attribué une classe ma-classe (et on écrirait .ma-classe:hover).
+
+À partir de là, c'est à vous de définir l'apparence que doivent avoir les liens lorsqu'on pointe dessus. Laissez libre cours à votre imagination, il n'y a pas de limite.
+
+Définissez le style qui va s'appliquer au sélecteur
+Dans le bout de code ci-dessous, on va appliquer une couleur différente pour le titre, le paragraphe, et à l'élément de la classe  mon-element .
+
+On a la structure suivante en HTML :
+
+<body>
+    <div class="mon-element">
+    <h1>Ma page de pseudo-classes</h1>
+    <p>Les pseudo-classes sont très importantes afin de créer des apparences dynamiques en fonction des interactions avec les utilisateurs.</p>
+    </div>
+</body>
+
+…et le code suivant en CSS :
+
+.mon-element:hover {
+    background-color: #BEAEE2;
+    color: white;
+}
+
+h1:hover {
+    color: #CDF0EA;
+}
+
+p:hover {
+    color: #F9CEEE;
+}
+
+… ce qui nous donne :
+
+Ici, les changements sont brusques. Le CSS permet pourtant de créer des effets fondus, ou bien des animations qui se répètent autant de fois que souhaité. Si ce sujet vous intéresse, je vous conseille de jeter un œil au cours Créez des animations CSS modernes.
+
+Stylisez un élément au moment du clic avec  :active
+
+La pseudo-classe  :active  permet d'appliquer un style particulier au moment du clic.
+
+En pratique, elle n'est utilisée que sur les liens hypertexte car le style ne se maintient que très peu de temps : en fait, le changement intervient lorsque le bouton de la souris est enfoncé. Ce n'est donc pas forcément toujours bien visible.
+
+Essayons de changer la couleur de fond du lien hypertexte lorsque l'on clique dessus. Pour l'occasion, on aura au préalable ajouté un lien hypertexte dans le bout de code HTML plus haut, et désactivé le changement de style de  mon-element  au  hover.
+
+On écrit dans le fichier CSS :
+
+a:active {
+    background-color: #C1FFD7;
+}
+On a alors :
+
+Vous remarquerez d'ailleurs que le navigateur applique ici aussi un style par défaut où  color  du lien actif est rouge.
+
+Stylisez un élément sélectionné par le visiteur avec :focus
+
+Là, c'est un peu différent. La pseudo-classe  :focus  applique un style lorsque l'élément est sélectionné.
+
+C'est-à-dire ?
+
+On peut notamment utiliser la touche "tab" ⇥   du clavier pour déclencher le focus sur chacun des éléments.
+
+Cette pseudo-classe pourra être appliquée à d'autres balises HTML que nous n'avons pas encore vues, comme les éléments de formulaires. Nous nous pencherons davantage sur le focus dans ce chapitre.
+
+Dans notre bout de code CSS, on écrit :
+
+a:focus {
+    background-color: #FCFFA6;
+}
+
+Ce qui nous permet d'obtenir, avec la sélection depuis la touche "tab" du clavier : ⇥  
+
+Stylisez un lien hypertexte déjà consulté avec  :visited
+
+Il est possible d'appliquer un style à un lien hypertexte qui a déjà été "cliqué". Par défaut, le navigateur colore un lien en violet. Mais grâce à la pseudo-classe  :visited  , on peut changer ; même si, en pratique, sur les liens consultés, on ne change souvent pas grand-chose à part la couleur.
+
+Si vous ne souhaitez pas que les liens déjà visités soient colorés d'une façon différente qu'un lien hypertexte non cliqués, il vous faudra leur appliquer la même couleur qu'aux liens normaux. De nombreux sites web font cela (OpenClassrooms y compris !).
+
+Dans notre exemple, on ajoute au code CSS :
+
+a:visited {
+    color: black;
+}
+
+La couleur est désormais la même, que le lien ait été visité ou non.
+
+Tout cela semble un peu magique comme ça : il existe de nombreux sélecteurs, une grande quantité de propriétés CSS, permettant d'obtenir des effets particulièrement avancés (souvenez-vous du CSS Art).
+
+Les navigateurs ne connaissent pas toutes les propriétés CSS qui existent. En fait plus le navigateur est vieux, moins il connaît de fonctionnalités CSS.
+
+Je vous recommande fortement de mettre dans vos favoris le site www.caniuse.com, qui propose des tables de compatibilité des fonctionnalités de HTML et CSS sur différents navigateurs (et sur leurs différentes versions).
+
+Allez plus loin avec les sélecteurs avancés
+
+En CSS, le plus dur est bien souvent de réussir à cibler l'élément dont on veut changer le style. Vous avez appris tout un tas de manières d'appliquer du style à des éléments, avec les sélecteurs et les pseudo-classes. Mais sachez que nous n'avons pas tout couvert dans cette partie. Vous avez eu un aperçu de la puissance des sélecteurs avec le combinateur de voisin direct (ou siblings) dans la vidéo d'introduction, mais il en existe d'autres. En voici quelques-uns :
+
+Le sélecteur universel  *
+
+Le sélecteur universel  *  sélectionne toutes les balises sans exception.
+
+* {
+/* Insérez ici votre style */
+}
+
+Le sélecteur d'une balise contenue dans une autre :  A   B
+
+Prenons un exemple avec ce code écrit dans le fichier HTML :
+
+<h3>Titre avec <em>texte important</em></h3>
+
+Dans CSS, on écrirait alors :
+
+h3 em {
+/* Insérez ici votre style */
+}
+
+Ce morceau de code signifie en français :
+
+"Applique ce style à toutes les balises  <em>  situées à l'intérieur d'une balise  <h3>
+
+Notez qu'il n'y a pas de virgule entre les deux noms de balises.
+
+Le sélecteur d'une balise qui en suit une autre : A  +  B
+
+Dans CSS, on écrirait par exemple :
+
+h3 + p {
+/* Insérez ici votre style */
+}
+
+Ce qui aura pour résultat de sélectionner la première balise  <p>  située après un titre  <h3>.
+
+Exemple de code HTML associé :
+
+<h3>Titre</h3>
+<p>Paragraphe</p>
+
+Le sélecteur d'une balise qui possède un attribut : a[attribut]
+
+a[title] {
+/* Insérez ici votre style */
+}
+
+En français, ce morceau de code signifie :
+
+"Sélectionne tous les liens hypertexte   <a>  qui possèdent un attribut  title  ".
+
+Exemple de code HTML associé :
+
+<a href="http://site.com" title="Infobulle">
+
+Il existe des variantes de cette forme de sélecteur :
+
+a[attribut="Valeur"]  : une balise qui possède un attribut et une valeur exacte, comme :
+
+a[title="Cliquez ici"] {
+/* Insérez ici votre style */
+}
+
+C'est la même chose, mais l'attribut doit en plus avoir exactement pour valeur “Cliquez ici”.
+
+Exemple de code HTML associé :
+
+<a href="http://site.com" title="Cliquez ici">
+
+a[attribut*="Valeur"]  : une balise, un attribut et une valeur, comme :
+
+a[title*="ici"] {
+/* Insérez ici votre style */
+}
+
+Idem, l'attribut doit cette fois contenir dans sa valeur le mot “ici” (peu importe sa position).
+
+Exemple de code HTML associé :
+
+<a href="http://site.com" title="Quelque part par ici">
+
+Il en existe beaucoup d'autres sélecteurs. Si vous voulez une liste complète, vous pouvez vous renseigner directement à la source : sur le site du W3C !
+
+À vous de jouer !
+
