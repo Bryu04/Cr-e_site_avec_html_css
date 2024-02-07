@@ -58,3 +58,8 @@ h2 {
 a:hover {
     text-decoration: underline;
 }
+
+.cta:hover {
+    background: linear-gradient(#696484,#8788BA);
+    text-decoration: none;
+}
