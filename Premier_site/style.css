@@ -128,3 +128,8 @@ a:focus {
     color: white;
     outline-color: deeppink;
 }
+
+img:hover + h2 {
+    /* Ici on utilise la commande siblings ou selecteur de voisin pour changer la couleur du titre après l'image  */
+    color: deeppink;
+}
