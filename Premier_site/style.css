@@ -58,6 +58,11 @@ h1 {
     /* On peut aussi utiliser des formes plus complexe grace au site Francy Border Radius Generator  */
     border-radius: 74% 26% 21% 79% / 50% 87% 13% 50% ;
 
+    /* Maintenant on va ajouter de l'ombre sur notre bordure. Pour cela on va utiliser box-shadow. La prémière valeur est le décalage horizontale, la 2e le décalage verticale, la 3e valeur est l'adoucissement et la dernière valeur est la couleur. */
+    box-shadow: 6px 6px 15px black;
+
+    /* On peut faire de même sur les titres */
+    text-shadow: 3px 3px 0px black;
 }
 
 /* Changer le style des mots en : italics, gras, souligner */
@@ -90,4 +95,10 @@ body {
 
     /* Changer l'opacité de l'image de fond  */
     opacity: 0.8;
+
+    /* Ici on va ajouter une bordure centré au text  */
+    border: 2px dotted black; 
+
+    /* Après on utilise la propriété border-radius pour changer la forme de notre bordure. */
+    border-radius: 10px 30px 0px 90px; 
 }
