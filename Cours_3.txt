@@ -1,0 +1,101 @@
+Structurez votre page
+
+Utilisez la balise  <header> pour l'en-tête
+La plupart des sites web possèdent un <header>(en-tête, en français). On y trouve le plus souvent, à minima, un logo. On le place, pour des raisons de cohérence, en tête du code, donc au début de la balise   <body>  :
+
+<header>
+<!-- Placez ici le contenu de l'en-tête de votre page -->
+</header>
+
+L'en-tête peut contenir tout ce que vous voulez : une image pour un logo, liens, du texte pour le slogan de votre marque par exemple, un bouton d'appel à l'action… Généralement, on préfère que cela reste clair et lisible donc on évite de surcharger le  <header>  avec trop d'éléments.
+
+Voici par exemple l’en-tête du site de La Fourche :
+
+Attention, la balise <header>  n'a rien  à voir avec la balise  <head>  que vous aviez vue dans la première partie :
+
+la balise <header>  permet de créer une partie de la page HTML ;
+
+la balise  <head>  permet d'inclure des informations générales sur la page, notamment son titre, des liens vers des polices, vers une feuille de style, etc.
+
+Il peut y avoir plusieurs en-têtes dans votre page. Si celle-ci est découpée en plusieurs sections, chaque section peut en effet avoir son propre  <header>  .
+
+Utilisez la balise  <footer>  pour le pied de page
+À l'inverse de l'en-tête, le pied de page se trouve tout en bas de la page. On y trouve généralement des informations comme des liens de contact, les mentions légales, la politique de confidentialité, etc.
+
+<footer>
+<!-- Placez ici le contenu du pied de page -->
+</footer>
+Voici le pied de page de la page d’accueil du site de La Fourche :
+
+Utilisez la balise  <nav> pour le menu de navigation
+
+La balise <nav>  doit regrouper tous les principaux liens de navigation du site. Vous y placerez par exemple le menu principal de votre site. Généralement, le menu est réalisé sous forme de liste à l'intérieur de la balise<nav> .
+
+Voici le menu sur le site de La Fourche :
+
+Ici on pourrait avoir, de façon simplifiée :
+
+<nav>
+    <ul>
+        <li>
+            <a href="#">Nouveautés</a>
+        </li>
+        <li>
+            <a href="#">Anti-gaspi</a>
+        </li>
+        <li>
+            <a href="#">Origine France</a>
+        </li>
+        <li>
+            <a href="#">Marque La Fourche</a>
+        </li>
+    </ul>
+</nav>
+
+Utilisez la balise  <main>  pour le contenu principal de la page
+
+La balise <main> permet de déclarer le contenu principal de votre page. Elle englobe la majeure partie du  <body>  d'une page, en excluant les autres éléments tels que le  <header>, le  <footer>  et de potentiels  <aside>. La balise <main> doit être unique : il n'y en a qu'une seule par page :
+
+<main>
+</main>
+
+Utilisez des balises  <section>  pour structurer le contenu du  <main>
+
+La balise <section>  sert à regrouper des contenus en fonction de leur thématique. Elle englobe généralement une portion du contenu au centre de la page.
+
+<section>
+</section>
+
+Sur la page d'accueil du site de La Fourche, on trouve plusieurs blocs qui pourraient être considérés comme des sections de page :
+
+Utilisez une balise  <aside>  pour des contenus additionnels dans le  main
+Il existe d'autres balises pour structurer une page, comme <aside> par exemple, qui permet de contenir des informations complémentaires au document que l'on visualise. Ces informations sont généralement placées sur le côté (bien que ce ne soit pas une obligation). Il peut y avoir plusieurs blocs <aside>  dans la page. Sur Wikipédia, par exemple, il est courant de voir à droite un bloc d'informations complémentaires à l'article que l'on visualise.
+
+À noter : la balise <article>  sert à englober une portion généralement autonome de la page. C'est une partie de la page qui pourrait ainsi être reprise sur un autre site. C'est le cas par exemple des actualités (articles de journaux ou de blogs).
+
+Ne vous y trompez pas : ce schéma propose un exemple d'organisation de la page. Rien ne vous empêche de décider que votre menu de navigation soit à droite, ou tout en haut, que vos balises  <aside>  soient au-dessus, etc.
+
+Essayez d'utiliser toutes les balises que nous venons de découvrir avec le CodePen P3C1.
+
+Ce code peut vous aider à comprendre comment les balises doivent être agencées. Vous y reconnaissez un en-tête, un menu de navigation, un pied de page… et, au centre, deux sections incluses dans  <main>  .
+
+Eh mais… la page ne ressemble à rien, c'est normal ?
+
+Pour l'instant, vous avez juste du texte noir sur fond blanc. C'est normal, il n'y a pas de CSS ! Par contre, la page est bien structurée, ce qui va nous être utile pour la suite. Vous pouvez d'ailleurs totalement appliquer le style souhaité à ces balises, comme vous le feriez pour toutes les balises que vous avez utilisées jusqu'à maintenant.
+
+Je ne comprends pas l'intérêt de ces balises. On peut obtenir le même résultat sans les utiliser, non ?
+
+C'est vrai. En fait, ces balises sont seulement là pour expliquer à l'ordinateur :
+
+“Ceci est l'en-tête”.
+
+“Ceci est mon pied de page”, etc.
+
+Mais qui dit que l'ordinateur comprend veut aussi dire que le contenu sera également plus lisible par des outils d'assistance dans le cadre de l'accessibilité.
+
+Elles n'indiquent pas, contrairement à ce qu'on pourrait penser, où doit être placé le contenu. C'est le rôle du CSS, comme nous le verrons dans peu de temps maintenant.
+
+À l'intérieur de ces balises structurantes, comme vous l'avez sûrement vu dans le bout de code embarqué, vous pouvez également utiliser des balises universelles  <div>  et  <span>  afin de créer des blocs au sein de votre contenu, qui vous permettront ensuite de leur appliquer du style.
+
+À vous de jouer !
+
