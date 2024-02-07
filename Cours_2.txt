@@ -1151,3 +1151,246 @@ Bien ! Vous commencez à vous débrouiller en CSS, mais vos pages restent encore
 
 #################################################################################################################
 
+!!!!!!!!!!!!!!! Mettre en forme des pages web avec CSS3 !!!!!!!!!!!!!!!!!
+
+Compétences évaluées
+
+Mettre en forme des pages web avec CSS3
+
+Question 1
+
+Quelles étapes doit-on suivre pour importer du CSS dans un fichier HTML ?
+Attention, plusieurs réponses sont possibles.
+
+- Importer le fichier dans une balise  <css>
+
+- Créer un fichier ayant l'extension  .css (o) (B)
+
+- Utiliser la balise  <link>  pour importer le fichier (o) (B)
+
+- Écrire directement du style dans la balise  <css>
+
+"""""""" Réponse """"""""""
+Même s'il existe plusieurs méthodes pour appliquer du CSS à du HTML, ici on parle bien de celle qui consiste à écrire son CSS dans un fichier à part, et à l'importer dans son fichier HTML. Il faut donc disposer d'un fichier ayant l'extension  .css  et l'importer à l'aide de la balise  <link>  en lui précisant un attribut  href  ayant pour valeur là où trouver le fichier. Il fallait donc choisir les réponses 2 et 3.
+
+""""""""""""""""""""""""""
+
+Question 2
+
+On a le code HTML suivant :
+
+<body>
+    <h1>Bienvenue sur ma page</h1>
+    <p>Ceci est le super contenu de mon paragraphe</p>
+</body>
+
+Comment faire pour que la couleur du titre ainsi que du paragraphe soient  #ff1493  ?
+
+Attention, plusieurs réponses sont possibles.
+
+- h1, p {                         (o) (B)
+        color: #ff1493;
+     }
+
+- h1 {                                 (o) (B)
+        color: #ff1493; 
+     }
+ 
+  p {
+       color: #ff1493;
+     }
+
+- h1, p {                                                  (o) (B)
+       color: rgb(255, 20, 147); 
+     }
+
+- h1 + p {
+       color: #ff1493;
+     }
+
+"""""""" Réponse """"""""""
+Ici, plusieurs options sont valables. Pour vérifier, le mieux reste de tester. La première réponse sélectionne  p  et  h1  en même temps, et leur applique la couleur souhaitée.
+
+Pour ce qui est de la deuxième réponse, la couleur est appliquée séparément, mais ça fonctionne aussi.
+
+Pour ce qui est de la réponse 3, elle utilise la notation RGB. Si vous vérifiez, vous vous rendrez compte qu'il s'agit en fait de la même couleur.
+
+En revanche, la dernière option ne fonctionne pas : elle permet uniquement de sélectionner le paragraphe qui suit le titre.
+
+""""""""""""""""""""""""""
+
+Question 3
+On a le HTML suivant :
+
+<p class="premier-paragraphe"></p>
+<p class="deuxieme-paragraphe"></p>
+
+À partir de l'aperçu suivant, quelles propriétés de texte ont été appliquées dans les classes  premier-paragraphe  ou  deuxieme-paragraphe ?
+
+Attention, plusieurs réponses sont possibles.
+
+- text-align (o) (B)
+
+- font-size (o) (B)
+
+- text-decoration
+
+- font-family (o) (B)
+
+- color
+
+"""""""" Réponse """"""""""
+Ici, on voit bien qu'il y a une couleur de fond bleu ciel, mais que la couleur du texte n'a pas été modifiée. Pas de soulignement, ou de texte barré. En revanche, le texte est centré, la police du premier paragraphe est plus grande, et la police ne possède pas de serif. À vrai dire, voilà le CSS appliqué :
+
+body {
+    background-color: #9ADCFF;
+}
+
+.premier-paragraphe {
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.deuxieme-paragraphe {
+    text-align: center;
+}
+
+Il fallait donc choisir les réponses 1, 2 et 4.
+
+""""""""""""""""""""""""""
+
+Question 4
+Regardez le CodePen Quiz P2Q4, dans lequel vous avez la classe  elem.
+
+Lorsque vous le survolez avec la souris, l'opacité de l'élément est moins forte.
+
+Par quelles valeurs pourriez-vous remplacer le code de la ligne 9 pour obtenir le même résultat ? (N'hésitez pas à tester les différentes valeurs proposées.)
+
+- background-color: rgb(25, 25, 112);
+
+- background-color: #191970 60%;
+
+- background-color: rgba(25, 25, 112, 0.7); (o) (B)
+
+"""""""" Réponse """"""""""
+Ici, la première proposition est une couleur opaque : elle ne permet pas d'obtenir le même résultat qu'une opacité à 70 %. La syntaxe de la deuxième proposition, quant à elle, ne correspond pas à une syntaxe valable en CSS. En revanche, la proposition 3 utilise la notation RGBA, dont le dernier paramètre permet d'indiquer l'opacité. Il fallait choisir la réponse 3.
+
+""""""""""""""""""""""""""
+
+Question 5
+Voici le CodePen Quiz P2Q5.
+
+Quelle(s) propriété(s) ajouter ou modifier à la classe  .banniere  pour que mon background s'adapte bien en largeur (en restant sur une taille d'écran classique), s'affiche une seule fois et affiche aussi bien le sol que le ciel ?
+
+Attention, plusieurs réponses sont possibles.
+
+- background-repeat: no-repeat; (o) (M)
+
+- background-size: cover; (o) (B)
+
+- background-position: center; (o) (B)
+
+- background-attachement: fixed;
+
+"""""""" Réponse """"""""""
+Ici, seules deux propriétés suffisent pour bien correspondre à l'énoncé : les réponses 2 et 3.
+
+La réponse 1 n'est pas nécessaire puisqu'avec la taille  cover, l'image va s'adapter pour prendre toute la largeur, elle ne se répètera donc pas. De la même manière, ici, on ne demande pas de "fixer" l'image de fond. Il fallait donc choisir les réponses 2 et 3.
+
+""""""""""""""""""""""""""
+
+Question 6
+Vous avez la page juste en dessous. Le HTML et le CSS ont été codés de sorte à avoir :
+
+<div class="banner">
+    <h1>☀️ Bienvenue sur ma page 🏝</h1>
+</div>
+<h2>Ici, vous avez le contenu de la page</h2>
+Et le résultat :
+
+Que devez-vous écrire dans le fichier CSS au niveau de la classe  .banner  pour obtenir le même résultat ? N'hésitez pas à copier-coller le code pour voir ce que vous obtenez.
+
+Attention, plusieurs réponses sont possibles.
+
+- background: linear-gradient(#000046, #1CB5E0);
+
+- background-color: linear(to right,#000046, #1CB5E0);
+
+- background: linear-gradient(to left, #1CB5E0, #000046); (o) (B)
+
+- background: linear-gradient(to right,#000046, #1CB5E0); (o) (B)
+
+"""""""" Réponse """"""""""
+Ici, l'effet est obtenu grâce à la fonction CSS  linear-gradient  qui permet de créer une image de dégradé entre plusieurs couleurs en ligne droite, dans la direction définie. Cette fonction est passée en valeur de la propriété  background. Comme on le voit, on passe d'un bleu foncé à un bleu plus clair de droite à gauche.
+
+La proposition 1 applique son dégradé dans la direction par défaut, de haut en bas.
+
+La proposition 2, quant à elle, ne fonctionne pas car elle utilise une fonction  linear  qui n'existe pas. Par ailleurs, elle déclare la propriété  background-color : rien ne va dans ce bout de code !
+
+Pour ce qui est de la proposition 3, la direction appliquée est de gauche à droite, mais les couleurs sont également inversées. Il fallait donc choisir les réponses 3 et 4.
+
+""""""""""""""""""""""""""
+
+Question 7
+Dans le GIF ci-dessous, vous avez une card dont le style change au survol de la souris :
+
+Vous avez essayé de reproduire le même comportement dans un bout de code. Mais vous n’y êtes pas encore totalement parvenu :
+
+Quelles propriétés manque-t-il pour obtenir le même résultat ? 
+
+Attention, plusieurs réponses sont possibles.
+
+- box-shadow (o) (B)
+
+- border
+
+- border-radius (o) (B)
+
+- text-shadow
+
+"""""""" Réponse """"""""""
+Comme on peut le voir, les bords ne sont pas arrondis. Il faut également ajouter l’effet d’ombre au survol de la souris. Ici, pas de  border  nécessaire, ni de  text-shadow. Il fallait donc choisir les options 1 et 3.
+
+""""""""""""""""""""""""""
+
+Question 8
+Dans le CodePen Quiz P2Q8, vous avez le bout de code qui vous permet d’afficher un lien vers Google.
+
+Quel bout de code CSS vous permet de créer un effet où le texte, ainsi que le bord qui entoure le lien, deviennent bleu lorsqu’on clique sur le lien ?
+
+- a:hover {
+       color: blue;
+      border-color: blue;
+    }
+
+- a:active {                        (o) (B)
+        color: blue;
+        border-color: blue;
+   }
+
+- a:clicked {
+        color: blue;
+        border-color: blue;
+   }
+
+- active {
+       color: blue;
+       border-color: blue;
+   }
+
+
+"""""""" Réponse """"""""""
+Nous avons besoin d’un pseudo-sélecteur pour créer un style appliqué uniquement à la suite à une interaction utilisateur. Il s’agit ici de la pseudo-classe  :active. Mais gare à la syntaxe : on doit utiliser la balise visée, puis lui ajouter  :active.
+
+L’option 1 propose d’utiliser le pseudo-sélecteur  :hover  qui déclenche l’application de style au survol avec la souris.
+
+L’option 3 utilise  :clicked  qui n’existe pas.
+
+L’option 4, quant à elle, n’utilise pas le  a  et les deux points.
+
+Il fallait donc choisir la réponse 2 !
+
+""""""""""""""""""""""""""
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
