@@ -43,6 +43,21 @@ h1 {
 
     /* On ajoute un fond de dégradé, voir le site uiGradients */
     background: linear-gradient(to right,#1E9600, #FFF200, #FF0000);
+
+    /* Ici on va ajouter une bordure centré au text  */
+    /* border: 2px dotted black; */
+    /* La propriété border peut être separé pour chacun des cotés */
+    border-bottom: 2px dotted black;
+    border-top: 4px solid red;
+    border-left: 6px double blue;
+    border-right: 8px dotted green;
+
+    /* Après on utilise la propriété border-radius pour changer la forme de notre bordure. */
+    /* border-radius: 10px 30px 0px 90px; */
+
+    /* On peut aussi utiliser des formes plus complexe grace au site Francy Border Radius Generator  */
+    border-radius: 74% 26% 21% 79% / 50% 87% 13% 50% ;
+
 }
 
 /* Changer le style des mots en : italics, gras, souligner */
