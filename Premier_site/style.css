@@ -102,3 +102,15 @@ body {
     /* Après on utilise la propriété border-radius pour changer la forme de notre bordure. */
     border-radius: 10px 30px 0px 90px; 
 }
+
+img:hover {
+    /* Ici on va utiliser la pseudo-classe pour ajouter de la dynamique dans le site  */
+    opacity: 0.5;
+}
+
+
+a:hover {
+    /* On fait de même pour les liens  */
+    color: #FF0000;
+    text-decoration: none;
+}
