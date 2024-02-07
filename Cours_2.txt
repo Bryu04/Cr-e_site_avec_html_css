@@ -902,3 +902,25 @@ Je vous invite maintenant à aller vous entraîner à maitriser toutes les propr
 
 À vous de jouer !
 
+C’est maintenant le moment de mettre en pratique ce que vous venez d’apprendre, dans le projet de Robbie Lens. Pour cela, vous allez :
+
+ajouter des arrondis sur les liens "Un projet ? Écrivez-moi" et "Voir mon portfolio", d'une valeur de  50px  (le rendu n'est pas très beau, mais ne vous inquiétez pas, nous allons l'améliorer au fil des chapitres) ;
+
+créer une  div , sur la page À propos, qui englobe le paragraphe et la liste de compétences de Robbie Lens ; lui ajouter une bordure à droite et en bas, de  1px  d'épaisseur et de la couleur  #8e86b5  .
+
+Comme pour les activités précédentes, vous avez accès au code nécessaire pour débuter l’exercice sur la branche P2C4-exercice,
+
+En résumé
+
+On peut appliquer une bordure à un élément avec la super-propriété CSS  border. Il faut indiquer la largeur de la bordure, sa couleur et son type (simple, double, pointillés, tirets).
+
+On peut arrondir les bordures avec la propriété CSS  border-radius.
+
+On peut ajouter une ombre aux blocs de texte avec  box-shadow. On doit indiquer le décalage vertical et horizontal de l'ombre, son niveau d'adoucissement et sa couleur.
+
+Le texte peut lui aussi avoir une ombre avec  text-shadow.
+
+C’est grisant, n’est-ce pas ? Vous allez voir, dans le prochain chapitre, on va encore plus s’amuser en créant des apparences dynamiques en fonction des actions de l’utilisateur. Allons-y !
+
+#################################################################################################################
+
