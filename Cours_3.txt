@@ -145,3 +145,184 @@ Vous savez maintenant comment structurer correctement vos pages web ! Passons au
 
 ##############################################################################################################
 
+Découvrez le modèle des boîtes
+
+Différencier les balises de type  block  et de type  inline
+
+En HTML, la plupart des balises peuvent se ranger dans l'une ou l'autre de ces deux catégories :
+
+  - block: ce type de balise crée automatiquement un retour à la ligne avant et après ; 
+
+  - inline: ce type se trouve obligatoirement à l'intérieur d'une balise  block  . 
+
+Il existe en fait plusieurs autres catégories très spécifiques, par exemple pour les cellules de tableau (type  table-cell  ) ou les puces (type  list-item  ). Nous n'allons pas nous y intéresser pour le moment, car ces balises sont minoritaires.
+
+Pour bien visualiser le concept, voici un petit schéma :
+
+Comme vous pouvez le voir, les blocs sont les uns en dessous des autres. On peut aussi les imbriquer les uns à l'intérieur des autres : souvenez-vous, un bloc  <main>  contient par exemple des blocs  <section>  , qui eux-mêmes peuvent contenir des  <div> .
+
+Quant à la balise  <a></a>  (qui est de type  inline  ), elle se trouve à l'intérieur d'une balise  block  , et le texte vient s'insérer sur la même ligne.
+
+Faites bon usage des balises universelles <span>  et  <div>
+
+J'en profite pour vous parler à nouveau des balises universelles. Vous les connaissez déjà car je vous les ai présentées à plusieurs reprises. Ce sont des balises qui n'ont aucun sens particulier. Le principal intérêt de ces balises est que l'on peut leur appliquer une  class  (ou un  id  ) pour le CSS quand aucune autre balise ne convient.
+
+Il existe deux balises génériques et, comme par hasard, la seule différence entre les deux est que l'une d'elles est  inline  et l'autre est  block  :
+
+    1.La balise<span>(qui est de type inline).
+
+    2.La balise<div>(qui est de type block).
+
+N’abusez pas des balises universelles, même si elles sont utiles dans certains cas : beaucoup de développeurs mettent des  <div>  et des  <span>  trop souvent, et oublient que d'autres balises plus adaptées existent.
+
+Par exemple :
+
+  - <span class="important">  : ici, il ne s'agit pas d'une bonne pratique, alors qu'il existe les balises  
+    <strong>   ou  <em>  qui servent à indiquer l'importance ! 
+
+  - <div class="titre">  : idem, cela ne convient pas, puisqu'il existe des balises faites spécialement pour 
+    les titres (  <h1>  ,  <h2>  …).
+
+Le résultat visuel est le même, mais les balises génériques n'apportent aucun sens à la page, et ne peuvent pas être comprises par l'ordinateur. Utilisez toujours d'autres balises plus adaptées quand c'est possible.
+
+Maintenant que vous comprenez la différence entre inline et block , nous allons apprendre à dimensionner des éléments en CSS ! Nous allons ici travailler uniquement sur des balises de type  block  .
+
+Pour commencer, intéressons-nous à la taille des blocs.
+
+Dimensionnez les éléments avec width et height
+
+Contrairement à un  inline  , un  block  peut avoir une largeur et une hauteur précises grâce à ces deux propriétés CSS :
+
+  1.width  (largeur du bloc).
+
+  2.height  (hauteur du bloc).
+
+On les exprime en pixels px ou en pourcentage %.
+
+Par défaut, un bloc prend 100 % de la largeur disponible.
+
+On peut le vérifier en appliquant à nos blocs des bordures ou une couleur de fond :
+
+Maintenant, rajoutons un peu de CSS afin de modifier la largeur des paragraphes. Si on veut que tous les paragraphes aient une largeur de 50 %, on écrira en CSS :
+
+p {  
+    width: 50%;
+}
+
+Le résultat est visible juste en dessous :
+
+Les pourcentages sont utiles pour créer un design qui s'adapte automatiquement à la résolution d'écran du visiteur.
+
+Toutefois, il se peut que vous ayez besoin de créer des blocs ayant une dimension précise en pixels, par exemple pour reprendre un design très précis. Essayez le bout de code suivant pour voir :
+
+p {
+    width: 250px;
+}
+
+Les images sont un cas un peu particulier : elles se mettent les unes à la suite des autres, sans prendre toute la largeur, mais on peut malgré tout leur donner une dimension exacte.
+
+Définissez des marges avec margin et padding
+
+Tous les blocs possèdent des marges (intérieures et extérieures) :
+
+En CSS, on peut modifier la taille des marges avec deux propriétés :
+
+  1. margin  (taille de la marge extérieure)
+
+  2. padding  (taille de la marge intérieure).
+
+Pour bien comprendre la différence, faisons quelques tests.
+
+Pour l'occasion, j'ai rédigé dans le fichier HTML des paragraphes de texte en lorem ipsum (du faux texte). Ensuite, dans le fichier CSS, j'ai donné au bloc  p  une largeur de  350px  et j'ai ajouté une couleur jaune avec la balise  background-color  pour qu'on visualise bien la différence entre les différentes marges :
+
+p {
+    width: 350px;
+    background-color: #F1C864;
+    text-align: justify;
+}
+
+Voilà ce qu'on obtient avec ce code :
+
+Comme vous pouvez le constater, il n'y a par défaut pas de marge intérieure (padding  ) dans le bloc du paragraphe, (on le voit bien car il a un fond jaune et que les bordures sont collées au texte).
+
+En revanche, il y a une marge extérieure (margin  ), on la voit bien car elle espace les paragraphe entre eux, avec une marge blanche (couleur du fond de la page par défaut). C'est cette marge qui fait que deux paragraphes ne sont pas collés, et qu'on a l'impression de “sauter une ligne”.
+
+Ajoutez une marge intérieure avec la propriété CSS  padding
+Pour ajouteraux paragraphes une marge intérieure (padding) de  16px  par exemple, on écrit :
+
+p {
+    width: 350px;
+    background-color: #F1C864;
+    text-align: justify;
+    padding: 16px;
+}
+
+On obtient alors :
+
+Ajoutez une marge extérieure avec la propriété CSS  margin
+Maintenant, si on veut que nos paragraphes soient encore plus espacés entre eux, on rajoute la propriété margin  . Demandons par exemple  50px  de marge entre deux paragraphes :
+
+p {
+    width: 350px;
+    background-color: #F1C864;
+    text-align: justify;
+    padding: 16px;
+    margin: 50px;
+}
+
+On obtient :
+
+Mais ??? Une marge s'est rajoutée tout autour aussi, pas seulement entre les deux paragraphes !?
+
+Eh oui, margin  (comme padding  d'ailleurs) s'applique aux quatre côtés du bloc.
+
+Si vous voulez spécifier des marges différentes en haut, en bas, à gauche et à droite, il va falloir utiliser des propriétés plus précises… Le principe est le même que pour la propriété  border, vous allez voir !
+
+Spécifiez les propriétés margin et padding 
+
+Vous allez avoir besoin d'un minimum de vocabulaire en anglais ici :
+
+  - top: haut ;
+
+  - bottom: bas ;
+
+  - left: gauche ;
+
+  - right: droite.
+
+Voyez ce que cela donne dans le schéma ci-dessous :
+
+Vous pouvez aussi utiliser seulement les propriétés raccourcies  margin  ou padding en précisant quatre valeurs à la suite, dans le sens des aiguilles d'une montre (haut, droite, bas, gauche).
+
+Exemple :  margin: 2px 0 3px 1px;.
+
+Ce qui signifie :
+
+“ 2 pixels de marge en haut, 0 pixel de marge à droite (le  px  est facultatif dans ce cas), 3 pixels de marge en bas et 1 pixel de marge à gauche”.
+
+Centrez vos blocs avec  width  et  margin: auto;
+
+Pour centrer des blocs, il faut respecter les règles suivantes :
+
+  1. donner une largeur au bloc avec la propriété width ;
+
+  2. indiquer  margin: auto; (les marges extérieures seront alors automatiques, et permettront de centrer le 
+     contenu.
+
+Essayons cette technique sur nos paragraphes, en ajoutant simplement une ligne au CSS :
+
+p {
+    width: 350px;
+    background-color: #F1C864;
+    text-align: justify;
+    padding: 16px;
+    margin: auto;
+}
+
+Et on obtient :
+
+Il n'est cependant pas possible de centrer verticalement un bloc avec cette technique. Seul le centrage horizontal est permis.
+
+Je vous invite maintenant à tester ce que vous venez de découvrir avec le CodePen P3C2.
+
+À vous de jouer !
