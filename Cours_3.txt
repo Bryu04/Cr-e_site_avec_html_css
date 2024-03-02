@@ -120,4 +120,28 @@ Vous avez trouvé cela difficile ? En cas de doute, consultez la solution sur la
 
 En résumé
 
+- Plusieurs balises permettent de délimiter les différentes zones qui constituent la page web :
+
+   - <header>  : en-tête ;
+
+   - <footer>  : pied de page ;
+
+   - <nav>  : liens principaux de navigation ;
+
+   - <section>  : section de page ;
+
+   - <aside>  : informations complémentaires ;
+
+   - <article>  : article indépendant.
+
+- Ces balises peuvent être imbriquées les unes dans les autres. Ainsi, une section peut avoir son propre 
+  en-tête.
+
+- Ces balises ne s'occupent pas de la mise en page. Elles servent seulement à indiquer à l'ordinateur la 
+  fonction du texte qu'elles encadrent. On pourrait très bien placer l'en-tête en bas de la page, si on le 
+  souhaitait.
+
+Vous savez maintenant comment structurer correctement vos pages web ! Passons au prochain chapitre : vous allez découvrir le modèle des boîtes, il s'agit d'une autre façon de structurer une page web, mais cette fois à l'aide du CSS, on y va !
+
+##############################################################################################################
 
