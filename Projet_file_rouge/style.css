@@ -28,7 +28,7 @@ li {
     color: #F9F8FF;
 }
 
-.header, .footer {
+header, footer, nav {
     /* Changer la couleur de fond en blanc  */
     background-color: white;
 }

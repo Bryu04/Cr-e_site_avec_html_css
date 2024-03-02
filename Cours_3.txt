@@ -1,6 +1,7 @@
 Structurez votre page
 
 Utilisez la balise  <header> pour l'en-tête
+
 La plupart des sites web possèdent un <header>(en-tête, en français). On y trouve le plus souvent, à minima, un logo. On le place, pour des raisons de cohérence, en tête du code, donc au début de la balise   <body>  :
 
 <header>
@@ -13,13 +14,15 @@ Voici par exemple l’en-tête du site de La Fourche :
 
 Attention, la balise <header>  n'a rien  à voir avec la balise  <head>  que vous aviez vue dans la première partie :
 
-la balise <header>  permet de créer une partie de la page HTML ;
+  - la balise <header>  permet de créer une partie de la page HTML ;
 
-la balise  <head>  permet d'inclure des informations générales sur la page, notamment son titre, des liens vers des polices, vers une feuille de style, etc.
+  - la balise  <head>  permet d'inclure des informations générales sur la page, notamment son titre, des liens 
+    vers des polices, vers une feuille de style, etc.
 
 Il peut y avoir plusieurs en-têtes dans votre page. Si celle-ci est découpée en plusieurs sections, chaque section peut en effet avoir son propre  <header>  .
 
 Utilisez la balise  <footer>  pour le pied de page
+
 À l'inverse de l'en-tête, le pied de page se trouve tout en bas de la page. On y trouve généralement des informations comme des liens de contact, les mentions légales, la politique de confidentialité, etc.
 
 <footer>
@@ -98,4 +101,23 @@ Elles n'indiquent pas, contrairement à ce qu'on pourrait penser, où doit être
 À l'intérieur de ces balises structurantes, comme vous l'avez sûrement vu dans le bout de code embarqué, vous pouvez également utiliser des balises universelles  <div>  et  <span>  afin de créer des blocs au sein de votre contenu, qui vous permettront ensuite de leur appliquer du style.
 
 À vous de jouer !
+
+C'est le moment de mettre en pratique ce que vous venez d'apprendre dans le portfolio de Robbie Lens. Pour cela, vous allez :
+
+- intégrer un  <header>  dans les pages d'accueil et Á propos ;
+
+- intégrer un  <footer>  dans ces même pages ;
+
+- ajouter  <main>  là où c'est nécessaire ;
+
+- basculer vos liens hypertextes de navigation dans une balise  <nav>  ;
+
+- adapter les déclarations CSS en fonction des modifications faites. 
+
+Comme d'habitude, vous avez accès sur GitHub à la base de code pour faire l’exercice sur la branche P3C1-exercice.
+
+Vous avez trouvé cela difficile ? En cas de doute, consultez la solution sur la branche P3C1-solution.
+
+En résumé
+
 
