@@ -82,3 +82,8 @@ a:hover {
 .logo_site:hover, .logo_twitter:hover, .logo_insta:hover {
     opacity: 0.5;
 }
+
+.a-propos-main {
+    width: 50%;
+    margin: auto;
+}
