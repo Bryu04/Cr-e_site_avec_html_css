@@ -148,3 +148,16 @@ img:hover + h2 {
     /* Ici on utilise la commande siblings ou selecteur de voisin pour changer la couleur du titre après l'image  */
     color: deeppink;
 }
+
+.box {
+    border: 2px solid black; 
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: 50px 30px;
+}
+
+.conteneur {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
