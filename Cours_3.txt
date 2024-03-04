@@ -356,3 +356,22 @@ Cela sert à réinitialiser les marges par défaut des navigateurs.
 Vous trouverez sur GitHub la base de code nécessaire pour réaliser l’exercice sur la branche P3C2-exercice. Voici la solution sur la branche P3C2-solution pour vérifier si vous aviez vu juste.
 
 En résumé
+
+- On distingue deux principaux types de balises en HTML :
+
+    - les balises de type  block  comme  <p>  ou  <h1> créent un retour à la ligne et occupent par défaut 
+      toute la largeur disponible. Elles se suivent de haut en bas ;
+
+    - les balises de type  inline  comme  <a>  ou  <strong>  délimitent du texte au milieu d'une ligne. Elles 
+      se suivent de gauche à droite.
+
+- On peut modifier la taille d'une balise de type block  avec les propriétés CSS  width (largeur) et  height  
+  (hauteur).
+
+- Les éléments de la page disposent chacun de padding (marges intérieures) et de margin  (marges extérieures).
+
+- On peut centrer le contenu d'un bloc dont la largeur est définie par width avec margin: auto;
+
+Ça va ? Vous avez bien digéré toutes les informations ? Alors accrochez-vous ! Dans le chapitre suivant, on va voir une partie essentielle du CSS moderne : Flexbox. Alors à tout de suite !
+
+##############################################################################################################
