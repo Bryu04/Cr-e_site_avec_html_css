@@ -39,6 +39,11 @@ header, footer {
     padding: 20px 50px 20px 50px;
 }
 
+section {
+    /* Ajouter de la marge au section */
+    padding: 80px;
+}
+
 body {
     /* Changer la couleur du coeur de la page  */
     background-color: #1F2039;
