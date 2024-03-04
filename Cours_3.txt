@@ -375,3 +375,219 @@ En résumé
 Ça va ? Vous avez bien digéré toutes les informations ? Alors accrochez-vous ! Dans le chapitre suivant, on va voir une partie essentielle du CSS moderne : Flexbox. Alors à tout de suite !
 
 ##############################################################################################################
+
+Faites votre mise en page avec Flexbox
+
+Comprenez la logique : un conteneur, des éléments
+
+Pour faire de la mise en page avec Flexbox, il faut :
+
+  1.Définir un conteneur.
+
+  2.Et placer à l'intérieur plusieurs éléments.
+
+Imaginez un carton dans lequel vous rangez plusieurs objets : c'est le principe !
+
+Sur une même page web, vous pouvez avoir plusieurs conteneurs (plusieurs cartons, si vous préférez). Vous pouvez en créer autant que nécessaire pour obtenir la mise en page que vous voulez.
+
+Commençons par étudier le fonctionnement d'un carton (euh pardon, d'un conteneur).
+
+Un conteneur (container en anglais) est une balise qui peut renfermer d'autres balises, comme du texte ou encore des images. Les conteneurs les plus célèbres sont les balises  <div>  et  <span> .
+
+<div class="container">
+<div class="element element1">Élément 1</div>
+<div class="element element2">Élément 2</div>
+<div class="element element3">Élément 3</div>
+</div>
+
+Mais si je fais ça, par défaut, mes éléments vont se mettre les uns en dessous des autres, non ? Ce sont des blocs, après tout !
+
+Oui, tout à fait, c'est le comportement normal dont nous avons l'habitude. Découvrons donc maintenant l'intérêt de Flexbox !
+
+Alignez les éléments d'un conteneur avec  display: flex; 
+
+Il suffit d'une seule propriété CSS, et tout change ! Cette propriété, c'est flex  et on l'applique au conteneur :
+
+.container {
+    display: flex;
+}
+
+... alors les blocs se placent par défaut côte à côte. Magique !
+
+Donnez leur une direction avec la propriété  flex-direction
+
+Flexbox permet d'agencer ces éléments dans le sens que l'on veut. Avec flex-direction, on peut les positionner verticalement ou encore les inverser. Cette propriété CSS peut prendre les valeurs suivantes :
+
+  - row  : organisés sur une ligne (par défaut) ;
+
+  - column  : organisés sur une colonne ;
+
+  - row-reverse  : organisés sur une ligne, mais en ordre inversé ;
+
+  - column-reverse  : organisés sur une colonne, mais en ordre inversé.
+
+Ici, on fait simplement :
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+Ce qui donne :
+
+Mais mais... c'est pareil qu'au début, non ? On avait ce résultat sans Flexbox, après tout !
+
+C'est vrai. Mais maintenant que nos éléments sont flex, ils ont tout un tas d'autres propriétés utiles que nous allons voir juste après, on va y revenir.
+
+Essayez aussi de tester l'ordre inversé, pour voir :
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+Et voilà ce que ça donne :
+
+Regardez bien la différence : les blocs sont maintenant dans l'ordre inverse ! Je n'ai pas du tout changé le code HTML, qui reste le même depuis le début.
+
+Retournez à la ligne avec la propriété  flex-wrap
+
+Par défaut, les blocs essaient de rester sur la même ligne s'ils n'ont pas la place, quitte à "s'écraser",  et provoquer parfois des anomalies dans la mise en page (certains éléments pouvant dépasser de leur conteneur). Si vous voulez, vous pouvez demander à ce que les blocs aillent à la ligne lorsqu'ils n'ont plus la place, avec flex-wrap.
+
+Voilà les différentes valeurs de flex-wrap :
+
+nowrap  : pas de retour à la ligne (par défaut) ;
+
+wrap  : les éléments vont à la ligne lorsqu'il n'y a plus la place ;
+
+wrap-reverse  : les éléments vont à la ligne, lorsqu'il n'y a plus la place, en sens inverse.
+
+.container {
+    display: flex;
+    flex-wrap: nowrap; 
+    /* OU wrap;
+    OU wrap-reverse; */
+}
+
+Dans les illustrations suivantes, vous pouvez voir les différents comportements de nos blocs en fonction de la valeur que l'on attribue à  flex-wrap  : 
+
+Cette propriété sera particulièrement utile quand nous aurons besoin d'adapter nos pages aux plus petits écrans. Nous verrons ça dans la prochaine partie de ce cours.
+
+Alignez les éléments sur un axe principal et secondaire
+
+Les éléments sont organisés par défaut de manière horizontale. Mais ils peuvent être organisés de manière verticale. Selon le choix que vous faîtes, ça va définir ce qu'on appelle l'axe principal. Il y a aussi un axe secondaire :
+
+  - si vos éléments sont organisés horizontalement, l'axe secondaire est l'axe vertical ;
+
+  - si vos éléments sont organisés verticalement, l'axe secondaire est l'axe horizontal.
+
+Pourquoi je vous raconte ça ? Parce que nous allons découvrir comment aligner nos éléments sur l'axe principal et sur l'axe secondaire.
+
+Alignez sur l'axe principal avec la propriété  justify-content
+
+Pour faire simple, partons sur des éléments organisés horizontalement (c'est le cas par défaut).
+
+Pour changer leur alignement, on va utiliser justify-content, qui peut prendre ces valeurs :
+
+  - flex-start: alignés au début (par défaut) ;
+
+  - flex-end: alignés à la fin ;
+
+  - center: alignés au centre ;
+
+  - space-between: les éléments sont étirés sur tout l'axe (il y a de l'espace entre eux) ;
+
+  - space-around: idem, les éléments sont étirés sur tout l'axe, mais ils laissent aussi de l'espace sur les 
+    extrémités.
+
+On écrit alors :
+
+.container {
+    display: flex;
+    justify-content: flex-start /* OU flex-end
+    OU center
+    OU space-between
+    OU space-around; */
+}
+
+Le mieux est encore de tester toutes les valeurs possibles pour voir ce que ça donne, vous ne pensez pas ?
+
+Manipulez toutes les valeurs possibles de  justify-content  dans le CodePen P3C3.
+
+Vous voyez comment les éléments s'alignent différemment selon les cas ? Avec une simple propriété, on peut intelligemment agencer nos éléments comme on veut !
+
+Maintenant, voici ce qu'il faut bien comprendre : ça marche aussi si vos éléments sont dans une direction verticale. Dans ce cas, l'axe vertical devient l'axe principal, et justify-content s'applique aussi :
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px; /* Un peu de hauteur pour que les éléments aient la place de bouger */
+}
+
+Avec une direction verticale (“column”), le centrage fonctionne de la même façon, mais cette fois en hauteur.
+
+Ajoutez  flex-direction: column;  dans le CodePen P3C3, vous verrez la différence !
+
+Alignez sur l'axe secondaire avec  align-items
+Si nos éléments sont placés dans une direction horizontale (ligne), l'axe secondaire est... vertical. Et inversement : si nos éléments sont dans une direction verticale (colonne), l'axe secondaire est horizontal.
+
+La propriété align-items  permet de changer leur alignement sur l'axe secondaire, grâce aux valeurs :
+
+  - stretch: les éléments sont étirés sur tout l'axe (valeur par défaut) ;
+
+  - flex-start: alignés au début ;
+
+  - flex-end: alignés à la fin ;
+
+  - center: alignés au centre ;
+
+  - baseline: alignés sur la ligne de base (semblable à  flex-start  ).
+
+Pour ces exemples, nous allons partir du principe que nos éléments sont dans une direction horizontale (mais n'hésitez pas à tester aussi dans la direction verticale !).
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+Ajoutez align-items: center;  dans le CodePen P3C3, vous verrez le résultat !
+
+Saint Graal du développeur web, le centrage vertical et horizontal peut d'ailleurs être obtenu encore plus facilement. Dites-vous que votre conteneur est une Flexbox, et établissez des marges automatiques sur les éléments à l'intérieur. C'est tout ! Essayez :
+
+.container {
+    display: flex;
+}
+
+.element {
+    margin: auto;
+}
+
+Répartissez les blocs sur plusieurs lignes avec align-content
+
+Si vous avez plusieurs lignes dans votre Flexbox, vous pouvez choisir comment celles-ci seront réparties avec align-content.
+
+Cette propriété n'a aucun effet s'il n'y a qu'une seule ligne dans la Flexbox.
+
+Prenons donc un cas de figure où nous avons plusieurs lignes. J'autorise les éléments à aller à la ligne avecflex-wrap.
+
+Voyons voir comment les lignes se répartissent différemment avec la nouvelle propriété align-content  que je voulais vous présenter. Elle peut prendre ces valeurs :
+
+  - stretch  (par défaut) : les éléments s'étirent pour occuper tout l'espace ;
+
+  - flex-start  : les éléments sont placés au début ;
+
+  - flex-end  : les éléments sont placés à la fin ;
+
+  - center  : les éléments sont placés au centre ;
+
+  - space-between  : les éléments sont séparés avec de l'espace entre eux ;
+
+  - space-around  : idem, mais il y a aussi de l'espace au début et à la fin.
+
+Amusez-vous avec le CodePen P3C3 pour tester tout cela en remplaçant la propriété  justify-content  par  align-content  !
+
+Et si vous voulez vous entraîner pour vous assurer que vous maîtrisez bien les propriétés de Flexbox, je vous recommande le jeu Flexbox Froggy. Avec les différentes propriétés, vous devrez replacer les grenouilles sur les nénuphars. 
+
+À vous de jouer !
