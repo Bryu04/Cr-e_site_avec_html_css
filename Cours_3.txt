@@ -623,3 +623,22 @@ Allez récupérer le modèle que vous trouverez dans la branche P3C3-exercice.
 Vous trouverez dans la base de code, pour démarrer l'exercice, des exercices qui vous aideront à mettre en place votre code. Et une fois que vous aurez fini, vous pouvez comparer ce que vous avez fait avec la solution sur la branche P3C3-solution.
 
 En résumé
+
+- Le principe de Flexbox est d'avoir un conteneur avec plusieurs éléments à l'intérieur. Avec  display: flex;  
+  sur le conteneur, les éléments à l'intérieur sont agencés en mode Flexbox (horizontalement, par défaut).
+
+- Flexbox peut gérer toutes les directions. Avec  flex-direction , on peut indiquer si les éléments sont 
+  agencés horizontalement (par défaut) ou verticalement. Cela définit ce qu'on appelle l'axe principal.
+
+- L'alignement des éléments se fait sur l'axe principal avec  justify-content  et sur l'axe secondaire avec  
+  align-items .
+
+- Avec  flex-wrap, on peut autoriser les éléments à revenir à la ligne s'ils n'ont plus d'espace.
+
+- S'il y a plusieurs lignes, on peut indiquer comment les lignes doivent se répartir entre elles avec  align-
+  content.
+
+Alors, la découverte de Flexbox vous a plu ? J'espère, parce que dans le chapitre suivant nous allons voir les bases d'un outil tout aussi puissant : CSS Grids !
+
+##############################################################################################################
+
