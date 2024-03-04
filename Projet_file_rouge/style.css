@@ -93,3 +93,31 @@ a:hover {
     width: 50%;
     margin: auto;
 }
+
+/* Modifier le conteneur introduction */
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 380px;
+    align-items: flex-start;
+    
+}
+
+.titre {
+    order: 1;
+}
+
+.Texte_intro {
+    order: 2;
+    width: 50%;
+}
+
+.Photo {
+    order: 4;
+}
+
+.cta_div {
+    order: 3;
+}
