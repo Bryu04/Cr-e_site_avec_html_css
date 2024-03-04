@@ -121,3 +121,13 @@ a:hover {
 .cta_div {
     order: 3;
 }
+
+.Images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 200px;
+    row-gap: 30px;
+    align-items: flex-start;
+}
