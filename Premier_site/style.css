@@ -113,6 +113,9 @@ body {
     /* On modifie la largeur du bloc  */
     width: 50%; /*Valeur en px ou %*/
     height: 400px;
+
+    /* On va maintenant centrer notre bannière */
+    margin: auto;
 }
 
 img:hover {
