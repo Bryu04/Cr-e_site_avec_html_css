@@ -101,6 +101,10 @@ body {
 
     /* Après on utilise la propriété border-radius pour changer la forme de notre bordure. */
     border-radius: 10px 30px 0px 90px; 
+
+    /* On modifie la largeur du bloc  */
+    width: 50%; /*Valeur en px ou %*/
+    height: 400px;
 }
 
 img:hover {
