@@ -1153,3 +1153,22 @@ Et voici la solution de l'exercice sur la branche P3C5-solution.
 
 En résumé
 
+- La propriété  display  permet de changer le comportement de base d'un élément : 
+
+        - transformer un élément  inline  en  block  ;
+
+        - inversement, un élément  block  en  inline  ;
+
+        - mais aussi de faire un mélange des deux avec  inline-block.
+
+- Le positionnement relatif permet de décaler un bloc par rapport à sa position normale.
+
+- Le positionnement absolu permet de placer un élément où l'on souhaite sur la page, au pixel près.
+
+- Un élément A positionné en absolu à l'intérieur d'un autre élément B (lui-même positionné en absolu, fixe ou 
+  relatif) se positionne par rapport à l'élément B, et non par rapport au coin en haut à gauche de la page.
+
+- Lorsque plusieurs éléments s'empilent, il est possible de les ordonner avec  z-index.
+
+##############################################################################################################
+
