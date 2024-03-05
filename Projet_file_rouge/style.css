@@ -127,3 +127,28 @@ a:hover {
     justify-content: center;
     margin-bottom: 15px;
 }
+
+/* Modification pour le portfolio */
+.portfolio-section-photos {
+    background-color: white;
+    padding: 80px;
+}
+
+.portfolio-section-photos h2 {
+    color: #242424;
+    margin-bottom: 80px;
+}
+
+.grid_paysages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px 300px;
+    gap: 15px;
+}
+
+.grid_paysages img,
+.grid_portraits img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
