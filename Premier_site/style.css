@@ -149,39 +149,30 @@ img:hover + h2 {
     color: deeppink;
 }
 
-.one {
+.box {
+    display: flex;
     border: 2px solid black; 
     border-radius: 10px;
     background-color: antiquewhite;
     padding: 50px 30px;
-    order: 3;
 }
 
-.two {
-    border: 2px solid black; 
-    border-radius: 10px;
-    background-color: antiquewhite;
-    padding: 50px 30px;
-    order: 1;
-}
-
-.three {
-    border: 2px solid black; 
-    border-radius: 10px;
-    background-color: antiquewhite;
-    padding: 50px 30px;
-    order: 2;
-    flex: 1;
-}
-
-.conteneur {
+/* .conteneur {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     height: 600px;
     align-items: center;
     /* On utilise flex-wrap pour adapter les éléments en fonction de la taille de l'écran est petite */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* Ajouter des espaces entre les éléments avec gap */
+    /* gap: 20px; */
+/* } */ 
+
+/* Ici on va utiliser la méthode CSS Grids */
+.conteneur {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 150px 300px;
     gap: 20px;
 }
