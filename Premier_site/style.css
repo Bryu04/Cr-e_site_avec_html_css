@@ -243,5 +243,17 @@ a {
     justify-content: center;
     align-items: center;
     width: 250px;
-    display: inline;
+    display: inline-block;
+}
+
+.une {
+    height: 100px;
+}
+
+.deux {
+    height: 200px;
+}
+
+.trois {
+    height: 300px;
 }
