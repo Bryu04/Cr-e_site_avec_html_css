@@ -911,3 +911,35 @@ Vous êtes aussi libre de vous exercer sur des formats plus élaborés qui resse
 Comme d'habitude, vous pouvez consulter la solution sur la branche P3C4-solution.
 
 En résumé
+
+- Les CSS Grids sont complémentaires à Flexbox et permettent de créer facilement des mises en page plus 
+  élaborées que Flexbox, sans forcément avoir des éléments de la même taille.
+
+- Pour déclarer une grid, on déclare simplement  display: grid;  sur le conteneur : notre navigateur comprend 
+  tout de suite que nos éléments sont dans la grid.
+
+- On définit les colonnes avec grid-template-columns  et les rangées avec grid-template-rows : en fonction du 
+  nombre de valeurs passées, de nouvelles colonnes et rangées sont créées.
+
+- En plus des unités classiques  px  ,  em  ,  rem  et  %  , les  fr  sont encore plus simples, et permettent 
+  d'indiquer une fraction de la grille.
+
+- gap  permet d'espacer les éléments entre eux.
+
+- Les grids créent implicitement des lignes horizontales et verticales délimitant les différentes rangées et 
+  colonnes.
+
+- Chaque élément peut avoir :
+
+    - son propre point de départ horizontal avec  grid-row-start  ;
+
+    - son point d'arrivée horizontal avec  grid-row-end  ;
+
+    - son point de départ vertical avec  grid-column-start  ;
+
+    - et son point d'arrivée vertical avec  grid-column-end  .
+
+Et voilà, c'est tout pour le moment sur les grids. Vous commencez à disposer de pas mal d'outils de mise en page CSS. C'est normal si cela vous ne paraît pas encore très clair pour l'instant, mais vous verrez : avec la pratique, ça finit par rentrer ! En attendant, on se retrouve dans le dernier chapitre de la partie, qui nous permettra d'aborder d'autres techniques de mise en page en CSS. Alors à tout de suite !
+
+##############################################################################################################
+
