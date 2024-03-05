@@ -232,3 +232,16 @@ a {
     width: 300px;
     height: 100px;
 }
+
+/* Transformer un bloc en inline */
+
+.item {
+    border: 2px solid black; 
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: 50px 30px;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    display: inline;
+}
