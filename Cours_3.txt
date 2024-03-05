@@ -642,3 +642,250 @@ Alors, la découverte de Flexbox vous a plu ? J'espère, parce que dans le chapi
 
 ##############################################################################################################
 
+Découvrez les bases de CSS Grids
+
+Définissez une grid avec la propriété CSS display: grid;
+
+De la même manière que pour Flexbox, lorsque vous utilisez CSS Grids, vous pouvez imaginer un conteneur, une sorte de "carton" dans lequel vous allez mettre les éléments de votre grid. Sauf que, cette fois-ci, vous allez avoir besoin de déclarer la propriété display: grid; :
+
+.conteneur {
+    display: grid;
+}
+
+Ensuite, il faut préciser quelques éléments supplémentaires si on veut que ça fonctionne. Pour ce faire, il s'agit de se demander comment représenter nos éléments. Lorsque vous créez un tableau, vous réfléchissez aux colonnes et aux rangées qu'il faudra créer. Eh bien, c'est la même chose ici !
+
+On va définir les colonnes et les rangées avec deux propriétés :
+
+  1. grid-template-columns pour le nombre de colonnes, et la largeur de chacune d'entre elles.
+
+  2. grid-template-rows pour le nombre de rangées, et la hauteur de chacune d'entre elles.
+
+Définissez vos colonnes avec la propriété CSS  grid-template-columns
+On a déjà 9 éléments déclarés côté HTML de la manière suivante :
+
+<div class="conteneur">
+    <div class="box">🐸 Élément 1</div>
+    <div class="box">🦊 Élément 2</div>
+    <div class="box">🦄 Élément 3</div>
+    <div class="box">🐶 Élément 4</div>
+    <div class="box">🐨 Élément 5</div>
+    <div class="box">🐒 Élément 6</div>
+    <div class="box">🦆 Élément 7</div>
+    <div class="box">🐙 Élément 8</div>
+    <div class="box">🐋 Élément 9</div>
+</div>
+
+La classe CSS .box permet d'ajouter un peu de style aux éléments. Pour que le contenu plus harmonieux, on va donner à chaque élément une hauteur de  150px :
+
+.box {
+  height: 150px;
+}
+
+Plus bas, dans le fichier CSS, créons 3 colonnes, chacune de  200px  de large, à l'aide de la propriété grid-template-columns:
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+}
+
+Et on obtient :
+
+Magique, n'est-ce pas ?
+
+On n'a même pas eu à dire "je veux 3 colonnes" : le nombre de colonnes a tout simplement été déduit par le navigateur, à partir du moment où on a spécifié 3 largeurs distinctes Si vous définissez 10 largeurs, vous aurez 10 colonnes.
+
+Et vous pouvez moduler la largeur que vous souhaitez pour chacune de vos colonnes. Par exemple, on pourrait écrire :
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 100px 300px 200px;
+}
+
+Et on obtient alors :
+
+Définissez vos rangées avec la propriété CSS grid-template-rows
+
+Passons maintenant à la propriété grid-template-rows. Et on fait bien attention à supprimer la hauteur fixe qu'on avait associée à la classe  .box :  height: 150px;  .
+
+Pourquoi il faut faire ça ? Je ne comprends pas.
+
+En fait, indiquer une hauteur avec la propriété  height  à  .box  a pour effet d'assigner une hauteur fixe pour tous les éléments de classe  .box  . Or, on peut avoir besoin de définir des hauteurs différentes aux rangées, ce qu'on va pouvoir spécifier avec  grid-template-rows  , en indiquant la hauteur de chacune, comme on l'a fait pour  grid-template-columns  :
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px 150px 200px;
+}
+
+Si vous laissez la hauteur fixe et que vous indiquez en même temps différentes hauteurs pour les rangées :
+
+.box {
+  height: 150px;
+}
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px 150px 200px;
+}
+
+…ça ne marche pas, en tout cas, le navigateur va vouloir appliquer les deux instructions en même temps ce qui ne vous donnera pas l'effet voulu et les éléments vont se chevaucher :
+
+Sans hauteur fixe et grâce aux hauteurs spécifiées une à une, on a donc bien 3 rangées, une de 100px  de hauteur, la seconde de  150px  , et la troisième de  200px . Voyez par vous-même :
+
+Pas mal, n'est-ce pas ?
+
+C'est un peu écrasé tout ça. Il faut que j'ajoute des marges ou paddings sur chaque élément pour faire respirer mon contenu ?
+
+Aérez votre contenu avec la propriété CSS  gap
+
+La propriété CSS gap permet de créer des espacements entre vos éléments. Si vous voulez garder les mêmes distances entre les rangées et les colonnes sans avoir à vous compliquer la vie, vous précisez simplement une valeur.
+
+On écrit alors :
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 100px 150px 200px;
+    gap: 10px;
+}
+
+Et on obtient :
+
+Choisissez vos unités
+
+Jusqu'à maintenant, nous avons utilisé une unité en px pour définir les hauteurs et largeurs des rangées et colonnes. Mais il est également possible d'utiliser des em, rem, et des pourcentages.
+
+Et encore mieux : je vais vous montrer une unité qui est spécifique aux grids : les "fraction units", ou fr pour les intimes, qui représentent des parts de largeur dans les colonnes.
+
+Mais pourquoi utiliser les  fr  alors qu'on a des pourcentages ?
+
+Si vous tentez d'utiliser des pourcentages avec CSS Grid, vous verrez que ce n'est pas toujours simple. Si par exemple, vous souhaitez créer 2 colonnes dans une  grid  , et que vous mettez  50%  de largeur pour chacune d'entre elles, vous vous attendez sûrement à ce que votre grid prenne toute la largeur… Et pourtant non : les grid gaps (les espacements entre vos grids) peuvent venir mettre le bazar dans tout ça, et votre grid va dépasser. C'est pourquoi il est encore plus simple d'utiliser des fr , l'unité créée spécialement pour les CSS Grids.
+
+Donc si dans notre code on a :
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 100px 200px;
+    gap: 10px;
+}
+
+… on aura :
+
+… et vous pouvez ajuster la taille en fonction de la colonne. Par exemple :
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 50px 100px 200px;
+    grid-gap: 10px;
+}
+
+… nous donne :
+
+Le code utilisé pour réaliser cette grille est disponible dans le CodePen P3C4a.
+
+Définissez la taille des éléments de votre  grid
+
+Pour l'instant, nos grilles sont assez sages, et nous n'avons rien fait que nous ne pourrions faire avec Flexbox. Mais je vais vous montrer comment secouer tout ça !
+
+Si vous vouliez obtenir ce résultat, par exemple ?
+
+Pour cela, vous allez apprendre à maîtriser les propriétés liées à grid-column  et grid-row.
+
+C'est surtout dans ce genre de cas qu'on voit que CSS Grid est complémentaire à Flexbox. Créer ce type de mise en page serait vraiment plus laborieux avec Flexbox, alors qu'ici, on peut le faire assez simplement.
+
+À chaque fois que vous écrivez display: grid, le navigateur se représente votre conteneur comme un ensemble d'éléments délimités par des lignes horizontales et verticales. Ces lignes sont invisibles, mais peuvent être inspectées avec les outils de développement.
+
+Dans notre cas, pour réaliser une grid similaire à ce que je vous montrais, avec des éléments à cheval sur plusieurs colonnes ou plusieurs rangées, on va devoir indiquer un point de départ et un point d'arrivée pour nos éléments.
+
+On aura besoin des propriétés suivantes pour déclarer nos éléments :
+
+  - grid-column-start indique la ligne verticale de départ de l'élément ;
+
+  - grid-column-end indique la ligne verticale d'arrivée de l'élément ;
+
+  - grid-row-start indique la ligne horizontale de départ de l'élément ;
+
+  - grid-row-end indique la ligne horizontale d'arrivée de l'élément.
+
+Ainsi, on change un peu notre code pour avoir une structure qui nous permet simplement de mettre en place la grid. Ce qui nous donne en HTML :
+
+<div class="conteneur">
+    <div class="box une">🐸 Élément 1</div>
+    <div class="box deux">🦊 Élément 2</div>
+    <div class="box trois">🦄 Élément 3</div>
+    <div class="box quatre">🐶 Élément 4</div>
+    <div class="box cinq">🐨 Élément 5</div>
+    <div class="box six">🐒 Élément 6</div>
+    <div class="box sept">🦆 Élément 7</div>
+    <div class="box huit">🐙 Élément 8</div>
+    <div class="box neuf">🐋 Élément 9</div>
+</div>
+
+Et en CSS, on a :
+
+.conteneur {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-gap: 10px;
+}
+
+Mesurez vos colonnes
+
+Prenons notre première  div  :  .une.
+
+Si on veut qu'elle prenne toute la largeur, comme dans le résultat attendu, on doit alors préciser :
+
+.une {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+Et vous pouvez même l'écrire en une seule ligne avec la propriété raccourcie  grid-column  :
+
+.une {
+    grid-column: 1 / 4;
+}
+
+Attendez, mais pourquoi on dit d'aller jusqu'à  4  pour prendre toute la largeur, alors qu'il n'y a que 3 colonnes ? On ne devrait pas plutôt dire  grid-column-end: 3;  pour dire qu'elle s'arrête à la troisième colonne ?
+
+Et non car ça reviendrait à dire qu'elle s'arrête juste avant le dernier tiers, donc juste avant la troisième colonne. C'est déroutant je vous l'accorde mais en fait on compte +1 avec cette technique. Le navigateur considère que pour couvrir toute la largeur, on "atteint" un élément suivant.
+
+Mesurez vos rangées
+On veut maintenant créer le deuxième élément de la grid, qui s'étale sur deux rangées en hauteur, à partir de la deuxième rangée (l'élément  .une  occupe déjà la première rangée). On précise donc que  .deux  commence à la rangée 2 et finit sur la rangée 4 :
+
+.deux {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+Ce qui équivaut à :
+
+.deux {
+    grid-row: 2 / 4;
+}
+
+En allant jusqu'au bout de notre logique, on obtient bien :
+
+ous pouvez retrouver le code complet de la  grid  dans le CodePen P3C4b.
+
+Si vous avez l'impression de vous embrouiller entre les différentes propriétés de CSS Grid, pas de panique. CSS Grid est relativement avancé en CSS. L'idée de ce chapitre est de vous montrer le champ des possibles avec les grids.
+
+Si vous voulez aller plus loin, vous pouvez :
+
+  - creuser la documentation de la mise en page à l'aide des CSS Grids ;
+
+  - suivre le cours Create Web Page Layouts with CSS (il n’existe pas en version française sur la plateforme 
+    pour l’instant) ;
+
+  - vous faire la main sur le petit jeu Grid Garden 
+    (en anglais, lien : https://codepip.com/games/grid-garden/#fr) (vous pouvez créer un compte gratuitement 
+    sur Codepip).
+
+Nous avons vu quelques-unes des propriétés les plus utiles des CSS Grids, mais il y en a bien d'autres. Des raccourcis qui vous simplifient encore plus la vie, des syntaxes particulièrement claires. Donc n'hésitez pas à jeter un œil à tout cela un peu plus tard dans votre apprentissage du CSS.
+
+À vous de jouer !
+
