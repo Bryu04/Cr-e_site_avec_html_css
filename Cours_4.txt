@@ -1,0 +1,231 @@
+                               Utilisez des fonctionnalités avancées de HTML et CSS
+
+Ajoutez des tableaux
+
+Créez un tableau en HTML et CSS
+
+La balise en paire <table> </table> indique le début et la fin d'un tableau. Cette balise est de type  block  , on va donc la placer en dehors d'un paragraphe ou d'une  div  .
+
+Indiquez les valeurs du tableau avec les balises HTML  <tr>  et  <td> 
+
+Pour construire un tableau ligne par ligne, on indique pour chaque ligne, <tr>  (pour table row ou "rangée du tableau"), le contenu des différentes cellules,<td>  (pour table data ou "donnée" ou "entrée") :
+
+  - <tr> </tr> indique le début et la fin d'une ligne du tableau ;
+
+  - <td> </td>  indique le début et la fin du contenu d'une cellule.
+
+On a une balise de ligne  <tr>  qui englobe un groupe de cellules  <td>  .
+
+Par exemple, si je veux faire un tableau à deux lignes, avec trois cellules par ligne (donc trois colonnes), je devrai taper ceci :
+
+<table>
+    <tr>
+        <td>Carmen</td>
+        <td>33 ans</td>
+        <td>Espagne</td>
+    </tr>
+    <tr>
+        <td>Michelle</td>
+        <td>26 ans</td>
+        <td>États-Unis</td>
+    </tr>
+</table>
+
+Bon, le résultat est un peu déprimant :
+
+C'est un tableau, ça ? Le texte s'est écrit à la suite et il n'y a même pas de bordures…
+
+Oui, un tableau HTML sans CSS paraît bien vide…
+
+Ajoutez des bordures au tableau HTML grâce à la propriété CSS  border
+
+Pour ajouter des bordures, on utilise le sélecteur CSS correspondant !
+
+On utilise td pour sélectionner toutes les cellules des tableaux de la page. Donc pour créer des bordures à nos cellules, on fait :
+
+td /* Toutes les cellules des tableaux... */
+{
+    border: 1px solid black; /* auront une bordure de 1px */
+}
+
+Et voici le résultat juste en dessous :
+
+Hum, ce n'est pas encore aussi parfait que ce qu'on voudrait. En effet, on aimerait qu'il n'y ait qu'une seule bordure entre deux cellules, or ce n'est pas le cas ici.
+
+Collez les bordures du tableau HTML avec la propriété CSS  border-collapse
+border-collapse est une propriété CSS qui permet de “coller les bordures entre elles”. Elle peut prendre deux valeurs :
+
+  1. collapse  : les bordures seront collées entre elles, c'est l'effet qu'on recherche ici ;
+
+  2. separate  : les bordures seront dissociées (valeur par défaut).
+
+On écrit :
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+Ce qui nous permet d'obtenir :
+
+Voilà qui est mieux !
+
+Ajoutez une ligne d'en-tête au tableau avec la balise HTML  <th>
+
+La ligne d'en-tête se crée avec un  <tr>  mais les cellules qu'elle contient sont, cette fois, encadrées par des balises <th>  (pour table header ou "en-tête de tableau" en français) et non pas  <td>  !
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Âge</th>
+        <th>Pays</th>
+    </tr>
+    <tr>
+        <td>Carmen</td>
+        <td>33 ans</td>
+        <td>Espagne</td>
+    </tr>
+    <tr>
+        <td>Michelle</td>
+        <td>26 ans</td>
+        <td>États-Unis</td>
+    </tr>
+</table>
+
+La ligne d'en-tête est très facile à reconnaître pour deux raisons :
+
+  - les cellules sont des<th>  au lieu des  <td>  habituels ;
+
+  - c'est la première ligne du tableau (c'est idiot, mais encore faut-il le préciser).
+
+Comme le nom des cellules est un peu différent pour l'en-tête, il faut penser à mettre à jour le CSS pour lui dire d'appliquer une bordure sur les cellules normales et sur l'en-tête :
+
+table {
+    border-collapse: collapse;
+}
+
+td, th /* Mettre une bordure sur les td ET les th */ {
+    border: 1px solid black;
+}
+
+Ce qui donne :
+
+Comme vous pouvez le constater, le navigateur a mis en gras le texte des cellules d'en-tête. C'est ce que font en général les navigateurs mais, si vous le désirez, vous pouvez changer cela à coups de CSS : modifier la couleur de fond des cellules d'en-tête, leur police, leur bordure, etc. Pour cela, il vous suffit d'utiliser le sélecteur  th  dans le CSS !
+
+Donnez un titre au tableau avec la balise HTML  <caption>
+Normalement, tout tableau doit avoir un titre. Le titre permet de renseigner rapidement le visiteur sur le contenu du tableau. Notre exemple est constitué d'une liste de personnes… oui, mais alors ? Qu'est-ce que cela représente ? Sans titre de tableau, vous le voyez, on est un peu perdu.
+
+Heureusement, il y a <caption> pour ajouter un titre à notre tableau  !
+
+Cette balise se place tout au début du tableau, juste avant l'en-tête. C'est elle qui contient le titre du tableau :
+
+<table>
+    <caption>Passagers du vol 377</caption>
+    <tr>
+        <th>Nom</th>
+        <th>Âge</th>
+        <th>Pays</th>
+    </tr>
+    <tr>
+        <td>Carmen</td>
+        <td>33 ans</td>
+        <td>Espagne</td>
+    </tr>
+    <tr>
+        <td>Michelle</td>
+        <td>26 ans</td>
+        <td>États-Unis</td>
+    </tr>
+</table>
+
+Et voilà le résultat :
+
+Vous pouvez changer la position du titre avec la propriété CSS caption-side. Par défaut, la valeur est  top  (au-dessus du tableau), mais vous pouvez aussi indiquer  bottom  :  le titre sera alors placé en dessous du tableau.
+
+Bon mais on étouffe encore un peu avec ce tableau très compacte !
+
+Oui d'ailleurs, comment on fait pour ajouter des marges dans un tableau, avec du  padding  ?
+
+Exactement, et ça se fait côté CSS avec la propriété padding!
+
+Ajoutez des marges à un tableau HTML avec la propriété CSS  padding
+Pour correctement ajouter des marges à toutes nos cellules, y compris celles de l'en-tête, on va ajouter la propriété CSS  padding sur les sélecteurs  td  et  th  à la fois (comme on l'avait fait pour ajouter des bordures, souvenez-vous) :
+
+td, th {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+Et voilà le résultat avec une marge de 15 pixels :
+
+C'est mieux !
+
+Et comment on fait pour centrer un tableau ? Par défaut il est à gauche…
+
+C'est simple, et ça se passe une fois de plus dans le fichier CSS, cette fois, au niveau du sélecteur  table !
+
+Centrez un tableau HTML avec la propriété CSS  margin
+Un peu plus haut dans le chapitre avait utilisé le sélecteur  table  pour ajouter la propriété CSS  border-collapse  qui nous permettait de "coller" les cellules entre elles.
+
+C'est également sous le sélecteur  table  qu'on va indiquer au navigateur de centrer le tableau sur la page grâce à la propriété CSS  margin  , pour laquelle on va préciser la valeur auto:
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+Voici ce que ça donne :
+
+Super ! Bon maintenant, voyons comment structurer un tableau un peu plus complexe. Nous avons appris à construire un petit tableau simple. Cela peut suffire dans la plupart des cas, mais vous aurez parfois besoin de réaliser des tableaux plus… complexes.
+
+Structurez un grand tableau avec des balises HTML
+
+Divisez un tableau avec les balises HTML  thead,  tbody et  tfoot
+Si votre tableau est assez gros, vous aurez tout intérêt à le découper en plusieurs parties. Pour cela, il existe des balises HTML qui permettent de définir les trois “zones” du tableau :
+
+  1. l'en-tête du tableau (en haut) se définit avec les balises <thead></thead>  
+
+  2. le corps du tableau (au centre) se définit avec les balises <tbody></tbody>  
+
+  3. le pied du tableau (en bas) se définit avec les balises <tfoot></tfoot>
+
+Vous vous servirez de ces balises, surtout si votre tableau est assez gros, et que vous avez besoin de l'organiser plus clairement. Pour les “petits” tableaux, vous pouvez garder sans problème l'organisation plus simple que nous avons vue au début.
+
+Ok d'accord, mais en fait, je vois bien ce qu'on peut mettre en en-tête et à l'intérieur du tableau, mais que mettre dans le pied de tableau ?
+
+Vous pouvez par exemple y mettre un résumé, ou un total. Le pied de tableau se mettra, comme l'en-tête, par défaut, en gras :
+
+Dans cet exemple de tableau, ce n'est pas forcément très parlant de mettre le même contenu dans l'en-tête et le pied du tableau. Mais cela peut être utile lorsqu'un tableau est très long.
+
+Entraînez-vous et manipulez le code de ce tableau sur le CodePen P4C1a.
+
+Vous l'aurez sûrement remarqué dans le code HTML : c'est un peu déroutant, mais il est conseillé d'écrire les balises dans l'ordre suivant :
+
+  1. <thead>
+
+  2. <tfoot>
+
+  3. <tbody>
+
+Fusionnez des cellules du tableau avec les attributs colspan et rowspan
+
+Pour fusionner des cellules entre elles, il suffit d'ajouter un attribut dans la balise HTML <td>. Cela permet d'indiquer le nombre de cellules à fusionner entre elles (la balise des cellules).
+
+II existe deux attributs pour deux types de fusions différentes :
+
+  1. l'attribut  colspan  permet de fusionner des colonnes : la fusion s'effectue horizontalement, aussi bien 
+     sur les lignes d'en-tête que sur le contenu lui-même. 
+
+  2. l'attribut  rowspan  permet de fusionner des lignes : là, deux lignes seront groupées entre elles. La 
+     fusion s'effectuera verticalement.
+
+Voyons tout de suite à quoi cela peut ressembler :
+
+Vous trouverez le code utilisé pour réaliser ce tableau dans le CodePen P4C1b.
+
+Notez qu'on peut modifier l'alignement vertical du texte des cellules de tableaux avec la propriétévertical-align qu'on a vue dans le chapitre "Abordez d'autres techniques de mise en page".
+
+À vous de jouer !

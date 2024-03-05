@@ -1,3 +1,5 @@
+                                       Agencez le contenu de vos pages
+
 Structurez votre page
 
 Utilisez la balise  <header> pour l'en-tête
