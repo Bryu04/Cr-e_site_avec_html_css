@@ -72,6 +72,7 @@ h2 {
     color: white;
     /* Ajouté des arrondis  */
     border-radius: 50px;
+    display: inline-block;
 }
 
 .nouvel_border {
