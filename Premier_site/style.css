@@ -243,7 +243,9 @@ a {
     justify-content: center;
     align-items: center;
     width: 250px;
-    display: inline-block;
+    /* display: inline-block; */
+    /* On peut aussi cacher certains éléments de la page avec display */
+    display: none;
 }
 
 .une {
