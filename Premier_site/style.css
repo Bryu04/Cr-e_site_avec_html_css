@@ -155,6 +155,8 @@ img:hover + h2 {
     border-radius: 10px;
     background-color: antiquewhite;
     padding: 50px 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .conteneur {
@@ -173,6 +175,51 @@ img:hover + h2 {
 .conteneur {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 150px 300px;
+    grid-template-rows: 150px 100px 100px 200px 150px;
     gap: 20px;
+}
+
+.one {
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.two {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.three {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.four {
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+
+.five {
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+
+.six {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.seven {
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+
+.eight {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.nine {
+    grid-column-start: 3;
+    grid-column-end: 6;
 }
