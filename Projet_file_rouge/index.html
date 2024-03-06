@@ -30,9 +30,9 @@
     <main>
     <section class="accueil-introduction">
     <div>
-    <h1 class="Titre">Photographie</h1>
+    <h1 class="Titre">Robbie Lens Photographie</h1>
     <p class="Texte_intro">Où <em>professionalisme</em> s'allie avec <em>passion</em>. Depuis plus de 5 ans maintenant, j'exerce mon métier avec la passion qui m'anime : capturer l'essence de chaque instant.</p>
-    <a href="dossier-demo/portfolio.html" class="cta"> UN PROJET ? ÉCRIVEZ-MOI</a>
+    <a href="#contact" class="cta"> UN PROJET ? ÉCRIVEZ-MOI</a>
     </div>
     
     <img src="images/robbie-lens.png" alt="Portrait de la photographe Robbie Lens" title="Robbie Lens"/>
@@ -53,18 +53,18 @@
             <img src="images/accueil/element-6.png" alt="Lac Wanaka - Nouvelle-Zélande" title="Lac Wanaka - Nouvelle-Zélande">
         </div>
     </section>
-    <section class="section-contact">
+    <section id="contact" class="section-contact">
         <h2>Parlons de votre projet</h2>
         <!-- Ajoutons un formulaire de contact -->
         <form action="" method="get">
-            <fieldset>
+            <fieldset class="contact">
                 <label for="nom">nom</label>
-                <input type="text" name="nom" id="nom"/>
+                <input type="text" name="nom" id="nom" autofocus required/>
                 <label for="email">email</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" required/>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="vos_message">
                 <label for="message">message</label>
                 <textarea name="message" id="message" rows="10"></textarea>
             </fieldset>
