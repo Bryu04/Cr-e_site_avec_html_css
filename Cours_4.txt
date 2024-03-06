@@ -267,3 +267,367 @@ Dans le chapitre suivant, on va apprendre à créer des formulaires. Alors à to
 
 ##############################################################################################################
 
+Créez des formulaires
+
+Pour créer un formulaire, vous aurez besoin de la balise HTML <form> </form>, elle permet d'indiquer le début et la fin du formulaire.
+
+Voici les deux attributs indispensables pour construire un formulaire fonctionnel :
+
+  1. L'attribut method indique par quel moyen les données vont être envoyées. Ne vous en préoccupez pas pour 
+     le moment. Sachez juste que les méthodes les plus utilisées sont get et post.
+
+  2. L'attribut action indique l'adresse de la page ou du programme qui va traiter les informations. 
+
+Tout cela va nous permettre de créer la structure de base d’un formulaire en HTML :
+
+<p>Texte avant le formulaire</p>
+    <form method="get" action="">
+        <p>Texte à l'intérieur du formulaire</p>
+    </form>
+<p>Texte après le formulaire</p>
+
+Je donne la valeur  get  à l'attribut  method ; et je laisse un champ vide : " " pour  action.
+
+Pourquoi est-ce qu'on le laisse un champ vide dans l'attribut  action  ?
+
+Si notre projet comportait également du code en *backend, c'est là qu'on indiquerait une URL qui pourrait traiter notre formulaire. Mais ici, en laissant un champ vide, on indique à notre formulaire qu'on restera sur la même URL, ce qui nous permettra plus tard d'inspecter ce qu'on obtient, assez simplement.
+
+*En règle générale, un site internet est composé de deux parties :
+
+  1. une partie frontend, c’est la partie visible de notre site internet, celle qui s’affiche dans votre 
+     navigateur grâce à HTML, CSS et JavaScript ; 
+
+  2. une partie backend, qui se trouve hébergée et qui s’exécute sur un serveur web. Elle permet de faire des 
+     tâches plus complexes, comme traiter un formulaire, envoyer un mail, sauvegarder des informations dans 
+     une base de données, etc.
+
+Voyons maintenant quelle balise HTML utiliser pour saisir du texte dans un formulaire.
+
+Insérez des champs de texte avec la balise HTML  <input>
+
+La balise HTML <input> est une balise orpheline.
+
+On la retrouvera plusieurs fois dans ce chapitre. Souvent, ce sera la valeur de son attribut, type, qui changera selon le type de champ que l'on veut ajouter : texte monoligne, email, date, etc.
+
+Ajoutez une zone de texte monoligne avec  <input type="text">
+Une zone de texte monoligne est une zone de texte d’une seule ligne. On l'utilise pour des champs de texte qui ne requièrent que quelques mots, comme un nom ou un prénom, par exemple.
+
+On ouvre avec la balise <input> et on précise la valeur de l'attribut (type="text" ) pour indiquer qu'il s'agit d'une zone de texte d'une seule ligne :
+
+<input type="text">
+
+Ensuite, il faut donner un nom à votre zone de texte ; pour cela on utilise l'attribut  name.
+
+Ce nom n'apparaît pas sur la page, mais il est indispensable parce qu’il permettra plus tard d'identifier le champ d'où viennent les informations.
+
+Commençons par demander au visiteur de renseigner son prénom. On écrit alors :
+
+<input type="text" name="prenom">
+Voici ce que cela donne pour un formulaire très basique avec uniquement notre champ de texte monoligne qui demande son prénom au visiteur du site :
+
+<form method="get" action="">
+    <input type="text" name="prenom">
+</form>
+
+Comment le visiteur saura qu'il faut renseigner son prénom si l'attribut name ne s'affiche pas ?
+
+Bien vu ! Lorsqu’un visiteur tombe sur un champ de texte à saisir, il ne sait pas toujours ce qu'il doit y écrire. C'est justement le rôle du champ libellé !
+
+Ajoutez un champ de libellé avec la balise HTML  <label> </label>
+
+Un libellé est un champ de texte prérempli avec une indication pour guider le visiteur du site sur ce qu’il doit écrire. On crée un champ de libellé avec la balise HTML<label> </label>  :
+
+<form method="get" action="">
+    <label>Votre prénom</label> : <input type="text" name="prenom">
+</form>
+
+Mais cela ne suffit pas : il faut lier le label à la zone de texte.
+
+Pour ce faire, on doit donner un nom à la zone de texte, non pas avec l'attribut  name  mais avec l'attribut id  (que l'on peut utiliser sur toutes les balises).
+
+Un attribut  name  et un attribut id  sur le champ ? Cela ne va-t-il pas faire double emploi ?
+
+ - L'attribut id est utilisé pour identifier l'élément HTML afin d’y accéder et de le manipuler. Il est donc 
+   unique pour cet élément.
+
+- L'attribut name, lui, réfère à la variable du formulaire que l’élément concerne. Ici, il n’y a qu’un seul 
+  élément qui pourra référer à la variable  prenom  ;  name et  id  auront donc la même valeur. Mais lorsque 
+  nous utiliserons des  checkbox  ou des  radio, plusieurs éléments correspondront à la même variable. Mais 
+  nous verrons cela un peu plus tard, et vous comprendrez mieux. 
+
+Pour lier le label au champ, il faut lui donner un attribut  for  qui a la même valeur que l' id  du champ :
+
+<form method="get" action="">
+    <p>
+        <label for="prenom">Votre prénom</label> : <input type="text" name="prenom" id="prenom">
+    </p>
+</form>
+
+Ce qui veut dire en français :
+
+"Pour le champs de texte monoligne, nommé  prenom, il y aura un libellé "Votre prénom" qui s'affichera".
+
+On peut ajouter un certain nombre d'autres attributs à la balise  <input>  pour personnaliser son fonctionnement :
+
+ - agrandir le champ avec  size  ;
+
+ - limiter le nombre de caractères que l'on peut saisir avec  maxlength  ;
+
+ - pré-remplir le champ avec une valeur par défaut à l'aide de  value  ;
+
+ - donner une indication sur le contenu du champ avec  placeholder . Cette indication disparaîtra dès que le 
+   visiteur aura cliqué à l'intérieur du champ.
+
+Dans l'exemple suivant, la zone de texte contient une indication permettant de comprendre ce qu'il faut saisir ; le champ fait 30 caractères de long, mais on ne peut écrire que 20 caractères maximum à l'intérieur :
+
+<form method="get" action="">
+    <p>
+        <label for="prenom">Votre prénom :</label>
+        <input type="text" name="prenom" id="prenom" placeholder="Ex. : Mathieu" size="30" maxlength="20">
+    </p>
+</form>
+
+Testez vous-même le résultat pour observer le comportement du champ. En attendant, voici le rendu du champ dans son état initial (avant que le visiteur ne renseigne quoi que ce soit) :
+
+Ajoutez une zone de texte multiligne avec  <textarea> </textarea>
+
+Une zone de texte multiligne est une zone de texte de plusieurs lignes. C’est utilisé dans le cas où le visiteur d’un site aurait besoin d’écrire un paragraphe de texte dans un formulaire.
+
+Pour créer une zone de texte multiligne, on utilise :<textarea> </textarea>  .
+
+Comme pour tout autre élément du formulaire, il faut lui donner un nom avec  name  et utiliser un  label   qui explique de quoi il s'agit :
+
+<form method="get" action="">
+    <p>
+        <label for="ameliorer">Des conseils pour améliorer mon site ?</label><br>
+        <textarea name="ameliorer" id="ameliorer"></textarea>
+    </p>
+</form>
+
+Et voici le résultat en image :
+
+Grâce à la poignée située en bas à droite de la zone de texte, le visiteur peut étirer le champ pour mieux visualiser ce qu'il écrit (ce qui n'est pas possible avec un champ de texte monoligne) :
+
+Mais on peut modifier la taille par défaut du  <textarea>, et ce, de deux façons différentes :
+
+  1. En appliquant au  <textarea>  les propriétés CSS width  et height .
+
+  2. En ajoutant à la balise  <textarea>  les attributs :
+
+      1. rows  (indique le nombre de lignes qui peuvent être affichées) ;
+
+      2. et  cols  (indique le nombre de colonnes qui peuvent être affichées). 
+
+Vous pouvez pré-remplir le  <textarea>  avec une valeur par défaut. Dans ce cas, on n'utilise pas l'attribut  value  : on écrit tout simplement le texte par défaut entre la balise ouvrante et la balise fermante !
+
+Ok mais on n'avait pas parlé plus haut de la balise  input  ? Et expliqué que ce serait l'attribut  type  qui changerait selon le type de champ ? Or on a déjà vu deux autres champs (libellé et multiligne qui ont des balises spécifique, je ne comprends pas.
+
+Vous avez raison, les balises libellé et zone de texte multiligne sont spécifiques : libellé n'est pas un champ de saisie (le visiteur ne rempli pas un libellé, c'est juste une indication pour lui) ; et le textearea permet de spécifier un champs étirable.
+
+Cela dit, en dehors du champs de texte monoligne, il existe d'autres type de saisie. On utilisera alors la balise  input  et l'attribut  type  (pour lequel on indiquera un type de champ en particulier).
+
+Utilisez  <input>  pour des formats de saisie particuliers
+
+Vous pouvez créer de nombreux types de champs de saisie :
+
+Type de champ                     Code
+
+un e-mail                         <input type="email">
+
+une URL                           <input type="url">
+
+                                  On peut demander à saisir une adresse absolue, 
+                                  commençant généralement par  http:// 
+
+un numéro de téléphone            <input type="tel">
+
+un nombre entier                  <input type="number">
+
+                                  Le champ s'affiche en général avec des petites flèches pour 
+                                  changer la valeur.
+
+un curseur 
+(aussi appelé “slider”)           <input type="range">
+
+                                  On utilise range pour demander au visiteur 
+                                  une valeur comprise entre deux bornes :
+
+une date                          Différents types de champs de sélection de date existent, comme 
+
+                                  <input type="date"> pour sélectionner une date :
+
+
+                                  Mais il existe des variantes :
+
+                                  <input type="time"> pour l'heure ;
+
+                                  <input type="week">  pour la semaine ;
+
+                                  <input type="month"  pour le mois ;
+
+                                  <input type="datetime">  pour la date et l'heure (avec 
+                                  gestion du décalage horaire) ;
+
+                                  <input type="datetime-local">  pour la date et l'heure (sans 
+                                  gestion du décalage horaire).
+
+                                  Vérifiez bien quels navigateurs gèrent ce type de champ, 
+                                  il n'est pas encore complètement reconnu.
+
+une recherche                     <input type="search">
+
+
+Pour les types de champs nombre, date et curseur, vous pouvez personnaliser le fonctionnement du champ avec les attributs suivants :
+
+      - min  : valeur minimale autorisée ;
+
+      - max  : valeur maximale autorisée ;
+
+      - step  : c'est un “pas” de déplacement. Si vous indiquez un pas de 2, le champ n'acceptera que des 
+                valeurs de 2 en 2 (par exemple 0, 2, 4, 6…).
+
+Laissez le visiteur choisir une option
+
+HTML offre plusieurs manières de choisir une ou des option(s) dans un formulaire. Ce sont des éléments qui demandent au visiteur de faire un choix parmi une liste de possibilités, comme :
+
+   1. Les cases à cocher (plusieurs choix possibles).
+
+   2. Les boutons radio (un seul choix possible).
+
+   3. Les listes déroulantes (un seul choix possible).
+
+Insérez des cases à cocher avec  <input type="checkbox">
+
+On crée une case à cocher avec la balise  <input>  en spécifiant le type  checkbox qui signifie "case à cocher" en français :
+
+<input type="checkbox" name="choix">
+
+Rajoutez un  <label>  et le tour est joué :
+
+<form method="get" action="">
+    <p>
+        Cochez les aliments que vous aimez manger :<br>
+        <input type="checkbox" name="frites" id="frites"> <label for="frites">Frites</label><br>
+        <input type="checkbox" name="steak" id="steak"> <label for="steak">Steak</label><br>
+        <input type="checkbox" name="epinards" id="epinards"> <label for="epinards">Épinards</label><br>
+        <input type="checkbox" name="huitres" id="huitres"> <label for="huitres">Huitres</label>
+    </p>
+</form>
+
+Ce qui donne, une liste d'aliments (le visiteur a la possibilité d'en cocher plusieurs) :
+
+N'oubliez pas de donner un nom différent à chaque case à cocher, cela vous permettra d'identifier plus tard lesquelles ont été cochées par le visiteur.
+
+Vous pouvez faire en sorte qu'une case soit cochée par défaut, avec l'attribut  checked  :  <input type="checkbox" name="choix" checked>.
+
+Normalement, tout attribut possède une valeur. Dans le cas présent, en revanche, ajouter une valeur n'est pas obligatoire : la présence de l'attribut suffit à faire comprendre à l'ordinateur que la case doit être cochée. Si cela vous perturbe, sachez que vous pouvez donner n'importe quelle valeur à l'attribut (certains développeurs écrivent parfois checked="checked" mais c'est un peu redondant). Dans tous les cas, la case sera cochée.
+
+Insérez des boutons radio avec  <input type="radio">
+
+Les boutons radio permettent au visiteur de faire un choix (et un seul) parmi une liste de possibilités. Il y a une petite difficulté supplémentaire par rapport aux cases à cocher : il faut organiser les boutons radio en groupes.
+
+Les options d'un même groupe possèdent le même nom, name, mais chaque option doit avoir une valeur (value) différente.
+
+La balise à utiliser est toujours  <input>, avec cette fois la valeur radio pour l'attribut type :
+
+<form method="get" action="">
+    <p>
+        Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br>
+        <input type="radio" name="age" value="moins15" id="moins15"> <label for="moins15">Moins de 15 ans</label><br>
+        <input type="radio" name="age" value="medium15-25" id="medium15-25"> <label for="medium15-25">15-25 ans</label><br>
+        <input type="radio" name="age" value="medium25-40" id="medium25-40"> <label for="medium25-40">25-40 ans</label><br>
+        <input type="radio" name="age" value="plus40" id="plus40"> <label for="plus40">Plus de 40 ans</label>
+    </p>
+</form>
+
+Ce qui donne :
+
+Pourquoi avoir mis le même nom pour chaque option ?
+
+Tout simplement pour que le navigateur sache de quel groupe votre sélection fait partie. Essayez d'enlever les attributs  name, vous verrez qu'il devient possible de sélectionner tous les éléments d'options. Or, ce n'est pas ce que l'on veut ; c'est pour cela qu'on les lie entre eux en leur donnant un nom identique.
+
+Vous noterez que cette fois on a choisi un id différent de name.
+
+En effet, les valeurs de name étant identiques, on n'aurait pas pu différencier les id.
+
+Si vous avez deux zones d'options différentes, il faut donner un  name unique à chaque groupe :
+
+<form method="get" action="">
+    <p>
+        Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br>
+        <input type="radio" name="age" value="moins15" id="moins15"> <label for="moins15">Moins de 15 ans</label><br>
+        <input type="radio" name="age" value="medium15-25" id="medium15-25"> <label for="medium15-25">15-25 ans</label><br>
+        <input type="radio" name="age" value="medium25-40" id="medium25-40"> <label for="medium25-40">25-40 ans</label><br>
+        <input type="radio" name="age" value="plus40" id="plus40"> <label for="plus40">Plus de 40 ans</label>
+    </p>
+    <p>
+        Sur quel continent habitez-vous ?<br>
+        <input type="radio" name="continent" value="europe" id="europe"> <label for="europe">Europe</label><br>
+        <input type="radio" name="continent" value="afrique" id="afrique"> <label for="afrique">Afrique</label><br>
+        <input type="radio" name="continent" value="asie" id="asie"> <label for="asie">Asie</label><br>
+        <input type="radio" name="continent" value="amerique" id="amerique"> <label for="amerique">Amérique</label><br>
+        <input type="radio" name="continent" value="oceanie" id="oceanie"> <label for="oceanie">Océanie</label>
+    </p>
+</form>
+
+Ce qui donne :
+
+Insérez une liste déroulante avec les balises   <select>  et  <option>
+
+Le fonctionnement est un peu différent :
+
+  1. On utilise la balise <select> </select>  pour indiquer le début et la fin de la liste déroulante.
+
+  2. On ajoute l'attribut  name  à la balise pour donner un nom à la liste.
+
+  3. Puis, à l'intérieur du  <select> </select>, on place plusieurs balises <option> </option>  (une par choix 
+     possible), pour donner à chacune d'elles un attribut  value afin d'identifier ce que le visiteur a 
+     choisi :
+
+<form method="get" action="">
+    <p>
+        <label for="pays">Dans quel pays habitez-vous ?</label><br>
+        <select name="pays" id="pays">
+            <option value="espagne">Espagne</option>
+            <option value="royaume-uni">Royaume-Uni</option>
+            <option value="canada">Canada</option>
+            <option value="japon">Japon</option>
+        </select>
+    </p>
+</form>
+
+Si vous voulez qu'une option soit sélectionnée par défaut, utilisez l'attribut  selected  :
+
+<option value="canada" selected>Canada</option>
+
+À vous d'essayer pour voir ce que ça donne :
+
+Entraînez-vous à manipuler tous ces éléments d’option avec le CodePen P4C2.
+
+Et mais c'est bien joli tout ça, mais normalement on rajoute un bouton d'envoi à la fin d'un formulaire pour que le visiteur puisse nous envoyer les données saisies, non ?
+
+Bien vu ! C'est ce que l'on voit dans le prochain chapitre !
+
+En résumé
+
+- Un formulaire est englobé par la balise HTML   <form></form>  à laquelle on ajoute les attributs  method  et  action.
+
+- On utilise ensuite d'autres balises HTML pour permettre au visiteur du site de saisir des informations :
+
+           - la balise orpheline  <input>  pour un champ de saisie monoligne ;
+
+           - la balise en paire  <textarea> </textarea>  pour un champ de saisie multiligne ;
+
+           - la balise en paire  <select> </select>  suivi d'options avec la balise en paire  
+             <option> </option>  pour une liste déroulante.
+
+- Le champ  <input>  peut également être configuré pour saisir d'autres types de données : e-mail, URL, numéro 
+  de téléphone, date, etc.
+
+- Un label peut être relié à n'importe quel input avec l'attribut  for  correspondant à l'attribut  id  pour 
+  le champ utilisé.
+
+Vous avez vu les bases des formulaires ! Bravo à vous ! Mais nous n'avons pas encore terminé : dans le chapitre suivant, vous verrez comment regrouper vos champs, et envoyer votre formulaire. Ce sera l'occasion de vous exercer sur le projet de Robbie Lens. Alors à tout de suite !
+
+##############################################################################################################
+
