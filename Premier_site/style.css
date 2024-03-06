@@ -276,3 +276,52 @@ table {
     border-collapse: collapse;
     border: 2px solid red;
 }
+
+/* Changer la mise en forme du formulaire */
+input[type='submit'] {
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid black;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 0px 10px;
+}
+
+fieldset {
+    background-color: wheat;
+    border-radius: 20px;
+}
+
+fieldset p {
+    font-family: Arial;
+    /* ON change la taille des paragrahes. L'unité relatif em s'adapte à la taille de l'écran */
+    font-size: 1em;
+    /* Changer le style des paragrahes en : italics, gras, souligner */
+    font-style: normal;
+    color: black;
+    margin: 0px;
+    padding: 10px;
+    background-color: wheat;
+}
+
+legend {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+.formulaire {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
