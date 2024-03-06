@@ -229,3 +229,21 @@ Vous trouverez le code utilisé pour réaliser ce tableau dans le CodePen P4C1b.
 Notez qu'on peut modifier l'alignement vertical du texte des cellules de tableaux avec la propriétévertical-align qu'on a vue dans le chapitre "Abordez d'autres techniques de mise en page".
 
 À vous de jouer !
+
+Vous allez maintenant pouvoir construire le tableau des tarifs de Robbie Lens !
+
+Vous verrez que la base de code a été réorganisée :
+
+  - le fichier CSS a été découpé en 4 fichiers CSS différents qui se trouvent dans le dossier  style ;
+
+  - le fichier de base  style.css  est importé par chaque page ;
+
+  - chaque page possède son propre fichier CSS.
+
+Vous ajouterez les tarifs à la suite de la page "À propos", après le lien Call to action (appel à l’action).
+
+Voilà à quoi le tableau devrait ressembler :
+
+Comme d'habitude, vous trouverez la base de code pour faire l’exercice sur la branche P4C1-exercice, et vous pouvez consulter la solution sur la branche P4C1-solution pour vérifier vos acquis.
+
+En résumé

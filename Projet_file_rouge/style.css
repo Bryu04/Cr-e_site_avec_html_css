@@ -183,3 +183,31 @@ a:hover {
 .lien-conteneur-photo:hover .photo-hover {
     display: flex;
 }
+
+td, th {
+    border: 1px solid  #8e86b5;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+td {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 100;
+}
+
+table {
+    border-collapse: collapse;
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    margin-top: 100px;
+}
+
+caption {
+    padding-bottom: 60px;
+}
