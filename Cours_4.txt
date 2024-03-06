@@ -631,3 +631,114 @@ Vous avez vu les bases des formulaires ! Bravo à vous ! Mais nous n'avons pas e
 
 ##############################################################################################################
 
+Finalisez un formulaire et ajoutez un bouton d'envoi
+
+Il ne nous reste plus qu'à agrémenter notre formulaire de quelques dernières fonctionnalités, puis nous pourrons ajouter le bouton d'envoi du formulaire.
+
+Regroupez des champs avec la balise  <fieldset>
+
+Si votre formulaire grossit et comporte beaucoup de champs, il peut être utile de les regrouper au sein de plusieurs balises <fieldset>.
+
+Chaque <fieldset> peut contenir une légende avec la balise<legend>. Regardez cet exemple :
+
+<form method="get" action="">
+  <fieldset>
+     <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
+     <label for="nom">Quel est votre nom ?</label>
+     <input type="text" name="nom" id="nom">
+     <label for="prenom">Quel est votre prénom ?</label>
+     <input type="text" name="prenom" id="prenom">
+     <label for="email">Quel est votre e-mail ?</label>
+     <input type="email" name="email" id="email">
+  </fieldset>
+  <fieldset>
+     <legend>Votre souhait</legend> <!-- Titre du fieldset -->
+     <p>
+        Faites un souhait que vous voudriez voir exaucé :
+        <input type="radio" name="souhait" value="riche" id="riche"> <label for="riche">Être riche</label>
+        <input type="radio" name="souhait" value="celebre" id="celebre"> <label for="celebre">Être célèbre</label>
+        <input type="radio" name="souhait" value="intelligent" id="intelligent"> <label for="intelligent">Être <strong>encore</strong> plus intelligent</label>
+        <input type="radio" name="souhait" value="autre" id="autre"> <label for="autre">Autre...</label>
+     </p>
+     <p>
+        <label for="precisions">Si "Autre", veuillez préciser :</label>
+        <textarea name="precisions" id="precisions" cols="40" rows="4"></textarea>
+     </p>
+  </fieldset>
+</form>
+
+On ajoute un peu de CSS pour avoir un style sur notre fieldset et voilà le résultat :
+
+Vous voyez : chaque groupe est comme "encadré". Cela vous permet d'ajouter du style, et de visuellement séparer vos éléments entre eux.
+
+Manipulez le résultat obtenu avec le CodePen P4C3.
+
+Sélectionnez automatiquement un champ avec autofocus
+
+Vous pouvez également placer automatiquement le curseur dans l'un des champs de votre formulaire, avec l'attribut autofocus. Dès que le visiteur chargera la page, le curseur se placera dans ce champ. C'est très pratique d'un point de vue de l'expérience utilisateur.
+
+Par exemple, pour que le curseur soit par défaut dans le champ  prenom, on écrit :
+
+<input type="text" name="prenom" id="prenom" autofocus>
+
+Rendez un champ obligatoire avec required
+Vous pouvez également faire en sorte qu'un champ soit obligatoire, en lui donnant l'attributrequired.
+
+<input type="text" name="prenom" id="prenom" required>
+
+Le navigateur indiquera alors au visiteur, si le champ est vide au moment de l'envoi, qu'il doit impérativement être rempli.
+
+On dispose de pseudo-classes en CSS pour changer le style :
+
+des éléments requis avec  :required  ;
+
+et des éléments invalides avec  :invalid  .
+
+N'oubliez pas non plus que vous disposez de la pseudo-classe  :focus  pour changer l'apparence d'un champ lorsque le curseur se trouve à l'intérieur.
+
+Exemple pour colorer le fond des champs requis :
+
+:required {
+    background-color:#F2A3BB;
+}
+
+Créez le bouton d'envoi du formulaire avec  <input>
+
+Pour créer le bouton d'envoi, c'est encore la balise  <input>  qu'on utilise.
+
+Elle existe en quatre versions :
+
+   1. type="submit"  : c'est celui que vous utiliserez le plus souvent. Le visiteur sera conduit à la page 
+      indiquée dans l'attribut  action  du formulaire.
+
+   2. type="reset"  : remise à zéro du formulaire (testez pour voir).
+
+   3. type="image"  : équivalent du bouton  submit, présenté cette fois sous forme d'image. Rajoutez 
+      l'attribut  src  pour indiquer l'URL de l'image.
+
+   4. type="button"  : bouton générique, qui n'aura (par défaut) aucun effet. En général, ce bouton est géré 
+      en JavaScript pour exécuter des actions sur la page, mais nous n'apprendrons pas à le faire dans le 
+      cadre de ce cours.
+
+On peut changer le texte affiché à l'intérieur des boutons avec l'attribut  value :
+
+<input type="submit" value="Envoyer">
+
+Ce qui nous donne un input qui a l'apparence d'un bouton :
+
+Cela ne fonctionne pas sur CodePen, c'est normal. Essayez de créer cela en code local si vous voulez voir ce qui se passe.
+
+Lorsque vous cliquez sur le bouton Envoyer, le formulaire vous amène alors à la page indiquée dans l'attribut  action. Le seul petit souci, c'est que nous n'avons pas de page à indiquer en backend ici.
+
+Comme je vous l'avais dit au chapitre précédent, puisque nous avons gardé l'attribut  action  vide dans la balise  <form>  , le navigateur comprend qu'il doit rester sur la même page. En revanche, si vous observez bien la barre URL de votre navigateur, vous verrez le contenu de votre formulaire apparaître à la suite :
+
+index.html?nom=nebra&prenom=mathieu&email=coucou%40mathieu.com&souhait=autre&precisions=Apprendre+le+machine+learning
+
+Donc, il se passe bien quelque chose !
+
+Mais comme je l'avais dit au chapitre précédent, le HTML et CSS ne sont pas suffisants pour traiter ces informations. Il est nécessaire d'apprendre un nouveau langage, comme le PHP, pour pouvoir “récupérer” les informations saisies et décider quoi en faire.
+
+Cela tombe bien, j'ai aussi rédigé un cours sur le langage PHP pour ceux que cela intéresse !
+
+À vous de jouer !
+
