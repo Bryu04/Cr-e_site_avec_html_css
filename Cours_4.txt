@@ -978,3 +978,25 @@ Comme d'habitude, vous pouvez accéder à la solution sur la branche P4C4-soluti
 
 En résumé
 
+Pour adapter un site internet aux différentes tailles d'écran, plusieurs techniques sont nécessaires :
+
+  - Il faut tout d'abord réussir à sélectionner les différentes tailles d'écran disponibles, afin d'appliquer 
+    le style souhaité. 
+
+  - Pour cela, on a recours aux media queries qui sont la manière de "conditionner" le style appliqué : "Si 
+    l'écran de l'utilisateur est plus petit que la taille  XXXpx  , alors appliquer ce style".
+
+  - Il est ensuite possible d'utiliser les différentes astuces :
+
+         - display: none  pour cacher un élément qui ne rentre pas sur les tailles d'écran plus petites ;
+
+         - overflow  pour permettre de scroller avec la souris dans un élément container ;
+
+         - min-width  et  max-width  pour définir des tailles minimum et maximum.
+
+Bravo à vous ! Vous avez quasiment terminé ce cours ! 
+
+Dans le prochain chapitre, nous vous donnerons quelques astuces pour aller plus loin dans votre apprentissage du HTML et du CSS mais de manière générale, dans le monde du Web.
+
+##############################################################################################################
+
