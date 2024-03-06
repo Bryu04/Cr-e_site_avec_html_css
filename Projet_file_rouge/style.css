@@ -289,3 +289,18 @@ input[type='submit'] {
 input[type='submit']:hover {
     background: linear-gradient(#696484,#8788BA);
 }
+
+@media screen and (max-width:1200px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .accueil-introduction,
+    form {
+        max-width: 1000px;
+    }
+
+    table {
+        display: none;
+    }
+}
