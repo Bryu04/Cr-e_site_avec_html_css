@@ -331,6 +331,7 @@ form {
 @media screen and (max-width: 1200px) {
     p {
         color: deeppink;
+        overflow: scroll;
     }
     
     .item {
