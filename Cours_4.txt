@@ -765,3 +765,18 @@ Pour ce qui est du style du formulaire, vous trouverez le résultat final du sit
 Alors, qu’est-ce que ça donne de votre côté ? Voici la solution sur la branche P4C3-solution.
 
 En résumé
+
+- Il est possible de regrouper les champs au sein d'une balise  <fieldset>  qui comporte une légende, avec la 
+  balise  <legend>.
+
+- On peut sélectionner automatiquement un champ en précisant  l'attribut autofocus.
+
+- Il est également possible de rendre un champ obligatoire avec l'attribut  required.
+
+- Le bouton qui permet de valider le formulaire est créé à partir d'une balise input en faisant :  
+  <input type="submit" value="Envoyer">
+
+Dans le prochain chapitre, nous allons voir comment rendre une page responsive afin qu'elle s'adapte aux différentes tailles d'écran. Alors à tout de suite !
+
+##############################################################################################################
+
