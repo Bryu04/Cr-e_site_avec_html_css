@@ -18,6 +18,7 @@ h1 {
     font-size: 3.5em;
     color: #a5b4fc;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 p {
@@ -27,8 +28,7 @@ p {
 }
 
 li {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1em;
+    font-size: 1.1em;
     color: #F9F8FF;
 }
 
@@ -36,7 +36,7 @@ header, footer {
     /* Changer la couleur de fond en blanc  */
     background-color: white;
     /* Ajouter de la marge interne */
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px 
 }
 
 nav, footer {
@@ -58,12 +58,15 @@ section {
 body {
     /* Changer la couleur du coeur de la page  */
     background-color: #1F2039;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
 }
 
 h2 {
     color: #F9F8FF;
     /* Ajouté des marge au dessus et en dessous */
-    padding: 30px 0px;
+    margin-bottom: 80px;
+    text-align: center;
 }
 
 .cta {
@@ -73,8 +76,8 @@ h2 {
     /* Ajouté des arrondis  */
     border-radius: 50px;
     display: inline-block;
-    margin-top: 20px;
     padding: 20px 25px;
+    
 }
 
 .nouvel_border {
@@ -82,6 +85,17 @@ h2 {
     border-right: 1px solid #8e86b5;
     /* Ajouté de l'espace interne */
     padding: 50px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.nouvel_border + div {
+    text-align: center;
+}
+
+.nouvel_border h2 {
+    margin-top: 30px;
 }
 
 a:hover {
@@ -98,17 +112,21 @@ a:hover {
 }
 
 .a-propos-main {
-    width: 50%;
     margin: auto;
 }
+
 
 /* Modifier le conteneur introduction */
 .accueil-introduction {
     display: flex;
     flex-direction: row;
-    width: 50%;
-    align-items: center;
+    max-width: 1000px;
+    align-items: flex-start;
     margin: auto;
+}
+
+.accueil-introduction div {
+    margin-right: 50px;
 }
 
 .accueil-photos {
@@ -141,6 +159,7 @@ a:hover {
 .portfolio-section-photos h2 {
     color: #242424;
     margin-bottom: 80px;
+    text-align: left;
 }
 
 .grid_paysages {
@@ -188,32 +207,22 @@ a:hover {
 }
 
 td, th {
-    border: 1px solid  #8e86b5;
-    padding-left: 40px;
-    padding-right: 40px;
+    border: 1px solid  #a5b4fc;
+    padding: 15px;
 }
 
 td {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 80px;
 }
 
-th {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 100;
-}
 
 table {
     border-collapse: collapse;
     color: white;
-    font-family: 'Manrope', sans-serif;
-    margin-top: 100px;
+    width: 100%;
+    text-align: center;
 }
 
-caption {
-    padding-bottom: 60px;
-}
 
 .section-contact h2 {
     font-family: 'Manrope', sans-serif;
@@ -222,7 +231,7 @@ caption {
 }
 
 form {
-    width: 60%;
+    max-width: 1000px;
     margin: auto;
     color: white;
     font-family: 'Manrope', sans-serif;
@@ -290,17 +299,52 @@ input[type='submit']:hover {
     background: linear-gradient(#696484,#8788BA);
 }
 
-@media screen and (max-width:1200px) {
+
+
+@media screen and (max-width:996px) {
+    
+    .accueil-photos div {
+        flex-direction: column;
+    }
+    
+    .grid_paysages,
+    .grid_portraits,
+    fieldset,
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header,
+    footer {
+        padding: 20px;
+    }
+
     h1 {
         font-size: 2em;
     }
 
-    .accueil-introduction,
-    form {
-        max-width: 1000px;
+    .accueil-introduction {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .accueil-introduction img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        order: 1;
+    }
+
+    .accueil-introduction div {
+        order: 2;
+        text-align: center;
+        margin-top: 30px;
     }
 
     table {
         display: none;
     }
+
 }
