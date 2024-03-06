@@ -247,3 +247,23 @@ Voilà à quoi le tableau devrait ressembler :
 Comme d'habitude, vous trouverez la base de code pour faire l’exercice sur la branche P4C1-exercice, et vous pouvez consulter la solution sur la branche P4C1-solution pour vérifier vos acquis.
 
 En résumé
+
+- Un tableau s'insère avec la balise HTML  <table>  et se définit ligne par ligne avec  <tr>.
+
+- Chaque ligne comporte des cellules  <td>  (cellules normales) ou  <th>   (cellules d'en-tête).
+
+- Le titre du tableau se définit avec  <caption>.
+
+- On peut ajouter une bordure aux cellules du tableau HTML avec la propriété CSS border  . Pour coller les 
+  bordures entre elles, on utilise la propriété CSS  border-collapse.
+
+- Un tableau peut être divisé en trois sections grâce aux balises HTML <thead>  (en-tête),  <tbody>  (corps) 
+  et  <tfoot>  (bas du tableau). L'utilisation de ces balises n'est pas obligatoire.
+
+- En HTML, on peut fusionner des cellules horizontalement avec l'attribut  colspan, ou verticalement avec  
+  rowspan. Il faut indiquer combien de cellules doivent être fusionnées.
+
+Dans le chapitre suivant, on va apprendre à créer des formulaires. Alors à tout de suite !
+
+##############################################################################################################
+
