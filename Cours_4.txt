@@ -1000,3 +1000,97 @@ Dans le prochain chapitre, nous vous donnerons quelques astuces pour aller plus 
 
 ##############################################################################################################
 
+Allez plus loin
+
+Alors que ce cours touche à sa fin, la tentation est grande de penser que l'on a tout vu. Mais on ne finit jamais d’apprendre. Ce chapitre a pour but de vous donner quelques directions pour compléter votre apprentissage. Alors ne soyez pas triste, car vous n'avez pas fini de faire des découvertes !
+
+Apprenez à créer un site web interactif avec Javascript
+
+C'est probablement l'un des premiers langages que vous voudrez apprendre, maintenant que vous avez des connaissances en HTML et CSS.
+
+À quoi JavaScript peut-il bien servir ? On ne peut pas tout faire avec HTML et CSS ?
+
+On peut faire déjà beaucoup de choses en HTML et CSS mais, lorsqu'on veut rendre sa page plus interactive, un langage comme JavaScript devient indispensable.
+
+JavaScript est un langage de programmation que l'on utilise fréquemment sur le Web, en plus de HTML et CSS. Javascript permet de rajouter de l'interactivité à un site web (réponses quand on clique sur un bouton ou des données entrées dans des formulaires, composition dynamique, animations…).
+
+Voici quelques exemples de ce à quoi JavaScript peut servir :
+
+  - modifier des propriétés CSS sans avoir à recharger la page (exemple : vous pointez sur une image, et le 
+    fond de votre site change de couleur (ce n'est pas possible à faire avec un  :hover  car cela concerne 
+    deux balises différentes ; c'est bien là une limite du CSS) ;
+
+  - modifier le code source HTML sans avoir à recharger la page, pendant que le visiteur consulte la page ;
+
+  - il permet aussi d'afficher des boîtes de dialogue à l'écran du visiteur…
+
+  - … ou encore de modifier la taille de la fenêtre.
+
+JavaScript est régulièrement utilisé aujourd'hui pour faire de l'AJAX (Asynchronous JavaScript And XML). Cette technique permet de modifier une partie de la page web que le visiteur consulte, en échangeant des données avec le serveur. Cela donne l'impression que les pages sont plus dynamiques et plus réactives.
+
+Les navigateurs sont de plus en plus efficaces dans leur traitement de JavaScript, ce qui fait que les pages qui utilisent JavaScript sont de plus en plus réactives. On peut ainsi arriver aujourd'hui à créer des sites qui deviennent littéralement des applications web, l'équivalent de logiciels, mais disponibles sous forme de sites web ! Un exemple célèbre : Google Docs, la suite bureautique de Google, disponible sur le Web.
+
+Pour démarrer votre apprentissage de JavaScript, rendez-vous sur le cours Apprenez à programmer avec JavaScript. 
+
+Apprenez à créer un site web dynamique avec PHP
+
+Les langages qui permettent de créer des sites web dynamiques s'exécutent sur le “serveur” qui contient votre site web. Les langages serveur permettent de générer la page web lorsque le visiteur arrive sur votre site. Chaque visiteur peut donc obtenir une page web personnalisée suivant ses besoins !
+
+Les langages “côté serveur” sont nombreux. L'un des plus connus, PHP : Facile à utiliser et puissant, il est utilisé notamment par Facebook… et OpenClassrooms.
+
+Tous les langages ne servent pas aux mêmes choses, mais ils se complètent. Si vous combinez HTML + CSS + JavaScript + PHP, par exemple, vous pouvez :
+
+  - faire de l'AJAX (échanges de données entre la page et le serveur) ;
+
+  - effectuer des calculs ;
+
+  - stocker des informations dans des bases de données ;
+
+  - bref, faire des sites web dynamiques !
+
+J'ai d'ailleurs rédigé un cours sur PHP : Concevez votre site web avec PHP et MySQL. Vous êtes nombreux à suivre après avoir appris HTML et CSS !
+
+Souvenez-vous de la balise  <form>  : je vous avais expliqué comment créer des formulaires, mais pas comment récupérer les informations saisies par vos visiteurs. Il vous faut obligatoirement un langage serveur, comme PHP, pour récupérer et traiter ces données !
+
+Au final, ce type de langage vous permet de réaliser vos rêves les plus fous sur votre site web :
+
+  - forum ;
+
+  - newsletter ;
+
+  - compteur de visiteurs ;
+
+  - système de news automatisé ;
+
+  - gestion de membres ;
+
+  - jeux web (jeux de stratégie, élevage d'animaux virtuels…) ;
+
+  - etc.
+
+Bonne découverte !
+
+Prenez du recul sur ce que vous pouvez encore apprendre
+
+Nous avons mis au point une Carte des Connaissances !
+
+Il s'agit d'une carte heuristique (mindmap) sur laquelle nous avons listé nos cours en développement. Ils sont regroupés par thématiques et langages. Vous pourrez y voir en un clin d'œil les différents technologies et spécialisations auxquels vous pourrez vous former avec OpenClassrooms.
+
+Consultez le glossaire des balises HTML et propriétés CSS
+
+Si vous avez besoin de revenir facilement sur un point du cours, vous pouvez télécharger et consulter :
+
+  1. La liste des balises HTML. 
+
+  2. La liste des propriétés CSS.
+
+En outre, n'hésitez pas à consulter le site de Mozilla Developer pour connaître les spécificités de toutes les balises HTML et propriétés CSS (grâce au glossaire situé à gauche de la page).
+
+Téléchargez la fiche résumé du cours
+
+lien : https://course.oc-static.com/courses/1603881/Fiche+HTML+CSS.pdf
+
+Merci d'avoir suivi ce cours et à bientôt sur OpenClassrooms !
+
+##############################################################################################################
+
