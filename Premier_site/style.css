@@ -259,3 +259,13 @@ a {
 .trois {
     height: 300px;
 }
+
+/* Créer des bordures pour le tableau */
+td {
+    border: 1px solid black;
+}
+
+table {
+    /* fusionner les bordures du tableau  */
+    border-collapse: collapse;
+}
