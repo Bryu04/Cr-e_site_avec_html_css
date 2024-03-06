@@ -742,3 +742,26 @@ Cela tombe bien, j'ai aussi rédigé un cours sur le langage PHP pour ceux que c
 
 À vous de jouer !
 
+Vous allez pouvoir créer un formulaire de contact pour Robbie Lens !
+
+Pour cela, rendez-vous sur GitHub pour avoir la base de code pour faire l’exercice sur la branche P4C3-exercice.
+
+Vous y trouverez la structure de la nouvelle section à ajouter dans la page d'accueil. À vous de jouer pour :
+
+  - ajouter un champ nom avec le label associé ;
+
+  - ajouter un champ email avec le label associé ;
+
+  - ajouter un textarea ayant pour label message ;
+
+  - créer un bouton de validation "Envoyer". 
+
+  - changer le lien du bouton “Un projet?Écrivez-moi” pour le faire pointer vers le formulaire
+
+Le formulaire aura une méthode  get  et restera vide pour l'attribut  action  .
+
+Pour ce qui est du style du formulaire, vous trouverez le résultat final du site de Robbie Lens.
+
+Alors, qu’est-ce que ça donne de votre côté ? Voici la solution sur la branche P4C3-solution.
+
+En résumé
