@@ -1094,3 +1094,233 @@ Merci d'avoir suivi ce cours et à bientôt sur OpenClassrooms !
 
 ##############################################################################################################
 
+!!!!!!!!!!!!!!! Quiz : Utiliser des fonctionnalités avancées de HTML et CSS !!!!!!!!!!!!!!!
+
+Compétences évaluées
+Utiliser des fonctionnalités avancées de HTML et CSS
+
+Question 1
+Le CodePen Quiz P4Q1 présente un tableau.
+
+Quelle ligne de code faut-il ajouter à la place du commentaire pour avoir un tableau sans espace entre les lignes et les colonnes ?
+
+- border: 1px solid black;
+
+- border-collapse: separate;
+
+- display: grid;
+
+- border-collapse: collapse; (o) (B)
+
+""""""""" Réponse """"""""""
+Ici, vous avez un tableau dont les bords ne sont pas collés. Comme nous l'avons vu ensemble dans le cours, il suffit d'ajouter  border-collapse: collapse  pour que les cellules soient bien collées les unes aux autres. En effet, nous avons déjà ajouté des bordures à notre tableau, la valeur  separate  pour  border-collapse  ne permet pas de rapprocher les cellules. Et enfin, CSS Grid ne nous est d'aucune utilité ici.
+
+""""""""""""""""""""""""""""
+
+Question 2
+
+Parmi les éléments ci-dessous, lesquels ne concernent pas les tableaux en HTML et CSS ?
+
+Attention, plusieurs réponses sont possibles.
+
+- tfooter (o) (B)
+
+- thead
+
+- td
+
+- caption
+
+- legend (o) (B)
+
+""""""""" Réponse """"""""""
+Parcourons ensemble les différentes options valides proposées ici.
+
+L'élément  thead  permet d'indiquer l'en-tête du tableau,  td  correspond à une cellule,  caption  permet de donner un titre au tableau.
+
+En revanche,  tfooter  ne correspond à rien : pour indiquer le pied du tableau, il s'agit de  tfoot, et  legend  est utilisé dans les formulaires.
+
+Il fallait donc choisir les options 1 et 5 !
+
+""""""""""""""""""""""""""""
+
+Question 3
+
+J'ai le code suivant :
+
+<form method="get" action="">
+    <label id="prenom" for="prenom">Votre prénom</label>
+    <input type="text" name="surnom">
+</form>
+
+Mais je ne comprends pas : quand je clique sur mon  label  rien ne se passe, le champ de saisie n'est pas sélectionné.
+
+Qu'est-ce qui pose problème ici ?
+
+- La balise  input  doit se situer avant la balise  label
+
+- L'attribut  id  n'est pas sur la balise  input (o) (B)
+
+- La valeur de  name  est  surnom  et non  prenom
+
+- Il n'y a pas de bouton de validation du formulaire
+
+""""""""" Réponse """"""""""
+Ici, c'est bien parce que l'attribut  id  n'est pas précisé dans la balise  input  que le lien ne se fait pas entre l'input  et le  label.
+
+Rien à voir avec le bouton de validation ou l'ordre de l'input  et du  label.
+
+Par ailleurs, l'attribut  name  n'a rien à voir avec le lien entre  label  et  input.
+
+Il fallait donc choisir la réponse 2.
+
+""""""""""""""""""""""""""""
+
+Question 4
+
+Parmi les valeurs suivantes, lesquelles permettent bien de créer un champ de saisie ? Vous pouvez essayer les différentes options pour voir !
+
+Attention, plusieurs réponses sont possibles.
+
+- type="email" (o) (B)
+
+- type="date" (o) (B)
+
+- type="telephone" 
+
+- type="URL" (o) (B)
+
+""""""""" Réponse """"""""""
+Ici, seule la troisième option ne correspond pas à un véritable type d'input : il faut choisir  tel  car  telephone  n’existe pas. Il fallait donc choisir les réponses 1, 2 et 4 !
+
+""""""""""""""""""""""""""""
+
+Question 5
+
+Parmi les bouts de code suivants, lesquels permettent d'obtenir le résultat ci-dessous ?
+
+La capture d'écran montre une liste déroulante à la suite de la question Quelle plante souhaitez-vous acheter ?
+
+
+- <form method="get" action="">
+    <caption for="plante">Quelle plante souhaitez-vous acheter ?</caption>
+    <select name="plante" id="plante">
+        <option value="philodendron">Philodendron</option>
+        <option value="calathea">Calathea</option>
+        <option value="pilea">Pilea</option>
+        <option value="yucca">Yucca</option>
+    </select>
+</form>
+
+- <form method="get" action="">
+    <label for="plante">Quelle plante souhaitez-vous acheter ?</label>
+    <option name="plante" id="plante">
+        <select value="philodendron">Philodendron</select>
+        <select value="calathea">Calathea</select>
+        <select value="pilea">Pilea</select>
+        <select value="yucca">Yucca</select>
+    </option>
+</form>
+
+- <form method="get" action="">
+    <label for="plante">Quelle plante souhaitez-vous acheter ?</label> (o) (B)
+    <select name="plante" id="plante">
+        <option value="philodendron">Philodendron</option>
+        <option value="calathea">Calathea</option>
+        <option value="pilea">Pilea</option>
+        <option value="yucca">Yucca</option>
+    </select>
+</form>
+
+""""""""" Réponse """"""""""
+La première option utilise la balise  <caption>. Sauf que cette balise ne permet pas de créer un libellé dans un formulaire.
+
+La deuxième réponse, quant à elle, inverse les balises  <select>  et  <option>.
+
+Il fallait donc choisir l'option 3.
+
+""""""""""""""""""""""""""""
+
+Question 6
+
+J'ai le bout de code suivant :
+
+<form method="post" action="">
+    <fieldset>
+        <title>Vos coordonnées</title>
+        <label for="nom">Quel est votre nom ?</label>
+        <input type="text" name="nom" id="nom">
+        <label for="prenom">Quel est votre prénom ?</label>
+        <input type="text" name="prenom" id="prenom">
+        <option for="email">Quel est votre e-mail ?</option>
+        <input type="email" name="email" id="email">
+        <button type="submit" value="Envoyer">
+    </form>
+</fieldset>
+
+Qu'est-ce qui ne va pas ici ? (Vous pouvez essayer de repérer les erreurs sans regarder les propositions, pour vous entraîner.)
+
+Attention, plusieurs réponses sont possibles.
+
+- La balise  <form>  est fermée avant la balise  <fieldset> (o) (B)
+
+- Le  fieldset  utilise une balise  <title>  au lieu d'utiliser  <legend> (o) (B)
+
+- Le bouton de validation est un  button  et non un  input (o) (B)
+
+- Il y a une  option  qui se balade seule (o) (B)
+
+- La valeur de l'attribut  method  est  post
+
+""""""""" Réponse """"""""""
+Pas mal de choses posent problème dans ce bout de code. En effet, les explications citées dans les propositions 1, 2, 3 et 4 sont bien des erreurs. En revanche, le fait que l'attribut  method  ait pour valeur  post  n'est pas du tout un problème. Il fallait donc choisir  1, 2, 3 et 4.
+
+""""""""""""""""""""""""""""
+
+Question 7
+
+Quelle est la signification de la media query suivante ?
+
+@media all and (min-width: 960px) and (max-width: 1024px)
+
+- Tous les médias de moins de  960px  et plus de  1024px
+
+- Les écrans de moins  960px  et plus de  1024px
+
+- Tous les médias de plus de  960px  et moins de  1024px (o) (B)
+
+- Tous les écrans de moins de 960px et de plus de 1024px
+
+""""""""" Réponse """"""""""
+La media query utilisée ici concerne tous les médias.
+
+Par ailleurs, il est précisé  min-width: 960px  et  max-width: 1024px. Cela signifie que la taille concernée est supérieure à  960px  et inférieure à  1024px.
+
+Il fallait donc choisir l'option 3 !
+
+""""""""""""""""""""""""""""
+
+Question 8
+
+Quelles astuces sont couramment utilisées pour rendre un site responsive ?
+
+Attention, plusieurs réponses sont possibles.
+
+- Changer  flex-direction  de  row  à  column (o) (B)
+
+- Définir un  overflow: auto  ou  scroll (o) (B)
+
+- Définir une  width  fixe
+
+- Prévoir plusieurs breakpoints avec des comportements associés (o) (B)
+
+""""""""" Réponse """"""""""
+Souvent, changer l'orientation de ses éléments au sein de  flex  permet d'adapter une grille à un écran plus étroit. De la même manière, quand la hauteur ou la largeur n'est pas suffisante, il peut vous arriver d'avoir à exploiter la propriété  overflow. Et pour tout ça, vous pouvez définir des media queries avec des breakpoints et des comportements associés.
+
+En revanche, définir une  width  fixe ne vous aidera pas à rendre un site responsive.
+
+Il fallait donc choisir les options 1, 2 et 4.
+
+""""""""""""""""""""""""""""
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
